@@ -1,0 +1,10 @@
+[2026-03-02 09:12:03] python=3.10.12 torch=2.1.0 cuda=12.1
+[2026-03-02 09:12:04] device: NVIDIA A100-SXM4-40GB
+[2026-03-02 09:12:05] git commit: 4f7c2ab
+[2026-03-02 09:12:06] seed=42
+[2026-03-02 09:12:10] dataset root: /data/cifar10
+[2026-03-02 09:13:00] $ python train.py --config config.yaml
+[2026-03-02 09:41:22] epoch 1 loss=1.842 val_top1=0.612
+[2026-03-02 10:58:15] epoch 20 loss=0.512 val_top1=0.931
+[2026-03-02 11:02:40] baseline: vanilla resnet18 top1=0.918
+[2026-03-02 11:02:41] baseline: mixup resnet18 top1=0.947

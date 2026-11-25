@@ -1,0 +1,11 @@
+{
+  "case_id": "EXAMPLE-CASE-000",
+  "task_id": "example-challenge",
+  "materials": {
+    "config": "config.yaml",
+    "log": "run.log",
+    "steps": "steps.md",
+    "draft": "draft.md"
+  },
+  "task": "把实验记录整理成方法与实验章节：步骤、设置、参数表（带来源）、数据集与划分、对照实验、复现清单与具体限制；正文数值必须能回查配置或日志。"
+}

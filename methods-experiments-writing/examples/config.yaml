@@ -1,0 +1,17 @@
+model: resnet18
+seed: 42
+train:
+  batch_size: 64
+  lr: 0.001
+  epochs: 20
+  weight_decay: 0.0001
+opt:
+  name: adamw
+  warmup_epochs: 3
+dataset:
+  name: CIFAR-10
+  n_train: 50000
+  split_ratio_train: 0.9
+  split_ratio_val: 0.1
+preprocess: random crop and horizontal flip
+baselines: [vanilla resnet18, mixup resnet18]

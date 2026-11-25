@@ -1,0 +1,362 @@
+{
+  "case_id": "EXAMPLE-CASE-000",
+  "task_id": "example-challenge",
+  "status": "partial",
+  "results": {
+    "method_steps": [
+      {
+        "order": 1,
+        "action": "读取 CIFAR-10 原始数据并做随机裁剪与水平翻转",
+        "inputs": "原始图像",
+        "outputs": "增强后的训练集",
+        "condition": ""
+      },
+      {
+        "order": 2,
+        "action": "用 ResNet-18 主干提取特征",
+        "inputs": "增强后的训练集",
+        "outputs": "类别 logits",
+        "condition": ""
+      },
+      {
+        "order": 3,
+        "action": "以 AdamW 优化交叉熵损失，warmup 3 个 epoch",
+        "inputs": "logits 与标签",
+        "outputs": "模型权重",
+        "condition": ""
+      },
+      {
+        "order": 4,
+        "action": "在验证集上评估 top-1 准确率",
+        "inputs": "验证集与权重",
+        "outputs": "top-1 指标",
+        "condition": ""
+      }
+    ],
+    "experimental_setup": {
+      "hardware": "NVIDIA A100-SXM4-40GB",
+      "software_versions": "python 3.10.12, torch 2.1.0, cuda 12.1",
+      "seed": "42",
+      "repetitions": "",
+      "train_val_test": "dataset.split_ratio_train=0.9, dataset.split_ratio_val=0.1"
+    },
+    "parameters": [
+      {
+        "name": "model",
+        "value": "resnet18",
+        "unit": "—",
+        "target": "全局",
+        "source": "config.yaml:1",
+        "source_type": "config"
+      },
+      {
+        "name": "seed",
+        "value": 42,
+        "unit": "—",
+        "target": "全局",
+        "source": "config.yaml:2",
+        "source_type": "config"
+      },
+      {
+        "name": "train.batch_size",
+        "value": 64,
+        "unit": "—",
+        "target": "训练",
+        "source": "config.yaml:4",
+        "source_type": "config"
+      },
+      {
+        "name": "train.lr",
+        "value": 0.001,
+        "unit": "—",
+        "target": "训练",
+        "source": "config.yaml:5",
+        "source_type": "config"
+      },
+      {
+        "name": "train.epochs",
+        "value": 20,
+        "unit": "epochs",
+        "target": "训练",
+        "source": "config.yaml:6",
+        "source_type": "config"
+      },
+      {
+        "name": "train.weight_decay",
+        "value": 0.0001,
+        "unit": "—",
+        "target": "训练",
+        "source": "config.yaml:7",
+        "source_type": "config"
+      },
+      {
+        "name": "opt.name",
+        "value": "adamw",
+        "unit": "—",
+        "target": "优化器",
+        "source": "config.yaml:12",
+        "source_type": "config"
+      },
+      {
+        "name": "opt.warmup_epochs",
+        "value": 3,
+        "unit": "epochs",
+        "target": "优化器",
+        "source": "config.yaml:10",
+        "source_type": "config"
+      },
+      {
+        "name": "dataset.name",
+        "value": "CIFAR-10",
+        "unit": "—",
+        "target": "数据",
+        "source": "config.yaml:12",
+        "source_type": "config"
+      },
+      {
+        "name": "dataset.n_train",
+        "value": 50000,
+        "unit": "—",
+        "target": "数据",
+        "source": "config.yaml:13",
+        "source_type": "config"
+      },
+      {
+        "name": "dataset.split_ratio_train",
+        "value": 0.9,
+        "unit": "—",
+        "target": "数据",
+        "source": "config.yaml:14",
+        "source_type": "config"
+      },
+      {
+        "name": "dataset.split_ratio_val",
+        "value": 0.1,
+        "unit": "—",
+        "target": "数据",
+        "source": "config.yaml:15",
+        "source_type": "config"
+      },
+      {
+        "name": "preprocess",
+        "value": "random crop and horizontal flip",
+        "unit": "—",
+        "target": "全局",
+        "source": "config.yaml:16",
+        "source_type": "config"
+      }
+    ],
+    "dataset": {
+      "name": "CIFAR-10",
+      "version": "",
+      "scale": "50000",
+      "preprocess": "random crop and horizontal flip",
+      "split": "split_ratio_train=0.9, split_ratio_val=0.1",
+      "purpose": "训练/验证/测试按上述比例划分"
+    },
+    "baselines": [
+      {
+        "name": "vanilla resnet18",
+        "version": "",
+        "budget_matched": "未说明",
+        "source": "config.yaml:17"
+      },
+      {
+        "name": "mixup resnet18",
+        "version": "",
+        "budget_matched": "未说明",
+        "source": "config.yaml:17"
+      }
+    ],
+    "reproducibility": {
+      "code_version": "git commit: 4f7c2ab",
+      "environment": "python 3.10.12, torch 2.1.0, cuda 12.1",
+      "seed": "42",
+      "commands": "",
+      "data_access": "/data/cifar10"
+    },
+    "limitations": [
+      {
+        "limitation": "正文数值与配置不一致：train.lr",
+        "failure_scenario": "按正文 0.01 复现会得到与记录不同的结果",
+        "requires_confirmation": true
+      },
+      {
+        "limitation": "正文数值无材料来源：87.3%",
+        "failure_scenario": "该数值可能来自未提供的材料，复现时无法核对",
+        "requires_confirmation": true
+      },
+      {
+        "limitation": "数据集版本未在材料中给出",
+        "failure_scenario": "换版本后划分与指标会变化，复现结果不可比",
+        "requires_confirmation": true
+      },
+      {
+        "limitation": "基线未说明是否同预算",
+        "failure_scenario": "不同训练预算下的对比结论不成立",
+        "requires_confirmation": true
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "param:model",
+      "locator": "config.yaml:1",
+      "locator_type": "config_or_log_line",
+      "quote": "model = resnet18",
+      "note": "参数与来源绑定"
+    },
+    {
+      "source_id": "param:seed",
+      "locator": "config.yaml:2",
+      "locator_type": "config_or_log_line",
+      "quote": "seed = 42",
+      "note": "参数与来源绑定"
+    },
+    {
+      "source_id": "param:train.batch_size",
+      "locator": "config.yaml:4",
+      "locator_type": "config_or_log_line",
+      "quote": "train.batch_size = 64",
+      "note": "参数与来源绑定"
+    },
+    {
+      "source_id": "param:train.lr",
+      "locator": "config.yaml:5",
+      "locator_type": "config_or_log_line",
+      "quote": "train.lr = 0.001",
+      "note": "参数与来源绑定"
+    },
+    {
+      "source_id": "param:train.epochs",
+      "locator": "config.yaml:6",
+      "locator_type": "config_or_log_line",
+      "quote": "train.epochs = 20",
+      "note": "参数与来源绑定"
+    },
+    {
+      "source_id": "param:train.weight_decay",
+      "locator": "config.yaml:7",
+      "locator_type": "config_or_log_line",
+      "quote": "train.weight_decay = 0.0001",
+      "note": "参数与来源绑定"
+    },
+    {
+      "source_id": "param:opt.name",
+      "locator": "config.yaml:12",
+      "locator_type": "config_or_log_line",
+      "quote": "opt.name = adamw",
+      "note": "参数与来源绑定"
+    },
+    {
+      "source_id": "param:opt.warmup_epochs",
+      "locator": "config.yaml:10",
+      "locator_type": "config_or_log_line",
+      "quote": "opt.warmup_epochs = 3",
+      "note": "参数与来源绑定"
+    },
+    {
+      "source_id": "param:dataset.name",
+      "locator": "config.yaml:12",
+      "locator_type": "config_or_log_line",
+      "quote": "dataset.name = CIFAR-10",
+      "note": "参数与来源绑定"
+    },
+    {
+      "source_id": "param:dataset.n_train",
+      "locator": "config.yaml:13",
+      "locator_type": "config_or_log_line",
+      "quote": "dataset.n_train = 50000",
+      "note": "参数与来源绑定"
+    },
+    {
+      "source_id": "step:1",
+      "locator": "steps 第 1 步",
+      "locator_type": "step_record",
+      "quote": "读取 CIFAR-10 原始数据并做随机裁剪与水平翻转",
+      "note": "步骤原文"
+    },
+    {
+      "source_id": "step:2",
+      "locator": "steps 第 2 步",
+      "locator_type": "step_record",
+      "quote": "用 ResNet-18 主干提取特征",
+      "note": "步骤原文"
+    },
+    {
+      "source_id": "step:3",
+      "locator": "steps 第 3 步",
+      "locator_type": "step_record",
+      "quote": "以 AdamW 优化交叉熵损失，warmup 3 个 epoch",
+      "note": "步骤原文"
+    },
+    {
+      "source_id": "step:4",
+      "locator": "steps 第 4 步",
+      "locator_type": "step_record",
+      "quote": "在验证集上评估 top-1 准确率",
+      "note": "步骤原文"
+    },
+    {
+      "source_id": "baseline:vanilla resnet18",
+      "locator": "config.yaml:17",
+      "locator_type": "material_line",
+      "quote": "vanilla resnet18",
+      "note": "基线来源"
+    },
+    {
+      "source_id": "baseline:mixup resnet18",
+      "locator": "config.yaml:17",
+      "locator_type": "material_line",
+      "quote": "mixup resnet18",
+      "note": "基线来源"
+    }
+  ],
+  "uncertainty": [
+    {
+      "item": "参数 train.lr 取值冲突（配置 0.001 vs 正文 0.01）",
+      "reason": "正文与配置文件不一致，无法判断以哪个为准",
+      "action_required": "由作者确认并统一正文或配置"
+    },
+    {
+      "item": "正文数值 87.3% 无来源",
+      "reason": "配置与日志中均未出现该数值",
+      "action_required": "补充来源或删除该数值"
+    },
+    {
+      "item": "数据集版本缺失",
+      "reason": "配置中未给出 version 字段",
+      "action_required": "确认数据集版本与获取方式"
+    }
+  ],
+  "changes": [
+    {
+      "step": "1",
+      "action": "解析配置/日志/步骤记录",
+      "note": "参数 13 个，步骤 4 步，日志 525 字符"
+    },
+    {
+      "step": "2",
+      "action": "参数与草稿数值对齐",
+      "note": "命中 5，冲突 1，无来源 1"
+    },
+    {
+      "step": "3",
+      "action": "六要素齐全性检查",
+      "note": "complete 4/5"
+    },
+    {
+      "step": "4",
+      "action": "生成章节草稿与限制清单",
+      "note": "限制 4 条"
+    }
+  ],
+  "artifacts": [],
+  "metadata": {
+    "skill_name": "methods-experiments-writing",
+    "skill_version": "1.0.0",
+    "generated_at": "2026-11-25T23:58:14+08:00",
+    "model": "",
+    "runtime": ""
+  }
+}

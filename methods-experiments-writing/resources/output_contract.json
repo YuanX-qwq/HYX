@@ -1,0 +1,43 @@
+{
+  "_note": "示例（EXAMPLE ONLY）。本文件仅演示 result.json 结构，不是任何正式案例的答案；评测结果必须来自真实输入。",
+  "case_id": "EXAMPLE-CASE-000",
+  "task_id": "example-challenge",
+  "status": "partial",
+  "results": {
+    "method_steps": [
+      {"order": 1, "action": "读取原始数据并做随机裁剪与水平翻转", "inputs": "原始图像", "outputs": "增强后的训练集", "condition": ""},
+      {"order": 2, "action": "用 ResNet-18 主干提取特征", "inputs": "增强后的训练集", "outputs": "类别 logits", "condition": ""},
+      {"order": 3, "action": "以 AdamW 优化交叉熵损失，warmup 3 个 epoch", "inputs": "logits 与标签", "outputs": "模型权重", "condition": "验证集 top-1 不再提升时提前停止（材料未给出阈值）"},
+      {"order": 4, "action": "在验证集上评估 top-1 准确率", "inputs": "验证集与权重", "outputs": "top-1 指标", "condition": ""}
+    ],
+    "experimental_setup": {
+      "hardware": "NVIDIA A100-SXM4-40GB",
+      "software_versions": "python 3.10.12, torch 2.1.0, cuda 12.1",
+      "seed": "42",
+      "repetitions": "",
+      "train_val_test": "dataset.split_ratio_train=0.9, dataset.split_ratio_val=0.1"
+    },
+    "parameters": [
+      {"name": "train.lr", "value": 0.001, "unit": "—", "target": "训练", "source": "config.yaml:6"}
+    ],
+    "dataset": {"name": "CIFAR-10", "version": "", "scale": "50000", "preprocess": "random crop and horizontal flip", "split": "split_ratio_train=0.9, split_ratio_val=0.1", "purpose": "训练/验证/测试按上述比例划分"},
+    "baselines": [
+      {"name": "vanilla resnet18", "version": "", "budget_matched": "未说明", "source": "config.yaml:14"}
+    ],
+    "reproducibility": {"code_version": "git commit: 4f7c2ab", "environment": "python 3.10.12, torch 2.1.0, cuda 12.1", "seed": "42", "commands": "$ python train.py --config config.yaml", "data_access": "/data/cifar10"},
+    "limitations": [
+      {"limitation": "正文学习率 0.01 与配置 0.001 不一致", "failure_scenario": "按正文复现会得到与记录不同的结果", "requires_confirmation": true}
+    ]
+  },
+  "sources": [
+    {"source_id": "param:train.lr", "locator": "config.yaml:6", "locator_type": "config_line", "quote": "lr: 0.001", "note": "参数与来源绑定"}
+  ],
+  "uncertainty": [
+    {"item": "正文数值 87.3% 无来源", "reason": "配置与日志中均未出现该数值", "action_required": "补充来源或删除该数值"}
+  ],
+  "changes": [
+    {"step": "1", "action": "解析配置/日志/步骤记录", "note": "参数 13 个，步骤 4 步"}
+  ],
+  "artifacts": [],
+  "metadata": {"skill_name": "methods-experiments-writing", "skill_version": "1.0.0", "model": "", "runtime": "", "generated_at": "2026-01-01T00:00:00+08:00"}
+}
