@@ -1,0 +1,54 @@
+{
+  "_note": "字段定义（DEFINITION ONLY）。本文件规定 litkg-builder 产出的 result.json 结构，其中的示例值仅为示意，不是任何正式案例的答案。",
+  "top_level": {
+    "case_id": "string，原样取自 /input/case.json 的 case_id，不得改写或编造",
+    "task_id": "string，本题挑战标识（product-arena-10-760d1a0b）或 case.json 中的 task_id",
+    "status": "success | partial | undetermined | refused",
+    "results": "object，主结果（见 results）",
+    "sources": "array，证据回链条目（见 sources）",
+    "uncertainty": "array，未报告/冲突/无法判断项（见 uncertainty）",
+    "changes": "array，运行过程与处置记录",
+    "artifacts": "array，产物路径（运行时可绝对路径；提交包内为相对路径）",
+    "metadata": "object，skill_name / skill_version / model / runtime / generated_at"
+  },
+  "results": {
+    "papers": "array，每篇 source_id、doi、title、authors、role、license、paragraph_count",
+    "graph": {
+      "stats": "papers / paragraphs / nodes / edges / candidates / edges_dropped_unmapped",
+      "nodes": "array，节点含 id、type、label、aliases、source_ids、evidence[]、merge_basis、merge_rule",
+      "edges": "array，边含 id、type、subject、object、direction、conditions、attribution、strength、evidence[]",
+      "merges": "array，合并决策记录（decision / rule / basis）",
+      "conflicts": "array，冲突记录（resolution 只能 kept_separate / kept_both）"
+    },
+    "queries": "array，每条含 query、rows、evidence、undetermined；至少 3 条",
+    "qc": "object，issues[] 与 summary{total, fail, warn}",
+    "kg_version": "string"
+  },
+  "sources_item": {
+    "source_id": "论文标识，如 P1",
+    "locator": "段落定位，如 paragraph P1-p002（JATS 段落 ID，非 PDF 页码）",
+    "locator_type": "paragraph | table | figure | equation | section",
+    "quote": "原文逐字短引（建议 12–300 字，可被脚本定位）",
+    "note": "该证据支撑的节点/边及其归因、证据强度"
+  },
+  "uncertainty_item": {
+    "item": "无法确定的事项",
+    "reason": "为什么无法确定（未报告/冲突/输入缺失）",
+    "action_required": "需要谁补什么才能确定"
+  },
+  "example_only": {
+    "case_id": "EXAMPLE-CASE-000",
+    "task_id": "product-arena-10-760d1a0b",
+    "status": "partial",
+    "results": {"graph": {"stats": {"nodes": 2, "edges": 1}, "nodes": [], "edges": [], "merges": [], "conflicts": []},
+                "queries": [{"query": "entity:（示例）", "rows": [], "undetermined": ["（示例）"]}]},
+    "sources": [{"source_id": "P1", "locator": "paragraph P1-p001", "locator_type": "paragraph",
+                 "quote": "（示例）verbatim excerpt from the source", "note": "（示例）node n001"}],
+    "uncertainty": [{"item": "（示例）A value not reported", "reason": "material does not state it",
+                     "action_required": "confirm with another source"}],
+    "changes": [{"step": "1", "action": "（示例）read case.json", "note": "（示例）identified scope"}],
+    "artifacts": [],
+    "metadata": {"skill_name": "litkg-builder", "skill_version": "1.0.0", "model": "", "runtime": "",
+                 "generated_at": "2026-01-01T00:00:00+08:00"}
+  }
+}

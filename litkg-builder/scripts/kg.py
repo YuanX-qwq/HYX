@@ -1003,7 +1003,7 @@ def build(case, outdir, case_id=None):
     if qcres["summary"]["fail"]:
         status = "partial"
     if not graph["nodes"]:
-        status = "unable_to_determine"
+        status = "undetermined"
     limit_notes = []
     if any(p.get("paragraphs") and any(x["pid_synthetic"] for x in p["paragraphs"]) for p in corpus["papers"]):
         limit_notes.append("输入未提供 JATS 段落 ID，段落 ID 由本工具按顺序生成并已标记 pid_synthetic。")
@@ -1011,30 +1011,68 @@ def build(case, outdir, case_id=None):
     if corpus["warnings"]:
         limit_notes.extend(corpus["warnings"])
 
+    # 官方契约：sources[] 把节点/边的每条证据摊平成可回链条目
+    sources = []
+    for n in graph["nodes"]:
+        for ev in n["evidence"]:
+            sources.append({"source_id": ev["source_id"], "locator": f"paragraph {ev['paragraph_id']}",
+                            "locator_type": "paragraph", "quote": ev["quote"],
+                            "note": f"node {n['id']} ({n['type']}: {n['label']}), {ev.get('attribution', 'author_claim')}, direct"})
+    for e in graph["edges"]:
+        for ev in e["evidence"]:
+            sources.append({"source_id": ev["source_id"], "locator": f"paragraph {ev['paragraph_id']}",
+                            "locator_type": "paragraph", "quote": ev["quote"],
+                            "note": f"edge {e['id']} ({e['type']}: {e['subject_label']} -> {e['object_label']}), {e.get('attribution', 'author_claim')}, {e.get('strength', 'direct')}"})
+
+    uncertainty = [{"item": u, "reason": "图谱未覆盖或证据不足",
+                    "action_required": "回到原文补充证据；无证据时不得写入事实"} for u in
+                   [x for q in queries for x in q.get("undetermined", [])][:20]]
+    uncertainty.append({"item": "PDF 页码 / 图表像素 / 补充材料数值", "reason": "本次输入不含 PDF 与图像附件",
+                        "action_required": "如需图表数值，需另行提供 PDF 或人工转录"})
+    for note in limit_notes:
+        uncertainty.append({"item": note, "reason": "输入限制", "action_required": "在结果中保留该限制说明"})
+    if graph["conflicts"]:
+        uncertainty.append({"item": f"{len(graph['conflicts'])} 处跨篇/篇内冲突",
+                            "reason": "冲突双方条件不同或原文明确相反",
+                            "action_required": "保留双方不合并不取均值，需人工判定适用条件"})
+
+    changes = [
+        {"step": "1", "action": "读取 case.json / task.md 并识别材料",
+         "note": f"识别 {len(corpus['papers'])} 篇材料，source_id 独立；根级 DOI/标题/作者只归属第一篇"},
+        {"step": "2", "action": "机械建图（切句、定位、候选实体、候选关系）",
+         "note": f"候选 {graph['stats']['candidates']} 条 → 节点 {len(graph['nodes'])}、边 {len(graph['edges'])}"},
+        {"step": "3", "action": "实体类型与表述判定",
+         "note": "只保留原文出现的表述；转述标 cited_claim，自述标 author_claim"},
+        {"step": "4", "action": "关系判定（方向、条件、证据强度）",
+         "note": f"未映射丢弃 {graph['stats']['edges_dropped_unmapped']} 条；比较类缺条件记 K007 warn"},
+        {"step": "5", "action": "跨篇对齐与冲突处置",
+         "note": f"merge 记录 {len(graph['merges'])} 条，冲突 {len(graph['conflicts'])} 条（全部 kept_separate/kept_both）"},
+        {"step": "6", "action": "执行查询并导出",
+         "note": f"{len(queries)} 条查询（含 undetermined），导出 JSON/CSV/GraphML/Cypher/HTML"},
+        {"step": "7", "action": "质检与交付",
+         "note": f"qc fail {qcres['summary']['fail']} / warn {qcres['summary']['warn']}；status={status}"},
+    ]
+
     result = {
         "case_id": case_id or "",
-        "skill": {"name": "litkg-builder", "version": VERSION},
+        "task_id": "product-arena-10-760d1a0b",
         "status": status,
-        "input_summary": {"papers": [{"source_id": p["source_id"], "doi": p["doi"], "title": p["title"],
-                                      "role": p["role"], "paragraph_count": len(p["paragraphs"])}
-                                     for p in corpus["papers"]],
-                          "corpus_manifest_present": bool(corpus["manifest"])},
-        "graph": {"stats": graph["stats"], "nodes": graph["nodes"], "edges": graph["edges"],
-                  "merges": graph["merges"], "conflicts": graph["conflicts"]},
-        "queries": queries,
-        "qc": qcres,
-        "uncertainty": {
-            "undetermined": [u for q in queries for u in q.get("undetermined", [])][:20],
-            "unreported": ["输入无 PDF 页码、无图像与补充材料，不推断其中数值。",
-                           "未给条件的比较关系不写绝对优劣。"],
-            "conflicts": len(graph["conflicts"]),
-            "notes": limit_notes,
+        "results": {
+            "papers": [{k: v for k, v in p.items() if k != "paragraphs"} | {"paragraph_count": len(p["paragraphs"])}
+                       for p in corpus["papers"]],
+            "graph": {"stats": graph["stats"], "nodes": graph["nodes"], "edges": graph["edges"],
+                      "merges": graph["merges"], "conflicts": graph["conflicts"]},
+            "queries": queries,
+            "qc": qcres,
+            "kg_version": VERSION,
         },
-        "artifacts": files,
-        "change_records": [{"step": "discover", "detail": f"识别 {len(corpus['papers'])} 篇材料"},
-                           {"step": "extract", "detail": f"候选实体 {graph['stats']['candidates']} 条 → 节点 {len(graph['nodes'])}"},
-                           {"step": "relate", "detail": f"保留边 {len(graph['edges'])}，未映射丢弃 {graph['stats']['edges_dropped_unmapped']}"},
-                           {"step": "qc", "detail": f"fail {qcres['summary']['fail']} / warn {qcres['summary']['warn']}"}],
+        "sources": sources,
+        "uncertainty": uncertainty,
+        "changes": changes,
+        "artifacts": list(files.values()),
+        "metadata": {"skill_name": "litkg-builder", "skill_version": VERSION, "model": "",
+                     "runtime": f"python {sys.version.split()[0]}", "generated_at":
+                         __import__("datetime").datetime.now().astimezone().isoformat(timespec="seconds")},
     }
     rpath = Path(outdir) / "result.json"
     rpath.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")

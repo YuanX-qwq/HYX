@@ -91,8 +91,14 @@ def main():
     r = kg.build(ROOT / "examples" / "corpus.synthetic.json", tmp / "run", "demo")
     rj = json.loads((tmp / "run" / "result.json").read_text(encoding="utf-8"))
     check("result_has_contract_fields",
-          {"case_id", "status", "graph", "queries", "qc", "uncertainty", "artifacts"} <= set(rj))
-    check("deterministic_ids", [n["id"] for n in rj["graph"]["nodes"]] == [n["id"] for n in graph["nodes"]])
+          {"case_id", "task_id", "status", "results", "sources", "uncertainty",
+           "changes", "artifacts", "metadata"} <= set(rj))
+    check("result_status_enum", rj["status"] in ("success", "partial", "undetermined", "refused"), rj["status"])
+    check("result_sources_locator", all(s["locator_type"] == "paragraph" and "paragraph " in s["locator"]
+                                        and s["quote"] for s in rj["sources"]) and bool(rj["sources"]))
+    check("result_uncertainty_objects",
+          all({"item", "reason", "action_required"} <= set(u) for u in rj["uncertainty"]))
+    check("deterministic_ids", [n["id"] for n in rj["results"]["graph"]["nodes"]] == [n["id"] for n in graph["nodes"]])
 
     tampered = json.loads(json.dumps(graph))
     tampered["nodes"][0]["evidence"][0]["quote"] = "这段引文在原段落中并不存在 zzz"

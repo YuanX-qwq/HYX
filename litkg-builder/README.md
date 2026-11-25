@@ -8,7 +8,7 @@
 python3 scripts/kg.py build --case /input/case.json --out /app/output --case-id "<case_id>"
 python3 scripts/kg.py demo  --out ./examples/output     # 合成示例，非真实文献
 python3 scripts/kg.py query --kg ./examples/output/kg.json --expr "entity:Cu-doped TiO2"
-python3 tests/selftest.py                                # 32 项断言
+python3 tests/selftest.py                                # 35 项断言
 ```
 
 只依赖 Python ≥3.8 标准库，无第三方包、无网络、无 GPU。
@@ -17,7 +17,7 @@ python3 tests/selftest.py                                # 32 项断言
 
 | 文件 | 内容 |
 |---|---|
-| `result.json` | 交付契约：`case_id` / `status` / `graph` / `queries` / `qc` / `uncertainty` / `artifacts` / `change_records` |
+| `result.json` | 官方契约：`case_id` / `task_id` / `status` / `results`（papers + graph + queries + qc）/ `sources` / `uncertainty` / `changes` / `artifacts` / `metadata` |
 | `kg.json` | 完整图谱（论文、节点、边、合并记录、冲突） |
 | `nodes.csv` / `edges.csv` | 供表格复核 |
 | `kg.graphml` / `kg.cypher` | 供 Gephi / Neo4j 导入 |
@@ -29,10 +29,13 @@ python3 tests/selftest.py                                # 32 项断言
 ```
 SKILL.md                      Agent 使用手册（触发、流程、判定规则、自查）
 scripts/kg.py                 单文件核心：装载/抽取/对齐/建边/质检/查询/导出/补丁
+scripts/serialize_result.py   草稿 → 契约形态 result.json（含必填校验）
+resources/output_contract.json  result.json 字段定义（含示例标注）
+resources/conventions.md      通用工作规范（证据/诚实状态/产物位置/体积/禁止事项）
 vocab/entity_types.json       10 类实体定义 + 实例级标记
 vocab/relation_types.json     11 类关系：方向、是否需条件、证据强度
 schemas/kg.schema.json        图谱 JSON Schema（draft 2020-12）
-tests/selftest.py             32 项 fixture 断言（全过为合格）
+tests/selftest.py             35 项 fixture 断言（全过为合格）
 examples/corpus.synthetic.json  全合成两篇论文，DOI 为 10.0000 保留段
 examples/output/              合成示例的构建产物（示例，不是正式案例结果）
 ```
@@ -61,3 +64,4 @@ examples/output/              合成示例的构建产物（示例，不是正�
 ## 来源与许可
 
 自研，无外部依赖与第三方代码。示例语料 CC0-1.0。
+

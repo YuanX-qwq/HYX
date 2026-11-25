@@ -91,15 +91,38 @@ python3 scripts/kg.py query --kg /app/work/kg/kg.json --expr "cross:papers"
 python3 scripts/kg.py build --case /input/case.json --out /app/output --case-id "<case_id>"
 ```
 
-`result.json` 必需字段：`case_id`、`status`（success / partial / unable_to_determine）、`graph`（nodes/edges/merges/conflicts）、`queries`、`qc`、`uncertainty`（undetermined / unreported / conflicts / notes）、`artifacts`、`change_records`。
-若 `case.json` 或 `task.md` 声明了 `output_contract`，逐项确认都已覆盖；缺项要么补，要么在 `uncertainty` 里写明原因。
+`result.json` 按平台官方契约组织，顶层字段固定：
+
+| 字段 | 内容 |
+|---|---|
+| `case_id` / `task_id` | `case_id` 原样取输入，不得改写；`task_id` 为本题 slug |
+| `status` | `success` / `partial` / `undetermined` / `refused` |
+| `results` | `papers`（每篇 source_id/DOI/标题/角色）、`graph`（nodes/edges/merges/conflicts/stats）、`queries`、`qc` |
+| `sources[]` | 每条证据摊平成 `{source_id, locator:"paragraph <pid>", locator_type:"paragraph", quote, note}` |
+| `uncertainty[]` | `{item, reason, action_required}`；未报告、冲突、缺料各一条 |
+| `changes[]` | `{step, action, note}`，七步实施记录 |
+| `artifacts[]` | 导出文件的真实路径 |
+| `metadata` | `skill_name`、`skill_version`、`runtime`、`generated_at`（不填虚构成绩） |
+
+若 `case.json` 或 `task.md` 声明了 `output_contract`，逐项确认都已覆盖；缺项要么补，要么在 `uncertainty` 里写明原因。字段定义见 `resources/output_contract.json`，通用规范见 `resources/conventions.md`。
+
+只写主结果时可先落草稿再序列化（自带契约校验，缺字段/status 非法会直接失败）：
+
+```bash
+python3 scripts/serialize_result.py \
+  --case /input/case.json \
+  --draft /app/work/results_draft.json \
+  --out /app/output/result.json \
+  --skill-name litkg-builder
+```
+
 配套导出 `kg.html` 供人眼复核；`kg.cypher`/`kg.graphml` 供下游入库。增量更新用同一 `--out` 目录重跑：节点/边编号按出现顺序稳定生成，新增论文的节点追加在后，既有编号不变；合并与冲突的处置记录保留在 `merges`/`conflicts`，不覆盖历史。
 
 ## 8. 异常与自查
 
 | 情况 | 处置 |
 |---|---|
-| 找不到 `material.json` 等旁侧文件 | 用 `build --case <目录>` 递归识别；仍无段落 → `status=unable_to_determine` 并写缺什么 |
+| 找不到 `material.json` 等旁侧文件 | 用 `build --case <目录>` 递归识别；仍无段落 → `status=undetermined` 并写缺什么 |
 | PDF/XML 解析失败 | 说明失败位置，改走文本层；无文本层则拒答，不臆造 |
 | 同名不同物 | 不合并，`R-TYPE`/`R-INSTANCE` + `needs_review` |
 | 证据互相冲突 | `kept_both`，双方条件并列，不取平均 |
@@ -108,12 +131,18 @@ python3 scripts/kg.py build --case /input/case.json --out /app/output --case-id 
 自查（每次交付前跑一遍）：
 
 ```bash
-python3 tests/selftest.py          # 32 项 fixture 断言，应全过
+python3 tests/selftest.py          # 35 项 fixture 断言，应全过
 python3 scripts/kg.py build --case /input/case.json --out /app/work/check --case-id check
+python3 scripts/serialize_result.py --case /input/case.json --draft /app/work/results_draft.json --out /app/work/check/result2.json
 ```
 
 验收线：`qc.summary.fail == 0`；所有节点/边 `evidence` 非空且 `quote` 能在对应段落定位；`queries` ≥ 3 且每条含 `rows` 或 `undetermined`；`merges` 每条有 `basis`+`rule`；`conflicts` 全部 `kept_separate`/`kept_both`。
 
 ## 资源
 
-`vocab/entity_types.json`（10 类实体与实例标记）、`vocab/relation_types.json`（11 类关系、方向与证据强度定义）、`schemas/kg.schema.json`、`scripts/kg.py`（单文件，纯标准库，Python ≥3.8）、`tests/selftest.py`、`examples/corpus.synthetic.json`（全合成示例，非真实文献）。
+- `scripts/kg.py`：单文件核心（装载/抽取/对齐/建边/质检/查询/导出/补丁），纯标准库，Python ≥3.8。
+- `scripts/serialize_result.py`：草稿 → 契约形态 `result.json`，含必填校验。
+- `vocab/entity_types.json`（10 类实体与实例标记）、`vocab/relation_types.json`（11 类关系、方向与证据强度）。
+- `schemas/kg.schema.json`：图谱 JSON Schema。
+- `resources/output_contract.json`：`result.json` 字段定义（含标注为示例的取值）；`resources/conventions.md`：通用工作规范。
+- `tests/selftest.py`（35 项断言）、`examples/corpus.synthetic.json` + `examples/output/`（全合成示例，非真实文献）。
