@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "result.json — 每个案例的最终结构化结果",
+  "description": "make_result.py 输出。保留 output_contract 全部字段；附带状态/证据核验/不确定性/变更记录。",
+  "type": "object",
+  "required": ["case_id", "status", "result"],
+  "properties": {
+    "case_id": {"type": "string"},
+    "status": {
+      "type": "string",
+      "enum": ["success", "partial", "failed", "unable", "refused"],
+      "description": "成功 / 部分完成 / 失败 / 无法判断 / 拒答（附原因）"
+    },
+    "result": {
+      "description": "按 output_contract 字段承载的任务答案（问答/翻译/提取/核验/知识结构化等）"
+    },
+    "evidence_check": {
+      "type": "object",
+      "properties": {
+        "checked": {"type": "integer"},
+        "verified": {"type": "integer"},
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {"type": "string"},
+              "status": {"type": "string", "enum": ["verified", "unverified", "mismatch", "no-quote"]},
+              "quote": {"type": "string"},
+              "block_id": {"type": ["string", "null"]},
+              "hit_pages": {"type": "array", "items": {"type": "integer"}}
+            }
+          }
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {"type": "string"},
+          "path": {"type": "string"},
+          "detail": {"type": "string"}
+        }
+      }
+    },
+    "unreported": {
+      "type": "array",
+      "description": "材料未报告/无法判断的条目，不得写成事实"
+    },
+    "sources": {
+      "type": "object",
+      "properties": {
+        "document_model": {"type": "string"},
+        "probe": {"type": ["string", "null"]},
+        "document_sha256": {"type": "string"},
+        "pages": {"type": "integer"}
+      }
+    },
+    "change_log": {
+      "type": "array",
+      "description": "运行过程中的改动与人工接管位置"
+    }
+  }
+}

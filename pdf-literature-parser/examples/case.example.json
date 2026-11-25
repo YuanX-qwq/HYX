@@ -1,0 +1,25 @@
+{
+  "case_id": "example-001",
+  "input": {
+    "material": "papers/example-paper.pdf",
+    "task_md": "task.example.md"
+  },
+  "output_contract": {
+    "questions": [
+      {
+        "qid": "q1",
+        "question": "What is the main claim of the paper?"
+      },
+      {
+        "qid": "q2",
+        "question": "Extract all numeric results from Table 1 and give their locations."
+      }
+    ],
+    "translation": null,
+    "knowledge_structure": null
+  },
+  "constraints": {
+    "evidence_required": true,
+    "page_paragraph_locations": true
+  }
+}

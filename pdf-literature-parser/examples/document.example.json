@@ -1,0 +1,109 @@
+{
+  "schema": "document/v1",
+  "synthetic": true,
+  "note": "示例文档模型片段（synthetic），仅演示结构；不是任何正式案例结果。",
+  "source": {
+    "file": "example-paper.pdf",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "pages": 2,
+    "producer": "synthetic",
+    "encrypted": false,
+    "needs_password": false,
+    "backend": "pymupdf"
+  },
+  "pages": [
+    {
+      "page": 1,
+      "label": "1",
+      "width": 595.28,
+      "height": 841.89,
+      "status": "ok",
+      "layout": {
+        "columns": 2,
+        "column_bboxes": [[54, 0, 292, 842], [302, 0, 540, 842]],
+        "confidence": 0.9,
+        "text_x": [54, 540]
+      },
+      "header": [
+        {"id": "p1b0", "kind": "paragraph", "text": "Journal of Example 12 (2024) 1-9",
+         "bbox": [54, 36, 300, 48], "zone": "header", "page": 1}
+      ],
+      "footer": [
+        {"id": "p1b99", "kind": "paragraph", "text": "1",
+         "bbox": [290, 800, 310, 812], "zone": "footer", "page": 1}
+      ],
+      "blocks": [
+        {"id": "p1b1", "kind": "heading", "text": "An Example Paper Title",
+         "bbox": [100, 80, 490, 104], "zone": "full", "page": 1,
+         "meta": {"level": 1}},
+        {"id": "p1b2", "kind": "heading", "text": "Abstract",
+         "bbox": [54, 130, 120, 144], "zone": "col-1", "page": 1,
+         "meta": {"level": 0}},
+        {"id": "p1b3", "kind": "paragraph",
+         "text": "We propose an example method that restores two-column reading order and anchors every claim back to the original page and block.",
+         "bbox": [54, 150, 292, 220], "zone": "col-1", "page": 1},
+        {"id": "p1b4", "kind": "equation", "text": "E = m c2 (1)",
+         "bbox": [100, 240, 260, 254], "zone": "col-1", "page": 1,
+         "meta": {"number": "1"}},
+        {"id": "p1b5", "kind": "table_caption", "text": "Table 1: Example results.",
+         "bbox": [54, 300, 250, 312], "zone": "col-1", "page": 1,
+         "meta": {"table_index": "1"}},
+        {"id": "p1b6", "kind": "table",
+         "text": "Method Precision Recall\nBaseline 0.61 0.58\nOurs 0.93 0.91",
+         "bbox": [54, 318, 292, 380], "zone": "col-1", "page": 1,
+         "meta": {"header_row": ["Method", "Precision", "Recall"],
+                  "ncols": 3,
+                  "grid": [["Method", "Precision", "Recall"],
+                           ["Baseline", "0.61", "0.58"],
+                           ["Ours", "0.93", "0.91"]]}}
+      ]
+    },
+    {
+      "page": 2,
+      "label": "2",
+      "width": 595.28,
+      "height": 841.89,
+      "status": "ok",
+      "layout": {"columns": 1, "column_bboxes": [[54, 0, 540, 842]],
+                 "confidence": 0.6, "text_x": [54, 540]},
+      "header": [],
+      "footer": [{"id": "p2b99", "kind": "paragraph", "text": "2",
+                  "bbox": [290, 800, 310, 812], "zone": "footer", "page": 2}],
+      "blocks": [
+        {"id": "p2b1", "kind": "heading", "text": "References",
+         "bbox": [54, 100, 130, 114], "zone": "col-1", "page": 2,
+         "meta": {"level": 1}},
+        {"id": "p2b2", "kind": "paragraph",
+         "text": "[1] A. Author, An example citation, J. Ex. 1 (2024) 1-9.",
+         "bbox": [54, 120, 540, 134], "zone": "col-1", "page": 2}
+      ]
+    }
+  ],
+  "sections": [
+    {"title": "An Example Paper Title", "level": 1, "number": null, "page": 1, "block_id": "p1b1", "bbox": [100, 80, 490, 104]},
+    {"title": "Abstract", "level": 0, "number": null, "page": 1, "block_id": "p1b2", "bbox": [54, 130, 120, 144]},
+    {"title": "References", "level": 1, "number": null, "page": 2, "block_id": "p2b1", "bbox": [54, 100, 130, 114]}
+  ],
+  "tables": [
+    {"index": "1", "caption": "Table 1: Example results.", "page": 1,
+     "caption_block_id": "p1b5", "bbox": [54, 300, 250, 312], "parts": [
+       {"page": 1, "block_id": "p1b6", "ncols": 3,
+        "header_row": ["Method", "Precision", "Recall"],
+        "grid": [["Method", "Precision", "Recall"],
+                 ["Baseline", "0.61", "0.58"],
+                 ["Ours", "0.93", "0.91"]]}
+     ], "merged": false}
+  ],
+  "figures": [],
+  "equations": [
+    {"number": "1", "page": 1, "block_id": "p1b4", "text": "E = m c2 (1)",
+     "bbox": [100, 240, 260, 254], "zone": "col-1"}
+  ],
+  "references": [
+    {"text": "[1] A. Author, An example citation, J. Ex. 1 (2024) 1-9.",
+     "page": 2, "block_id": "p2b2", "bbox": [54, 120, 540, 134]}
+  ],
+  "reading_order": [["p1b1", "p1b2", "p1b3", "p1b4", "p1b5", "p1b6"],
+                    ["p2b1", "p2b2"]],
+  "warnings": []
+}

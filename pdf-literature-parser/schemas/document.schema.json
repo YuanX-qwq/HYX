@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "document/v1 — 结构化文档模型",
+  "description": "parse_document.py 输出的文档模型。每个结构元素带 page/bbox/zone/source 证据锚点。",
+  "type": "object",
+  "required": ["schema", "source", "pages"],
+  "properties": {
+    "schema": {"const": "document/v1"},
+    "source": {
+      "type": "object",
+      "required": ["file", "sha256", "pages", "backend"],
+      "properties": {
+        "file": {"type": "string"},
+        "sha256": {"type": "string"},
+        "pages": {"type": "integer"},
+        "producer": {"type": "string"},
+        "encrypted": {"type": "boolean"},
+        "needs_password": {"type": "boolean"},
+        "backend": {"type": "string", "enum": ["pymupdf", "pdfplumber", "pdftotext", "plain"]}
+      }
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["page", "width", "height", "blocks"],
+        "properties": {
+          "page": {"type": "integer"},
+          "label": {"type": "string"},
+          "width": {"type": "number"},
+          "height": {"type": "number"},
+          "status": {"type": "string", "enum": ["ok", "unreadable"]},
+          "layout": {
+            "type": "object",
+            "properties": {
+              "columns": {"type": "integer"},
+              "column_bboxes": {"type": "array"},
+              "confidence": {"type": "number"},
+              "text_x": {"type": "array", "items": {"type": "number"}}
+            }
+          },
+          "header": {"type": "array", "items": {"$ref": "#/definitions/block"}},
+          "footer": {"type": "array", "items": {"$ref": "#/definitions/block"}},
+          "blocks": {"type": "array", "items": {"$ref": "#/definitions/block"}}
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "level", "page", "block_id"],
+        "properties": {
+          "title": {"type": "string"},
+          "level": {"type": "integer"},
+          "number": {"type": ["string", "null"]},
+          "page": {"type": "integer"},
+          "block_id": {"type": "string"},
+          "bbox": {"type": "array", "items": {"type": "number"}}
+        }
+      }
+    },
+    "tables": {"type": "array"},
+    "figures": {"type": "array"},
+    "equations": {"type": "array"},
+    "references": {"type": "array"},
+    "reading_order": {"type": "array"},
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "detail"],
+        "properties": {
+          "code": {"type": "string"},
+          "page": {"type": ["integer", "string", "null"]},
+          "detail": {"type": "string"}
+        }
+      }
+    }
+  },
+  "definitions": {
+    "block": {
+      "type": "object",
+      "required": ["id", "kind", "text", "bbox", "zone", "page"],
+      "properties": {
+        "id": {"type": "string", "description": "如 p3b12 = 第3页第12块"},
+        "kind": {
+          "type": "string",
+          "enum": ["heading", "paragraph", "figure_caption", "table_caption",
+                   "table", "equation", "equation_number", "footnote", "empty"]
+        },
+        "text": {"type": "string"},
+        "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+        "zone": {"type": "string", "enum": ["full", "col-1", "col-2", "col-3", "header", "footer", "body"]},
+        "page": {"type": "integer"},
+        "size": {"type": ["number", "null"]},
+        "bold": {"type": "boolean"},
+        "lines": {"type": "array"},
+        "meta": {"type": "object"}
+      }
+    }
+  }
+}

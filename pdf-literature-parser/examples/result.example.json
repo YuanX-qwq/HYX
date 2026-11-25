@@ -1,0 +1,75 @@
+{
+  "case_id": "example-001",
+  "example": true,
+  "note": "示意输出（synthetic），基于 examples/document.example.json；不是任何正式案例结果。",
+  "status": "success",
+  "result": {
+    "questions": [
+      {
+        "qid": "q1",
+        "question": "What is the main claim of the paper?",
+        "answer": "The paper proposes a method that restores two-column reading order and anchors every claim back to the original page and block.",
+        "evidence": [
+          {
+            "quote": "We propose an example method that restores two-column reading order and anchors every claim back to the original page and block.",
+            "page": 1,
+            "block_id": "p1b3",
+            "zone": "col-1",
+            "bbox": [54, 150, 292, 220]
+          }
+        ]
+      },
+      {
+        "qid": "q2",
+        "question": "Extract all numeric results from Table 1 and give their locations.",
+        "answer": {
+          "table": "Table 1",
+          "grid": [
+            ["Method", "Precision", "Recall"],
+            ["Baseline", "0.61", "0.58"],
+            ["Ours", "0.93", "0.91"]
+          ]
+        },
+        "evidence": [
+          {
+            "quote": "Baseline 0.61 0.58",
+            "page": 1,
+            "block_id": "p1b6",
+            "zone": "col-1",
+            "bbox": [54, 318, 292, 380]
+          }
+        ]
+      }
+    ],
+    "translation": null,
+    "knowledge_structure": null
+  },
+  "evidence_check": {
+    "checked": 2,
+    "verified": 2,
+    "items": [
+      {"path": "result.questions[0].evidence[0]", "status": "verified",
+       "quote": "We propose an example method that restores two-column reading order and anchors every claim back to the original page and block.",
+       "block_id": "p1b3", "hit_pages": [1]},
+      {"path": "result.questions[1].evidence[0]", "status": "verified",
+       "quote": "Baseline 0.61 0.58", "block_id": "p1b6", "hit_pages": [1]}
+    ]
+  },
+  "uncertainty": [],
+  "unreported": [
+    "样本量未在材料中报告（synthetic 示例）",
+    "置信区间未在材料中报告（synthetic 示例）"
+  ],
+  "sources": {
+    "document_model": "/app/output/document.json",
+    "probe": "/app/work/probe.json",
+    "document_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "pages": 2
+  },
+  "change_log": [
+    {"step": "probe", "detail": "后端 pymupdf，无加密，2 页，均有文字层"},
+    {"step": "parse", "detail": "解析出 2 栏版式、1 个表格、1 个编号公式、1 条参考文献"},
+    {"step": "answer", "detail": "Agent 依据 document.md 逐条作答并附引文"},
+    {"step": "verify", "detail": "2/2 证据机械核验通过"}
+  ]
+}
