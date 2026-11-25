@@ -47,3 +47,13 @@
 - 自测：python3 pdf-literature-parser/tests/selftest.py --workdir /tmp/litparse-selftest
 
 同步自 Bohrium 挑战「阅读01｜文献文档解析」（product-arena-08-3027d350）的提交包。
+
+## academic-language-polishing
+
+学术语言润色 Skill：改语言层不改结论层，逐句记录原文/改文/类型/理由，并用脚本机械验证数字、单位、引用、图表指向、否定、限定强度、条件与量词未被改坏。
+
+- 入口：[academic-language-polishing/SKILL.md](academic-language-polishing/SKILL.md)
+- 检查脚本：[academic-language-polishing/scripts/polish_check.py](academic-language-polishing/scripts/polish_check.py)
+- 自测：python3 academic-language-polishing/tests/selftest.py（24 项）
+
+同步自 Bohrium 挑战「写作02｜学术语言润色」（product-arena-02-7051d92d）的提交包。
