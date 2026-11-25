@@ -79,7 +79,7 @@ def main():
 
     fixed = TMP / "fixed"
     app = lk.apply_patches(DRAFT, PATCHES, fixed)
-    results.append(t("apply_all_patches", lambda: app["ok"] and len(app["applied"]) == 7 and not app["failed"]))
+    results.append(t("apply_all_patches", lambda: app["ok"] and len(app["applied"]) == 8 and not app["failed"]))
     ftxt = (fixed / "main.tex").read_text(encoding="utf-8")
     results.append(t("apply_added_booktabs", lambda: "\\usepackage{booktabs}" in ftxt))
     results.append(t("apply_added_tabularx", lambda: "\\usepackage{tabularx}" in ftxt))
@@ -92,6 +92,7 @@ def main():
                      (fixed / "sections" / "intro.tex").read_text(encoding="utf-8")))
     results.append(t("apply_float_tbp", lambda: "\\begin{figure}[tbp]" in
                      (fixed / "sections" / "method.tex").read_text(encoding="utf-8")))
+    results.append(t("apply_added_tikz_lib", lambda: "\\usetikzlibrary{positioning}" in ftxt))
 
     lint_fixed = lk.lint(fixed)
     results.append(t("fixed_lint_zero_errors", lambda: lint_fixed["counts"]["error"] == 0))

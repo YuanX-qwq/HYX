@@ -49,6 +49,13 @@
       "replace": "\\begin{figure}[tbp]",
       "code": "FLOAT_PLACEMENT",
       "reason": "[h] 单放易被挤走或裁切；改 [tbp] 让浮动体多页可放"
+    },
+    {
+      "file": "main.tex",
+      "find": "\\usepackage{tikz}\n",
+      "replace": "\\usepackage{tikz}\n\\usetikzlibrary{positioning}\n",
+      "code": "BUILD_TIKZ_LIB",
+      "reason": "tikzpicture 用 right=of 定位语法，需 \\usetikzlibrary{positioning}；缺失时编译报 PGF Math Error: Unknown function `of'（真实 log 命中）"
     }
   ]
 }
