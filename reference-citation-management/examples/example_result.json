@@ -216,11 +216,11 @@
   ],
   "artifacts": [],
   "metadata": {
-    "skill_name": "reference-citation-management",
-    "skill_version": "1.0.0",
     "model": "doubao-work-agent",
     "runtime": "python3.13",
-    "generated_at": "2026-11-25T23:29:44+08:00",
-    "example_only": true
+    "example_only": true,
+    "skill_name": "reference-citation-management",
+    "skill_version": "1.0.0",
+    "generated_at": "2026-11-25T23:36:07+08:00"
   }
 }

@@ -156,7 +156,7 @@
   ],
   "format_notes": {
     "target_style": "GB/T 7714-2015",
-    "converted_from": "",
+    "converted_from": "bibtex",
     "kept_fields": [
       "DOI",
       "volume",
