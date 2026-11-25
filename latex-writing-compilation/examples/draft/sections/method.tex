@@ -1,0 +1,54 @@
+\section{Method}
+\label{sec:method}
+
+\subsection{Node encoder}
+Each monomer graph $G=(V,E)$ with node features $\mathbf{x}_v\in\mathbb{R}^{d}$
+is encoded by a GINE layer stack \cite{zhang2023gnn}:
+\begin{equation}
+\mathbf{h}_v^{(l+1)} = \mathrm{MLP}\Big((1+\epsilon)\,\mathbf{h}_v^{(l)}
+  + \sum_{u\in\mathcal{N}(v)} \mathrm{ReLU}\big(\mathbf{h}_u^{(l)}
+  + \mathbf{W}_e\,\mathbf{e}_{uv}\big)\Big),
+\label{eq:gine}
+\end{equation}
+where $\mathbf{e}_{uv}$ is the bond-type embedding and $\epsilon$ is a learned
+scalar initialised at zero.
+
+\subsection{Sparse attention with global context}
+For each graph we sparsify the full pair set to the $k$ nearest neighbours in
+feature space and add a low-rank global branch, so that the electrostatic tail
+enters the readout without an $O(N^2)$ pair matrix:
+\begin{align}
+  \mathbf{s}_v &= \mathrm{softmax}_{\mathcal{N}_k(v)}\!\left(
+     \frac{\mathbf{q}_v^{\top}\mathbf{k}_u}{\sqrt{d/2}} \right), \label{eq:sparse}\\
+  \mathbf{a}_v &= \mathbf{U}\,\mathbf{V}^{\!\top}\mathbf{h}_v, \label{eq:lowrank}\\
+  \mathbf{z}_v &= \sum_{u\in\mathcal{N}_k(v)} s_{vu}\,\mathbf{v}_u
+     + \lambda\,\mathbf{a}_v, \label{eq:attn}
+\end{align}
+with $\lambda$ a scalar gate reported in Table~\ref{tab:main-res}. Sparse and
+low-rank terms share the projection weights; only the $k$ index changes.
+
+\subsection{Readout and training objective}
+Graph-level prediction averages the attended node states,
+\begin{equation}
+\hat{y}_G = \mathrm{MLP}\Big(\frac{1}{|V|}\sum_{v\in V}\mathbf{z}_v\Big),
+\label{eq:readout}
+\end{equation}
+and the model minimises a Huber loss with $\delta=1.0$ on the normalised label.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[node distance=12mm, every node/.style={draw,rounded corners,font=\small,align=center}]
+  \node (in) {Monomer\\graph};
+  \node (enc) [right=of in] {GINE\\encoder};
+  \node (sp) [right=of enc] {Sparse\\attention};
+  \node (ro) [right=of sp] {Attended\\readout};
+  \node (out) [right=of ro] {Property\\prediction};
+  \draw[->] (in) -- (enc);
+  \draw[->] (enc) -- (sp);
+  \draw[->] (sp) -- (ro);
+  \draw[->] (ro) -- (out);
+\end{tikzpicture}
+\caption{Pipeline. Encoder, sparse attention and readout share projection
+weights; the low-rank branch carries the electrostatic tail.}
+\label{fig:pipeline}
+\end{figure}

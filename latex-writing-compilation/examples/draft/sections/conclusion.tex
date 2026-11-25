@@ -1,0 +1,10 @@
+\section{Conclusion}
+\label{sec:concl}
+
+SAGN keeps long-range electrostatic context in a polymer graph network at a
+cost that scales with the sparsified neighbourhood rather than the full pair
+set. Under scaffold splits it lowers MAE by 1.33\,K against a budget-matched GIN
+baseline. Remaining limitations: the benchmark covers a single chemistry family,
+and the low-rank projection assumes a shared basis across monomers, so
+multi-family transfer is untested. The full source tree, the scaffold split
+indices and the exact build commands accompany this submission.

@@ -1,0 +1,54 @@
+{
+  "note": "示例补丁：确定性 find/replace，每条对应 lint/build 的一条诊断；不是通用修复表。",
+  "patches": [
+    {
+      "file": "main.tex",
+      "find": "\\usepackage{graphicx}\n",
+      "replace": "\\usepackage{graphicx}\n\\usepackage{booktabs}\n\\usepackage{tabularx}\n",
+      "code": "MISSING_PACKAGE",
+      "reason": "正文使用 \\toprule/\\midrule/\\bottomrule 与 tabularx，preamble 未加载 booktabs、tabularx"
+    },
+    {
+      "file": "sections/intro.tex",
+      "find": "\\eqref{eq:attention}",
+      "replace": "\\eqref{eq:attn}",
+      "code": "UNDEFINED_REF",
+      "reason": "\\eqref 指向不存在的 eq:attention；正文公式标签实际为 eq:attn"
+    },
+    {
+      "file": "sections/method.tex",
+      "find": "\\cite{zhang2023gnn}",
+      "replace": "\\cite{zhang2022gnn}",
+      "code": "MISSING_BIB_KEY",
+      "reason": "refs.bib 无 zhang2023gnn，键实际为 zhang2022gnn"
+    },
+    {
+      "file": "sections/experiments.tex",
+      "find": "Table~\\ref{tab:metrics}",
+      "replace": "Table~\\ref{tab:main-res}",
+      "code": "UNDEFINED_REF",
+      "reason": "\\ref 指向不存在的 tab:metrics；表格标签为 tab:main-res"
+    },
+    {
+      "file": "sections/experiments.tex",
+      "find": "\\begin{tabular}{lllllll}\n\\toprule\nModel & Backbone & Pretraining corpus & Split protocol & MAE (K) & RMSE (K) & Params (M) \\\\\n\\midrule",
+      "replace": "\\begin{tabularx}{\\textwidth}{@{}l*{6}{>{\\raggedright\\arraybackslash}X}@{}}\n\\toprule\nModel & Backbone & Pretraining corpus & Split protocol & MAE (K) & RMSE (K) & Params (M) \\\\\n\\midrule",
+      "code": "WIDE_TABLE",
+      "reason": "7 列窄定宽 tabular 超文本宽（Overfull \\hbox）；改 tabularx + X 列折行，不用 resizebox 硬压"
+    },
+    {
+      "file": "sections/experiments.tex",
+      "find": "\\end{tabular}\n\\end{table}",
+      "replace": "\\end{tabularx}\n\\end{table}",
+      "code": "WIDE_TABLE",
+      "reason": "tabular 环境名随 tabularx 改写的配套替换"
+    },
+    {
+      "file": "sections/method.tex",
+      "find": "\\begin{figure}[h]",
+      "replace": "\\begin{figure}[tbp]",
+      "code": "FLOAT_PLACEMENT",
+      "reason": "[h] 单放易被挤走或裁切；改 [tbp] 让浮动体多页可放"
+    }
+  ]
+}

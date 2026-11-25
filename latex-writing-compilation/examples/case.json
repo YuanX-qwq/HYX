@@ -1,0 +1,17 @@
+{
+  "_note": "示例案例（EXAMPLE ONLY）。演示 case.json 形状，不是正式案例；正式评测由平台提供。",
+  "case_id": "EXAMPLE-CASE-013",
+  "task_id": "latex-writing-compilation",
+  "source_root": "examples/draft",
+  "task_md": "examples/task.md",
+  "template": "templates/template_required.json",
+  "constraints": {
+    "engine": "pdflatex",
+    "max_passes": 3,
+    "textwidth_pt": 453.0,
+    "overfull_tolerance_pt": 5.0,
+    "forbid": ["resizebox", "scalebox", "includegraphics of rendered page"],
+    "require": ["compile success", "no undefined refs", "three-line tables", "reproduction notes filled"]
+  },
+  "scope": ["preamble/package loading", "equations", "wide tables", "floats", "citations", "build errors"]
+}

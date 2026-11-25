@@ -1,0 +1,64 @@
+{
+  "_note": "示例（EXAMPLE ONLY）。仅演示 result.json 字段，不是任何正式案例的答案；评测结果必须来自真实输入。",
+  "case_id": "EXAMPLE-CASE-000",
+  "task_id": "latex-writing-compilation",
+  "status": "partial",
+  "results": {
+    "latex_sources": [
+      {"path": "main.tex", "role": "main"},
+      {"path": "sections/method.tex", "role": "section"},
+      {"path": "refs.bib", "role": "bibliography"}
+    ],
+    "build": {
+      "engine": "pdflatex",
+      "passes": "2",
+      "status": "success",
+      "logs": "Output written on main.pdf (5 pages, 214536 bytes).",
+      "errors": [
+        {"file": "sections/experiments.tex", "line": "31", "cause": "Overfull \\hbox (18.7pt too wide) in alignment",
+         "fix": "改用 tabularx + X 列折行或拆表，不用 resizebox 硬压"}
+      ]
+    },
+    "artifacts": [
+      {"path": "output/main.pdf", "type": "pdf"},
+      {"path": "output/preview.png", "type": "png"}
+    ],
+    "template_compliance": {
+      "required_fields": ["title", "abstract", "keywords", "bibliography"],
+      "layout_ok": false
+    },
+    "reproduction_notes": {
+      "distro": "pdfTeX 3.141592653-2.6-1.40.24 (TeX Live 2022)",
+      "package_versions": "booktabs 1.61803398; tabularx 2.11; amsmath 2.20",
+      "font_versions": "LMRoman10-Regular, LMMono10-Regular",
+      "commands": "pdflatex -interaction=nonstopmode main.tex (×2)"
+    }
+  },
+  "sources": [
+    {
+      "source_id": "case-task",
+      "locator": "task.md, section 2",
+      "locator_type": "section",
+      "quote": "compiles in at most three passes with no undefined references",
+      "note": "direct evidence"
+    }
+  ],
+  "uncertainty": [
+    {
+      "item": "journal template version",
+      "reason": "case.json 只给模板名不给版本号",
+      "action_required": "向作者或期刊官网确认模板版本"
+    }
+  ],
+  "changes": [
+    {"step": "1", "action": "read case.json and task.md", "note": "identified scope and source tree"}
+  ],
+  "artifacts": [],
+  "metadata": {
+    "skill_name": "latex-writing-compilation",
+    "skill_version": "1.0.0",
+    "model": "",
+    "runtime": "",
+    "generated_at": "2026-01-01T00:00:00+08:00"
+  }
+}

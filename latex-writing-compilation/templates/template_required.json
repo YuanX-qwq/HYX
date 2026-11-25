@@ -1,0 +1,19 @@
+{
+  "template": "generic-journal-article",
+  "note": "示例模板必填项：按正则匹配源码，未命中即记入 missing_fields，layout_ok 需同时满足版式约束。",
+  "entries": [
+    {"field": "title", "regex": "\\\\title\\{"},
+    {"field": "author", "regex": "\\\\author\\{"},
+    {"field": "abstract", "regex": "\\\\begin\\{abstract\\}"},
+    {"field": "section-numbering", "regex": "\\\\section\\{"},
+    {"field": "equation-numbering", "regex": "\\\\begin\\{(?:equation|align)\\}"},
+    {"field": "three-line-table", "regex": "\\\\toprule"},
+    {"field": "bibliography", "regex": "\\\\bibliography\\{"},
+    {"field": "citation-style", "regex": "\\\\bibliographystyle\\{"}
+  ],
+  "layout_rules": [
+    "no overfull hbox above 5pt",
+    "every table/figure referenced by \\ref in body text",
+    "wide tables use tabularx/p{} rather than resizebox"
+  ]
+}

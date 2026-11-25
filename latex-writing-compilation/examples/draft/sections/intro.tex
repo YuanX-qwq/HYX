@@ -1,0 +1,21 @@
+\section{Introduction}
+\label{sec:intro}
+
+Graph neural networks trained on molecular graphs have become the default
+surrogate for quantum-chemical labels \citep{zhang2022gnn}, and polymer
+informatics has adopted them for dielectric and thermal properties
+\citep{liu2021polymer}. Two difficulties recur. First, electrostatic
+interactions decay slowly with distance, so a message-passing network that
+truncates at $L$ hops silently drops the tail of the potential; our attention
+term addresses this with a global, low-rank branch (Section~\ref{sec:method},
+\eqref{eq:attention}). Second, reported gains are frequently measured under random
+splits, which leak near-duplicate monomers; we therefore evaluate only under
+scaffold splits \citep{wang2020scaffold} and report every hyper-parameter used
+in Section~\ref{sec:exp}.
+
+\paragraph{Contributions.}
+(i) A sparse-attention readout that keeps full electrostatic context at
+$O(N\log N)$ cost. (ii) A scaffold-split protocol with five folds and fixed
+seeds. (iii) A complete, compilable source tree: the PDF in this submission is
+produced by the commands recorded in the reproduction notes, not by an
+image-editing tool.
