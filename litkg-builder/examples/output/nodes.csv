@@ -1,0 +1,28 @@
+node_id,type,label,aliases,source_ids,merge_basis,paragraph_ids,quote
+n001,material,Cu-doped TiO2 samples,,P1,同篇同类型同表述，合并为一个节点,P1-p001|P1-p002,We report a synthetic benchmark study on CO2 photoreduction using Cu-doped TiO2 samples and a fixed-bed reactor at 25 °C
+n002,condition,at 25 °C,,P1,跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并,P1-p001|P1-p003|P1-p005,We report a synthetic benchmark study on CO2 photoreduction using Cu-doped TiO2 samples and a fixed-bed reactor at 25 °C
+n003,condition,at 25 °C,,P2,跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并,P2-p005,"These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °"
+n004,material,undoped reference,,P1,跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并,P1-p001|P1-p005,The measured CO yield of 45 umol g-1 h-1 is higher than the undoped reference under the same condition.
+n005,material,undoped reference,,P2,跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并,P2-p003,"At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same c"
+n006,metric,45 umol g-1 h-1,,P1,同篇同类型同表述，合并为一个节点,P1-p001,The measured CO yield of 45 umol g-1 h-1 is higher than the undoped reference under the same condition.
+n007,method,impregnation,,P1,同篇同类型同表述，合并为一个节点,P1-p002,Cu-doped TiO2 samples were prepared by impregnation.
+n008,method,DFT calculations,,P1|P2,跨篇通用类型术语（方法/任务/机构等），按类型+规范形式合并,P1-p002|P2-p002,"Phase identification was carried out using in situ XRD, and electronic structure was examined using DFT calculations."
+n009,material,Cu-doped catalyst,,P1,同篇同类型同表述，合并为一个节点,P1-p003,"Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, "
+n010,material,undoped catalyst,,P1,同篇同类型同表述，合并为一个节点,P1-p003,"Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, "
+n011,metric,61%,,P1,同篇同类型同表述，合并为一个节点,P1-p003,"Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, "
+n012,metric,92%,,P1,跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并,P1-p003,"Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, "
+n013,metric,92%,,P2,跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并,P2-p004,"reported a selectivity of 92% for Cu-doped catalysts, which is consistent with our observation that doping suppresses H2"
+n014,conclusion,These results indicate that Cu doping stabilizes the active site.,,P1,同篇同类型同表述，合并为一个节点,P1-p004,These results indicate that Cu doping stabilizes the active site.
+n015,conclusion,"We conclude that Cu-doped TiO2 is more active than the undoped reference at 25 °C, while the origin of the selectivity gap is not resolved h…",,P1,同篇同类型同表述，合并为一个节点,P1-p005,"We conclude that Cu-doped TiO2 is more active than the undoped reference at 25 °C, while the origin of the selectivity g"
+n016,material,N-doped TiO2 samples,,P2,同篇同类型同表述，合并为一个节点,P2-p001|P2-p002,This synthetic study examines N-doped TiO2 samples for CO2 photoreduction in a slurry reactor at 15 °C.
+n017,condition,at 15 °C,,P2,同篇不同表述，未证同物，保留待复核,P2-p001|P2-p003|P2-p005,This synthetic study examines N-doped TiO2 samples for CO2 photoreduction in a slurry reactor at 15 °C.
+n018,material,Cu-doped systems,,P2,同篇同类型同表述，合并为一个节点,P2-p001,The measured CO yield of 30 umol g-1 h-1 is lower than reported values for Cu-doped systems.
+n019,metric,30 umol g-1 h-1,,P2,同篇同类型同表述，合并为一个节点,P2-p001,The measured CO yield of 30 umol g-1 h-1 is lower than reported values for Cu-doped systems.
+n020,method,annealing,,P2,同篇同类型同表述，合并为一个节点,P2-p002,N-doped TiO2 samples were obtained by annealing under ammonia.
+n021,method,gas chromatography,,P2,同篇同类型同表述，合并为一个节点,P2-p002,"Product analysis was performed using gas chromatography, and the electronic structure was examined using DFT calculation"
+n022,material,N-doped catalyst,,P2,同篇同类型同表述，合并为一个节点,P2-p003,"At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same c"
+n023,metric,88%,,P2,同篇同类型同表述，合并为一个节点,P2-p003,"At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same c"
+n024,researcher,Li Wei,,P2,同篇同类型同表述，合并为一个节点,P2-p004,Li Wei et al.
+n025,material,Cu-doped catalysts,,P2,同篇同类型同表述，合并为一个节点,P2-p004,"reported a selectivity of 92% for Cu-doped catalysts, which is consistent with our observation that doping suppresses H2"
+n026,material,Cu-doped system,,P2,同篇同类型同表述，合并为一个节点,P2-p005,"These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °"
+n027,conclusion,"These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °C cannot be made fro…",,P2,同篇同类型同表述，合并为一个节点,P2-p005,"These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °"

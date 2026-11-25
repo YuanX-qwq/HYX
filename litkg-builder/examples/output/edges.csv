@@ -1,0 +1,4 @@
+edge_id,relation,subject,object,direction,conditions,attribution,strength,source_id,paragraph_id,quote
+e001,outperforms,n006,n004,subject_to_object,,author_claim,direct,P1,P1-p001,The measured CO yield of 45 umol g-1 h-1 is higher than the undoped reference under the same condition.
+e002,outperforms,n009,n010,subject_to_object,at 25 °C,author_claim,direct,P1,P1-p003,"Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity."
+e003,outperforms,n022,n005,subject_to_object,At 15 °C,author_claim,direct,P2,P2-p003,"At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same condition."

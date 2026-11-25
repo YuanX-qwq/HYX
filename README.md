@@ -2,6 +2,18 @@
 
 本仓库用于存放 AI/科研工具作品。
 
+## litkg-builder
+
+证据绑定的文献知识图谱 Skill：从多篇论文材料建图，每个节点/边都带 `source_id` + JATS 段落 ID + 原文短引；跨篇按规则区分"合并 / 不合并"（通用方法可合并，材料样品/数据集/指标/条件不合并），跨篇数值冲突保留不合并不取均值；内置 11 类受控关系、K001–K012 质检、≥3 条可执行查询、JSON/CSV/GraphML/Cypher/HTML 导出，以及 Agent 补关系时的引文定位强校验。
+
+- 入口：[litkg-builder/SKILL.md](litkg-builder/SKILL.md)
+- 词表：[litkg-builder/vocab/](litkg-builder/vocab/)（10 类实体 / 11 类关系）
+- Schema：[litkg-builder/schemas/kg.schema.json](litkg-builder/schemas/kg.schema.json)
+- 合成示例产物：[litkg-builder/examples/output/](litkg-builder/examples/output/)（合成语料，非正式案例结果）
+- 自测：`python3 litkg-builder/tests/selftest.py`（32 项）
+
+同步自 Bohrium 挑战「阅读15｜文献知识图谱构建」（product-arena-10-760d1a0b）的提交包。
+
 ## nanopub-claims
 
 断言级 Nanopublication 抽取 Skill：把论文段落拆成单一可判断真假的断言（主体–受控关系–客体 + 条件限定），为每条断言绑定最小充分证据（逐字引文 + 页码 + 段落 id + 字符偏移），记录论文/作者/年份/版本/标识符来源，跑 Q001–Q013 机械质检，导出 JSON / CSV / TriG 三态可机读结构。

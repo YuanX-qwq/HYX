@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+  <key id="t" for="node" attr.name="type" attr.type="string"/>
+  <key id="s" for="node" attr.name="sources" attr.type="string"/>
+  <key id="r" for="edge" attr.name="relation" attr.type="string"/>
+  <graph id="litkg" edgedefault="directed">
+    <node id="n001"><data key="t">material</data><data key="s">P1</data><data key="label">Cu-doped TiO2 samples</data></node>
+    <node id="n002"><data key="t">condition</data><data key="s">P1</data><data key="label">at 25 °C</data></node>
+    <node id="n003"><data key="t">condition</data><data key="s">P2</data><data key="label">at 25 °C</data></node>
+    <node id="n004"><data key="t">material</data><data key="s">P1</data><data key="label">undoped reference</data></node>
+    <node id="n005"><data key="t">material</data><data key="s">P2</data><data key="label">undoped reference</data></node>
+    <node id="n006"><data key="t">metric</data><data key="s">P1</data><data key="label">45 umol g-1 h-1</data></node>
+    <node id="n007"><data key="t">method</data><data key="s">P1</data><data key="label">impregnation</data></node>
+    <node id="n008"><data key="t">method</data><data key="s">P1|P2</data><data key="label">DFT calculations</data></node>
+    <node id="n009"><data key="t">material</data><data key="s">P1</data><data key="label">Cu-doped catalyst</data></node>
+    <node id="n010"><data key="t">material</data><data key="s">P1</data><data key="label">undoped catalyst</data></node>
+    <node id="n011"><data key="t">metric</data><data key="s">P1</data><data key="label">61%</data></node>
+    <node id="n012"><data key="t">metric</data><data key="s">P1</data><data key="label">92%</data></node>
+    <node id="n013"><data key="t">metric</data><data key="s">P2</data><data key="label">92%</data></node>
+    <node id="n014"><data key="t">conclusion</data><data key="s">P1</data><data key="label">These results indicate that Cu doping stabilizes the active site.</data></node>
+    <node id="n015"><data key="t">conclusion</data><data key="s">P1</data><data key="label">We conclude that Cu-doped TiO2 is more active than the undoped reference at 25 °C, while the origin of the selectivity gap is not resolved h…</data></node>
+    <node id="n016"><data key="t">material</data><data key="s">P2</data><data key="label">N-doped TiO2 samples</data></node>
+    <node id="n017"><data key="t">condition</data><data key="s">P2</data><data key="label">at 15 °C</data></node>
+    <node id="n018"><data key="t">material</data><data key="s">P2</data><data key="label">Cu-doped systems</data></node>
+    <node id="n019"><data key="t">metric</data><data key="s">P2</data><data key="label">30 umol g-1 h-1</data></node>
+    <node id="n020"><data key="t">method</data><data key="s">P2</data><data key="label">annealing</data></node>
+    <node id="n021"><data key="t">method</data><data key="s">P2</data><data key="label">gas chromatography</data></node>
+    <node id="n022"><data key="t">material</data><data key="s">P2</data><data key="label">N-doped catalyst</data></node>
+    <node id="n023"><data key="t">metric</data><data key="s">P2</data><data key="label">88%</data></node>
+    <node id="n024"><data key="t">researcher</data><data key="s">P2</data><data key="label">Li Wei</data></node>
+    <node id="n025"><data key="t">material</data><data key="s">P2</data><data key="label">Cu-doped catalysts</data></node>
+    <node id="n026"><data key="t">material</data><data key="s">P2</data><data key="label">Cu-doped system</data></node>
+    <node id="n027"><data key="t">conclusion</data><data key="s">P2</data><data key="label">These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °C cannot be made fro…</data></node>
+    <edge id="e001" source="n006" target="n004"><data key="r">outperforms</data></edge>
+    <edge id="e002" source="n009" target="n010"><data key="r">outperforms</data></edge>
+    <edge id="e003" source="n022" target="n005"><data key="r">outperforms</data></edge>
+  </graph>
+</graphml>

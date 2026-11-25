@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "types": {
+    "researcher": {"zh": "研究者", "definition": "论文作者或被引用工作的研究团队；用于区分作者自述与他人转述。", "instance_level": false},
+    "material": {"zh": "材料", "definition": "论文中实际使用的物质、样品、试剂或体系（如催化剂、电极、粉末）。通用物质名称不等于同一物理样品。", "instance_level": "conditional"},
+    "method": {"zh": "方法", "definition": "分析方法、合成方法、计算模型或实验流程（如 XRD、DFT、退火、某算法）。", "instance_level": false},
+    "task": {"zh": "任务", "definition": "论文针对的科学任务或应用目标（如 CO2 还原、分类、寿命测试）。", "instance_level": false},
+    "metric": {"zh": "指标", "definition": "带数值与单位的评价量（效率、产率、选择性、准确率、误差等）。", "instance_level": true},
+    "dataset": {"zh": "数据集", "definition": "训练/评测/实验所用数据集或语料，按实例处理，跨篇不得默认合并。", "instance_level": true},
+    "model": {"zh": "模型", "definition": "具体模型实例（含超参或版本），按实例处理。", "instance_level": true},
+    "condition": {"zh": "条件", "definition": "温度、压力、pH、光照、时长、样本量等实验或评价条件。", "instance_level": true},
+    "conclusion": {"zh": "结论", "definition": "论文明确陈述的结论性判断，须与原句短引绑定；转述他人结论时标注 cited_claim。", "instance_level": false},
+    "organization": {"zh": "机构", "definition": "作者单位、实验室或数据提供方。", "instance_level": false}
+  },
+  "instance_markers": ["sample", "samples", "batch", "specimen", "powder", "film", "electrode", "our ", "this study", "本研究", "本实验", "样品", "批次"]
+}

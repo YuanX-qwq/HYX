@@ -1,0 +1,1221 @@
+{
+  "kg_version": "1.0.0",
+  "built_at": "2026-11-25T21:05:36+08:00",
+  "papers": [
+    {
+      "source_id": "P1",
+      "doi": "10.0000/synthetic.alpha.0001",
+      "title": "Synthetic Study Alpha: CO2 photoreduction over Cu-doped catalysts",
+      "authors": [
+        "Li Wei",
+        "Chen Hao"
+      ],
+      "year": 2024,
+      "license": "CC0-1.0",
+      "role": "primary",
+      "paragraph_count": 5,
+      "paragraph_ids": [
+        "P1-p001",
+        "P1-p002",
+        "P1-p003",
+        "P1-p004",
+        "P1-p005"
+      ]
+    },
+    {
+      "source_id": "P2",
+      "doi": "10.0000/synthetic.beta.0002",
+      "title": "Synthetic Study Beta: CO2 photoreduction over N-doped catalysts",
+      "authors": [
+        "Zhao Min"
+      ],
+      "year": 2025,
+      "license": "CC0-1.0",
+      "role": "secondary",
+      "paragraph_count": 5,
+      "paragraph_ids": [
+        "P2-p001",
+        "P2-p002",
+        "P2-p003",
+        "P2-p004",
+        "P2-p005"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n001",
+      "type": "material",
+      "label": "Cu-doped TiO2 samples",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p001",
+          "section": "Abstract",
+          "quote": "We report a synthetic benchmark study on CO2 photoreduction using Cu-doped TiO2 samples and a fixed-bed reactor at 25 °C.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 66,
+          "q_end": 87
+        },
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p002",
+          "section": "Methods",
+          "quote": "Cu-doped TiO2 samples were prepared by impregnation.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 0,
+          "q_end": 21
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n002",
+      "type": "condition",
+      "label": "at 25 °C",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p001",
+          "section": "Abstract",
+          "quote": "We report a synthetic benchmark study on CO2 photoreduction using Cu-doped TiO2 samples and a fixed-bed reactor at 25 °C.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 112,
+          "q_end": 120
+        },
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p003",
+          "section": "Results",
+          "quote": "Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 20,
+          "q_end": 28
+        },
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p005",
+          "section": "Conclusion",
+          "quote": "We conclude that Cu-doped TiO2 is more active than the undoped reference at 25 °C, while the origin of the selectivity gap is not resolved here.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 73,
+          "q_end": 81
+        }
+      ],
+      "merge_basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "merge_rule": "R-INSTANCE"
+    },
+    {
+      "id": "n003",
+      "type": "condition",
+      "label": "at 25 °C",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p005",
+          "section": "Conclusion",
+          "quote": "These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °C cannot be made from these data alone.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 113,
+          "q_end": 121
+        }
+      ],
+      "merge_basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "merge_rule": "R-INSTANCE"
+    },
+    {
+      "id": "n004",
+      "type": "material",
+      "label": "undoped reference",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p001",
+          "section": "Abstract",
+          "quote": "The measured CO yield of 45 umol g-1 h-1 is higher than the undoped reference under the same condition.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 182,
+          "q_end": 199
+        },
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p005",
+          "section": "Conclusion",
+          "quote": "We conclude that Cu-doped TiO2 is more active than the undoped reference at 25 °C, while the origin of the selectivity gap is not resolved here.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 55,
+          "q_end": 72
+        }
+      ],
+      "merge_basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "merge_rule": "R-INSTANCE"
+    },
+    {
+      "id": "n005",
+      "type": "material",
+      "label": "undoped reference",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p003",
+          "section": "Results",
+          "quote": "At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same condition.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 86,
+          "q_end": 103
+        }
+      ],
+      "merge_basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "merge_rule": "R-INSTANCE"
+    },
+    {
+      "id": "n006",
+      "type": "metric",
+      "label": "45 umol g-1 h-1",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p001",
+          "section": "Abstract",
+          "quote": "The measured CO yield of 45 umol g-1 h-1 is higher than the undoped reference under the same condition.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 147,
+          "q_end": 162
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n007",
+      "type": "method",
+      "label": "impregnation",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p002",
+          "section": "Methods",
+          "quote": "Cu-doped TiO2 samples were prepared by impregnation.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 39,
+          "q_end": 51
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n008",
+      "type": "method",
+      "label": "DFT calculations",
+      "aliases": [],
+      "source_ids": [
+        "P1",
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p002",
+          "section": "Methods",
+          "quote": "Phase identification was carried out using in situ XRD, and electronic structure was examined using DFT calculations.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 153,
+          "q_end": 169
+        },
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p002",
+          "section": "Methods",
+          "quote": "Product analysis was performed using gas chromatography, and the electronic structure was examined using DFT calculations.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 168,
+          "q_end": 184
+        }
+      ],
+      "merge_basis": "跨篇通用类型术语（方法/任务/机构等），按类型+规范形式合并",
+      "merge_rule": "R-GENERIC"
+    },
+    {
+      "id": "n009",
+      "type": "material",
+      "label": "Cu-doped catalyst",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p003",
+          "section": "Results",
+          "quote": "Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 34,
+          "q_end": 51
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n010",
+      "type": "material",
+      "label": "undoped catalyst",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p003",
+          "section": "Results",
+          "quote": "Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 102,
+          "q_end": 118
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n011",
+      "type": "metric",
+      "label": "61%",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p003",
+          "section": "Results",
+          "quote": "Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 139,
+          "q_end": 142
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n012",
+      "type": "metric",
+      "label": "92%",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p003",
+          "section": "Results",
+          "quote": "Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 78,
+          "q_end": 81
+        }
+      ],
+      "merge_basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "merge_rule": "R-INSTANCE"
+    },
+    {
+      "id": "n013",
+      "type": "metric",
+      "label": "92%",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p004",
+          "section": "Discussion",
+          "quote": "reported a selectivity of 92% for Cu-doped catalysts, which is consistent with our observation that doping suppresses H2 evolution.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 40,
+          "q_end": 43
+        }
+      ],
+      "merge_basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "merge_rule": "R-INSTANCE"
+    },
+    {
+      "id": "n014",
+      "type": "conclusion",
+      "label": "These results indicate that Cu doping stabilizes the active site.",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p004",
+          "section": "Discussion",
+          "quote": "These results indicate that Cu doping stabilizes the active site.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 0,
+          "q_end": 66
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n015",
+      "type": "conclusion",
+      "label": "We conclude that Cu-doped TiO2 is more active than the undoped reference at 25 °C, while the origin of the selectivity gap is not resolved h…",
+      "aliases": [],
+      "source_ids": [
+        "P1"
+      ],
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p005",
+          "section": "Conclusion",
+          "quote": "We conclude that Cu-doped TiO2 is more active than the undoped reference at 25 °C, while the origin of the selectivity gap is not resolved here.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 0,
+          "q_end": 144
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n016",
+      "type": "material",
+      "label": "N-doped TiO2 samples",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p001",
+          "section": "Abstract",
+          "quote": "This synthetic study examines N-doped TiO2 samples for CO2 photoreduction in a slurry reactor at 15 °C.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 30,
+          "q_end": 50
+        },
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p002",
+          "section": "Methods",
+          "quote": "N-doped TiO2 samples were obtained by annealing under ammonia.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 0,
+          "q_end": 20
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n017",
+      "type": "condition",
+      "label": "at 15 °C",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p001",
+          "section": "Abstract",
+          "quote": "This synthetic study examines N-doped TiO2 samples for CO2 photoreduction in a slurry reactor at 15 °C.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 94,
+          "q_end": 102
+        },
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p003",
+          "section": "Results",
+          "quote": "At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same condition.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 0,
+          "q_end": 8
+        },
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p005",
+          "section": "Conclusion",
+          "quote": "These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °C cannot be made from these data alone.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 47,
+          "q_end": 55
+        }
+      ],
+      "merge_basis": "同篇不同表述，未证同物，保留待复核",
+      "merge_rule": "R-SURFACE"
+    },
+    {
+      "id": "n018",
+      "type": "material",
+      "label": "Cu-doped systems",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p001",
+          "section": "Abstract",
+          "quote": "The measured CO yield of 30 umol g-1 h-1 is lower than reported values for Cu-doped systems.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 179,
+          "q_end": 195
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n019",
+      "type": "metric",
+      "label": "30 umol g-1 h-1",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p001",
+          "section": "Abstract",
+          "quote": "The measured CO yield of 30 umol g-1 h-1 is lower than reported values for Cu-doped systems.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 129,
+          "q_end": 144
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n020",
+      "type": "method",
+      "label": "annealing",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p002",
+          "section": "Methods",
+          "quote": "N-doped TiO2 samples were obtained by annealing under ammonia.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 38,
+          "q_end": 47
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n021",
+      "type": "method",
+      "label": "gas chromatography",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p002",
+          "section": "Methods",
+          "quote": "Product analysis was performed using gas chromatography, and the electronic structure was examined using DFT calculations.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 100,
+          "q_end": 118
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n022",
+      "type": "material",
+      "label": "N-doped catalyst",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p003",
+          "section": "Results",
+          "quote": "At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same condition.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 13,
+          "q_end": 29
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n023",
+      "type": "metric",
+      "label": "88%",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p003",
+          "section": "Results",
+          "quote": "At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same condition.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 58,
+          "q_end": 61
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n024",
+      "type": "researcher",
+      "label": "Li Wei",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p004",
+          "section": "Discussion",
+          "quote": "Li Wei et al.",
+          "attribution": "cited_claim",
+          "strength": "direct",
+          "q_start": 0,
+          "q_end": 6
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n025",
+      "type": "material",
+      "label": "Cu-doped catalysts",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p004",
+          "section": "Discussion",
+          "quote": "reported a selectivity of 92% for Cu-doped catalysts, which is consistent with our observation that doping suppresses H2 evolution.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 48,
+          "q_end": 66
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n026",
+      "type": "material",
+      "label": "Cu-doped system",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p005",
+          "section": "Conclusion",
+          "quote": "These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °C cannot be made from these data alone.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 90,
+          "q_end": 105
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    },
+    {
+      "id": "n027",
+      "type": "conclusion",
+      "label": "These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °C cannot be made fro…",
+      "aliases": [],
+      "source_ids": [
+        "P2"
+      ],
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p005",
+          "section": "Conclusion",
+          "quote": "These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °C cannot be made from these data alone.",
+          "attribution": "author_claim",
+          "strength": "direct",
+          "q_start": 0,
+          "q_end": 159
+        }
+      ],
+      "merge_basis": "同篇同类型同表述，合并为一个节点",
+      "merge_rule": "R-SAME"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e001",
+      "type": "outperforms",
+      "subject": "n006",
+      "object": "n004",
+      "subject_label": "45 umol g-1 h-1",
+      "object_label": "undoped reference",
+      "direction": "subject_to_object",
+      "conditions": "",
+      "attribution": "author_claim",
+      "strength": "direct",
+      "cue": "higher than",
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p001",
+          "quote": "The measured CO yield of 45 umol g-1 h-1 is higher than the undoped reference under the same condition.",
+          "q_start": 122,
+          "q_end": 225
+        }
+      ]
+    },
+    {
+      "id": "e002",
+      "type": "outperforms",
+      "subject": "n009",
+      "object": "n010",
+      "subject_label": "Cu-doped catalyst",
+      "object_label": "undoped catalyst",
+      "direction": "subject_to_object",
+      "conditions": "at 25 °C",
+      "attribution": "author_claim",
+      "strength": "direct",
+      "cue": "outperforms",
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p003",
+          "quote": "Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity.",
+          "q_start": 0,
+          "q_end": 155
+        }
+      ]
+    },
+    {
+      "id": "e003",
+      "type": "outperforms",
+      "subject": "n022",
+      "object": "n005",
+      "subject_label": "N-doped catalyst",
+      "object_label": "undoped reference",
+      "direction": "subject_to_object",
+      "conditions": "At 15 °C",
+      "attribution": "author_claim",
+      "strength": "direct",
+      "cue": "outperforms",
+      "evidence": [
+        {
+          "source_id": "P2",
+          "paragraph_id": "P2-p003",
+          "quote": "At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same condition.",
+          "q_start": 0,
+          "q_end": 129
+        }
+      ]
+    },
+    {
+      "id": "e004",
+      "type": "uses",
+      "subject": "n007",
+      "object": "n001",
+      "subject_label": "impregnation",
+      "object_label": "Cu-doped TiO2 samples",
+      "direction": "subject_to_object",
+      "conditions": "",
+      "attribution": "author_claim",
+      "strength": "direct",
+      "cue": "(agent)",
+      "evidence": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "P1-p002",
+          "quote": "Cu-doped TiO2 samples were prepared by impregnation"
+        }
+      ]
+    }
+  ],
+  "merges": [
+    {
+      "decision": "merged",
+      "node_id": "n001",
+      "label": "Cu-doped TiO2 samples",
+      "type": "material",
+      "source_id": "P1",
+      "paragraph_id": "P1-p001",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n001",
+      "label": "Cu-doped TiO2 samples",
+      "type": "material",
+      "source_id": "P1",
+      "paragraph_id": "P1-p002",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n002",
+      "label": "at 25 °C",
+      "type": "condition",
+      "source_id": "P1",
+      "paragraph_id": "P1-p001",
+      "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "rule": "R-INSTANCE"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n002",
+      "label": "at 25 °C",
+      "type": "condition",
+      "source_id": "P1",
+      "paragraph_id": "P1-p003",
+      "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "rule": "R-INSTANCE"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n002",
+      "label": "at 25 °C",
+      "type": "condition",
+      "source_id": "P1",
+      "paragraph_id": "P1-p005",
+      "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "rule": "R-INSTANCE"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n003",
+      "label": "at 25 °C",
+      "type": "condition",
+      "source_id": "P2",
+      "paragraph_id": "P2-p005",
+      "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "rule": "R-INSTANCE"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n004",
+      "label": "undoped reference",
+      "type": "material",
+      "source_id": "P1",
+      "paragraph_id": "P1-p001",
+      "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "rule": "R-INSTANCE"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n004",
+      "label": "undoped reference",
+      "type": "material",
+      "source_id": "P1",
+      "paragraph_id": "P1-p005",
+      "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "rule": "R-INSTANCE"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n005",
+      "label": "undoped reference",
+      "type": "material",
+      "source_id": "P2",
+      "paragraph_id": "P2-p003",
+      "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "rule": "R-INSTANCE"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n006",
+      "label": "45 umol g-1 h-1",
+      "type": "metric",
+      "source_id": "P1",
+      "paragraph_id": "P1-p001",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n007",
+      "label": "impregnation",
+      "type": "method",
+      "source_id": "P1",
+      "paragraph_id": "P1-p002",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n008",
+      "label": "DFT calculations",
+      "type": "method",
+      "source_id": "P1",
+      "paragraph_id": "P1-p002",
+      "basis": "跨篇通用类型术语（方法/任务/机构等），按类型+规范形式合并",
+      "rule": "R-GENERIC"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n008",
+      "label": "DFT calculations",
+      "type": "method",
+      "source_id": "P2",
+      "paragraph_id": "P2-p002",
+      "basis": "跨篇通用类型术语（方法/任务/机构等），按类型+规范形式合并",
+      "rule": "R-GENERIC"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n009",
+      "label": "Cu-doped catalyst",
+      "type": "material",
+      "source_id": "P1",
+      "paragraph_id": "P1-p003",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n010",
+      "label": "undoped catalyst",
+      "type": "material",
+      "source_id": "P1",
+      "paragraph_id": "P1-p003",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n011",
+      "label": "61%",
+      "type": "metric",
+      "source_id": "P1",
+      "paragraph_id": "P1-p003",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n012",
+      "label": "92%",
+      "type": "metric",
+      "source_id": "P1",
+      "paragraph_id": "P1-p003",
+      "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "rule": "R-INSTANCE"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n013",
+      "label": "92%",
+      "type": "metric",
+      "source_id": "P2",
+      "paragraph_id": "P2-p004",
+      "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并",
+      "rule": "R-INSTANCE"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n014",
+      "label": "These results indicate that Cu doping stabilizes the active site.",
+      "type": "conclusion",
+      "source_id": "P1",
+      "paragraph_id": "P1-p004",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n015",
+      "label": "We conclude that Cu-doped TiO2 is more active than the undoped reference at 25 °C, while the origin of the selectivity gap is not resolved h…",
+      "type": "conclusion",
+      "source_id": "P1",
+      "paragraph_id": "P1-p005",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n016",
+      "label": "N-doped TiO2 samples",
+      "type": "material",
+      "source_id": "P2",
+      "paragraph_id": "P2-p001",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n016",
+      "label": "N-doped TiO2 samples",
+      "type": "material",
+      "source_id": "P2",
+      "paragraph_id": "P2-p002",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n017",
+      "label": "at 15 °C",
+      "type": "condition",
+      "source_id": "P2",
+      "paragraph_id": "P2-p001",
+      "basis": "同篇不同表述，未证同物，保留待复核",
+      "rule": "R-SURFACE"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n017",
+      "label": "At 15 °C",
+      "type": "condition",
+      "source_id": "P2",
+      "paragraph_id": "P2-p003",
+      "basis": "同篇不同表述，未证同物，保留待复核",
+      "rule": "R-SURFACE"
+    },
+    {
+      "decision": "not_merged",
+      "node_id": "n017",
+      "label": "at 15 °C",
+      "type": "condition",
+      "source_id": "P2",
+      "paragraph_id": "P2-p005",
+      "basis": "同篇不同表述，未证同物，保留待复核",
+      "rule": "R-SURFACE"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n018",
+      "label": "Cu-doped systems",
+      "type": "material",
+      "source_id": "P2",
+      "paragraph_id": "P2-p001",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n019",
+      "label": "30 umol g-1 h-1",
+      "type": "metric",
+      "source_id": "P2",
+      "paragraph_id": "P2-p001",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n020",
+      "label": "annealing",
+      "type": "method",
+      "source_id": "P2",
+      "paragraph_id": "P2-p002",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n021",
+      "label": "gas chromatography",
+      "type": "method",
+      "source_id": "P2",
+      "paragraph_id": "P2-p002",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n022",
+      "label": "N-doped catalyst",
+      "type": "material",
+      "source_id": "P2",
+      "paragraph_id": "P2-p003",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n023",
+      "label": "88%",
+      "type": "metric",
+      "source_id": "P2",
+      "paragraph_id": "P2-p003",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n024",
+      "label": "Li Wei",
+      "type": "researcher",
+      "source_id": "P2",
+      "paragraph_id": "P2-p004",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n025",
+      "label": "Cu-doped catalysts",
+      "type": "material",
+      "source_id": "P2",
+      "paragraph_id": "P2-p004",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n026",
+      "label": "Cu-doped system",
+      "type": "material",
+      "source_id": "P2",
+      "paragraph_id": "P2-p005",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    },
+    {
+      "decision": "merged",
+      "node_id": "n027",
+      "label": "These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °C cannot be made fro…",
+      "type": "conclusion",
+      "source_id": "P2",
+      "paragraph_id": "P2-p005",
+      "basis": "同篇同类型同表述，合并为一个节点",
+      "rule": "R-SAME"
+    }
+  ],
+  "conflicts": [
+    {
+      "kind": "metric_value_divergence",
+      "label": "92%",
+      "claims": [
+        {
+          "source_id": "P1",
+          "paragraph_id": "",
+          "quote": "Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity."
+        },
+        {
+          "source_id": "P2",
+          "paragraph_id": "",
+          "quote": "reported a selectivity of 92% for Cu-doped catalysts, which is consistent with our observation that doping suppresses H2 evolution."
+        }
+      ],
+      "resolution": "kept_separate",
+      "basis": "跨篇同一指标名不代表同一实验条件/样品，数值不合并、不取均值"
+    }
+  ],
+  "stats": {
+    "papers": 2,
+    "paragraphs": 10,
+    "nodes": 27,
+    "edges": 4,
+    "edges_dropped_unmapped": 0,
+    "candidates": 35
+  },
+  "notes": {
+    "paragraph_id_note": "段落 ID 取原文 JATS 段落编号；若输入未给 ID 则标记 pid_synthetic。",
+    "page_note": "本包不含 PDF，节点/边不写页码，禁止把自建分页称作原 PDF 页。"
+  }
+}

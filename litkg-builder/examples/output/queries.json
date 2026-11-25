@@ -1,0 +1,259 @@
+[
+  {
+    "query": "entity:DFT calculations",
+    "matched_nodes": [
+      {
+        "id": "n008",
+        "type": "method",
+        "label": "DFT calculations",
+        "aliases": [],
+        "source_ids": [
+          "P1",
+          "P2"
+        ],
+        "merge_basis": "跨篇通用类型术语（方法/任务/机构等），按类型+规范形式合并",
+        "evidence": [
+          {
+            "source_id": "P1",
+            "paragraph_id": "P1-p002",
+            "section": "Methods",
+            "quote": "Phase identification was carried out using in situ XRD, and electronic structure was examined using DFT calculations.",
+            "attribution": "author_claim",
+            "strength": "direct",
+            "q_start": 153,
+            "q_end": 169
+          },
+          {
+            "source_id": "P2",
+            "paragraph_id": "P2-p002",
+            "section": "Methods",
+            "quote": "Product analysis was performed using gas chromatography, and the electronic structure was examined using DFT calculations.",
+            "attribution": "author_claim",
+            "strength": "direct",
+            "q_start": 168,
+            "q_end": 184
+          }
+        ]
+      }
+    ],
+    "rows": [],
+    "evidence": [
+      {
+        "source_id": "P1",
+        "paragraph_id": "P1-p002",
+        "section": "Methods",
+        "quote": "Phase identification was carried out using in situ XRD, and electronic structure was examined using DFT calculations.",
+        "attribution": "author_claim",
+        "strength": "direct",
+        "q_start": 153,
+        "q_end": 169
+      },
+      {
+        "source_id": "P2",
+        "paragraph_id": "P2-p002",
+        "section": "Methods",
+        "quote": "Product analysis was performed using gas chromatography, and the electronic structure was examined using DFT calculations.",
+        "attribution": "author_claim",
+        "strength": "direct",
+        "q_start": 168,
+        "q_end": 184
+      }
+    ],
+    "undetermined": []
+  },
+  {
+    "query": "relation:outperforms",
+    "rows": [
+      {
+        "edge_id": "e001",
+        "from": "45 umol g-1 h-1",
+        "to": "undoped reference",
+        "direction": "subject_to_object",
+        "conditions": "(未报告条件)",
+        "attribution": "author_claim",
+        "strength": "direct",
+        "source_id": "P1",
+        "paragraph_id": "P1-p001",
+        "quote": "The measured CO yield of 45 umol g-1 h-1 is higher than the undoped reference under the same condition."
+      },
+      {
+        "edge_id": "e002",
+        "from": "Cu-doped catalyst",
+        "to": "undoped catalyst",
+        "direction": "subject_to_object",
+        "conditions": "at 25 °C",
+        "attribution": "author_claim",
+        "strength": "direct",
+        "source_id": "P1",
+        "paragraph_id": "P1-p003",
+        "quote": "Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity."
+      },
+      {
+        "edge_id": "e003",
+        "from": "N-doped catalyst",
+        "to": "undoped reference",
+        "direction": "subject_to_object",
+        "conditions": "At 15 °C",
+        "attribution": "author_claim",
+        "strength": "direct",
+        "source_id": "P2",
+        "paragraph_id": "P2-p003",
+        "quote": "At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same condition."
+      }
+    ],
+    "undetermined": []
+  },
+  {
+    "query": "cross_paper_alignment",
+    "rows": [
+      {
+        "kind": "merged_across_papers",
+        "node_id": "n008",
+        "label": "DFT calculations",
+        "type": "method",
+        "source_ids": [
+          "P1",
+          "P2"
+        ],
+        "basis": "跨篇通用类型术语（方法/任务/机构等），按类型+规范形式合并",
+        "rule": "R-GENERIC"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n002",
+        "label": "at 25 °C",
+        "type": "condition",
+        "source_id": "P1",
+        "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n002",
+        "label": "at 25 °C",
+        "type": "condition",
+        "source_id": "P1",
+        "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n002",
+        "label": "at 25 °C",
+        "type": "condition",
+        "source_id": "P1",
+        "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n003",
+        "label": "at 25 °C",
+        "type": "condition",
+        "source_id": "P2",
+        "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n004",
+        "label": "undoped reference",
+        "type": "material",
+        "source_id": "P1",
+        "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n004",
+        "label": "undoped reference",
+        "type": "material",
+        "source_id": "P1",
+        "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n005",
+        "label": "undoped reference",
+        "type": "material",
+        "source_id": "P2",
+        "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n012",
+        "label": "92%",
+        "type": "metric",
+        "source_id": "P1",
+        "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n013",
+        "label": "92%",
+        "type": "metric",
+        "source_id": "P2",
+        "basis": "跨篇实例级实体（材料/样品/数据集/模型/指标/条件），未做同物判定，不得合并"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n017",
+        "label": "at 15 °C",
+        "type": "condition",
+        "source_id": "P2",
+        "basis": "同篇不同表述，未证同物，保留待复核"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n017",
+        "label": "At 15 °C",
+        "type": "condition",
+        "source_id": "P2",
+        "basis": "同篇不同表述，未证同物，保留待复核"
+      },
+      {
+        "kind": "kept_separate",
+        "node_id": "n017",
+        "label": "at 15 °C",
+        "type": "condition",
+        "source_id": "P2",
+        "basis": "同篇不同表述，未证同物，保留待复核"
+      },
+      {
+        "kind": "conflict",
+        "label": "92%",
+        "resolution": "kept_separate",
+        "basis": "跨篇同一指标名不代表同一实验条件/样品，数值不合并、不取均值",
+        "claims": [
+          {
+            "source_id": "P1",
+            "paragraph_id": "",
+            "quote": "Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity."
+          },
+          {
+            "source_id": "P2",
+            "paragraph_id": "",
+            "quote": "reported a selectivity of 92% for Cu-doped catalysts, which is consistent with our observation that doping suppresses H2 evolution."
+          }
+        ]
+      }
+    ],
+    "undetermined": [
+      "at 25 °C",
+      "at 25 °C",
+      "at 25 °C",
+      "at 25 °C",
+      "undoped reference",
+      "undoped reference",
+      "undoped reference",
+      "92%",
+      "92%",
+      "at 15 °C"
+    ]
+  },
+  {
+    "query": "evidence_audit",
+    "rows": [],
+    "summary": {
+      "total": 1,
+      "fail": 0,
+      "warn": 1
+    },
+    "undetermined": []
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "litkg knowledge graph",
+  "type": "object",
+  "required": ["kg_version", "papers", "nodes", "edges", "merges", "conflicts", "stats"],
+  "properties": {
+    "kg_version": {"type": "string"},
+    "papers": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_id", "role", "paragraph_ids"],
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^P[0-9]+$"},
+          "doi": {"type": "string"},
+          "title": {"type": "string"},
+          "authors": {"type": "array", "items": {"type": "string"}},
+          "role": {"enum": ["primary", "secondary"]},
+          "license": {"type": "string"},
+          "paragraph_count": {"type": "integer"},
+          "paragraph_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "label", "source_ids", "evidence", "merge_basis"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^n[0-9]{3,}$"},
+          "type": {"enum": ["researcher", "material", "method", "task", "metric", "dataset",
+                            "model", "condition", "conclusion", "organization"]},
+          "label": {"type": "string", "minLength": 2},
+          "aliases": {"type": "array", "items": {"type": "string"}},
+          "source_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "merge_basis": {"type": "string"},
+          "merge_rule": {"type": "string"},
+          "evidence": {
+            "type": "array", "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["source_id", "paragraph_id", "quote"],
+              "properties": {
+                "source_id": {"type": "string"},
+                "paragraph_id": {"type": "string"},
+                "section": {"type": "string"},
+                "quote": {"type": "string", "minLength": 12, "maxLength": 300},
+                "attribution": {"enum": ["author_claim", "cited_claim"]},
+                "strength": {"enum": ["direct", "indirect", "cited"]}
+              }
+            }
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "subject", "object", "direction", "evidence"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^e[0-9]{3,}$"},
+          "type": {"enum": ["uses", "uses_material", "evaluates_on", "measured_by", "outperforms",
+                            "compared_with", "supports", "contradicts", "reported_by",
+                            "derived_from", "mentions"]},
+          "subject": {"type": "string"},
+          "object": {"type": "string"},
+          "direction": {"enum": ["subject_to_object", "symmetric"]},
+          "conditions": {"type": "string"},
+          "attribution": {"enum": ["author_claim", "cited_claim"]},
+          "strength": {"enum": ["direct", "indirect", "cited"]},
+          "evidence": {"type": "array", "minItems": 1}
+        }
+      }
+    },
+    "merges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["decision", "label", "type", "basis", "rule"],
+        "properties": {
+          "decision": {"enum": ["merged", "not_merged", "needs_review"]},
+          "rule": {"enum": ["R-SAME", "R-NORM", "R-INSTANCE", "R-GENERIC", "R-TYPE", "R-SURFACE", "R-AGENT"]}
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "resolution", "basis"],
+        "properties": {"resolution": {"enum": ["kept_separate", "kept_both"]}}
+      }
+    },
+    "stats": {"type": "object", "required": ["papers", "paragraphs", "nodes", "edges"]}
+  }
+}

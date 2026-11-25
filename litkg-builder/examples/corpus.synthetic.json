@@ -1,0 +1,51 @@
+{
+  "_note": "完全合成的两篇论文语料，仅用于演示与自测；DOI 为保留段 10.0000，不对应任何真实文献，不代表真实科研结论。",
+  "corpus-manifest.json": {
+    "papers": [
+      {"source_id": "P1", "doi": "10.0000/synthetic.alpha.0001", "license": "CC0-1.0", "source_hash": "sha256:aaaa"},
+      {"source_id": "P2", "doi": "10.0000/synthetic.beta.0002", "license": "CC0-1.0", "source_hash": "sha256:bbbb"}
+    ]
+  },
+  "papers": [
+    {
+      "doi": "10.0000/synthetic.alpha.0001",
+      "title": "Synthetic Study Alpha: CO2 photoreduction over Cu-doped catalysts",
+      "authors": ["Li Wei", "Chen Hao"],
+      "year": 2024,
+      "license": "CC0-1.0",
+      "role": "primary",
+      "paragraphs": [
+        {"paragraph_id": "P1-p001", "section": "Abstract",
+         "text": "We report a synthetic benchmark study on CO2 photoreduction using Cu-doped TiO2 samples and a fixed-bed reactor at 25 °C. The measured CO yield of 45 umol g-1 h-1 is higher than the undoped reference under the same condition."},
+        {"paragraph_id": "P1-p002", "section": "Methods",
+         "text": "Cu-doped TiO2 samples were prepared by impregnation. Phase identification was carried out using in situ XRD, and electronic structure was examined using DFT calculations."},
+        {"paragraph_id": "P1-p003", "section": "Results",
+         "text": "Under visible light at 25 °C, the Cu-doped catalyst shows a CO selectivity of 92% and outperforms the undoped catalyst, which reaches only 61% selectivity."},
+        {"paragraph_id": "P1-p004", "section": "Discussion",
+         "text": "These results indicate that Cu doping stabilizes the active site. However, the long-term stability remains unreported in this synthetic text."},
+        {"paragraph_id": "P1-p005", "section": "Conclusion",
+         "text": "We conclude that Cu-doped TiO2 is more active than the undoped reference at 25 °C, while the origin of the selectivity gap is not resolved here."}
+      ]
+    },
+    {
+      "doi": "10.0000/synthetic.beta.0002",
+      "title": "Synthetic Study Beta: CO2 photoreduction over N-doped catalysts",
+      "authors": ["Zhao Min"],
+      "year": 2025,
+      "license": "CC0-1.0",
+      "role": "secondary",
+      "paragraphs": [
+        {"paragraph_id": "P2-p001", "section": "Abstract",
+         "text": "This synthetic study examines N-doped TiO2 samples for CO2 photoreduction in a slurry reactor at 15 °C. The measured CO yield of 30 umol g-1 h-1 is lower than reported values for Cu-doped systems."},
+        {"paragraph_id": "P2-p002", "section": "Methods",
+         "text": "N-doped TiO2 samples were obtained by annealing under ammonia. Product analysis was performed using gas chromatography, and the electronic structure was examined using DFT calculations."},
+        {"paragraph_id": "P2-p003", "section": "Results",
+         "text": "At 15 °C the N-doped catalyst reaches a CO selectivity of 88%, and it outperforms the undoped reference under the same condition."},
+        {"paragraph_id": "P2-p004", "section": "Discussion",
+         "text": "Li Wei et al. reported a selectivity of 92% for Cu-doped catalysts, which is consistent with our observation that doping suppresses H2 evolution."},
+        {"paragraph_id": "P2-p005", "section": "Conclusion",
+         "text": "These results show that N-doped TiO2 is active at 15 °C, but a direct comparison with the Cu-doped system tested at 25 °C cannot be made from these data alone."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "relations": {
+    "uses": {"zh": "使用", "direction": "subject_to_object", "symmetric": false, "requires_condition": false, "definition": "主体在本文中实际使用/采用该对象（方法、材料、条件、工具）。"},
+    "uses_material": {"zh": "使用材料", "direction": "subject_to_object", "symmetric": false, "requires_condition": true, "definition": "实验或模型使用了某具体材料/样品；需带条件或样品标识，否则降级为候选。"},
+    "evaluates_on": {"zh": "在…上评测", "direction": "subject_to_object", "symmetric": false, "requires_condition": false, "definition": "方法/模型在指定任务或数据集上被评测。"},
+    "measured_by": {"zh": "以…衡量", "direction": "subject_to_object", "symmetric": false, "requires_condition": false, "definition": "结论或方法的效果由某指标度量。"},
+    "outperforms": {"zh": "优于", "direction": "subject_to_object", "symmetric": false, "requires_condition": true, "definition": "有直接比较证据的优劣关系；方向必须是证据中的比较方向，条件缺失记 warn。"},
+    "compared_with": {"zh": "与…比较", "direction": "symmetric", "symmetric": true, "requires_condition": true, "definition": "仅表示发生比较，不表示优劣；不得替代 outperforms。"},
+    "supports": {"zh": "支持", "direction": "subject_to_object", "symmetric": false, "requires_condition": false, "definition": "证据支持某结论或假设。"},
+    "contradicts": {"zh": "矛盾", "direction": "subject_to_object", "symmetric": false, "requires_condition": false, "definition": "两来源就同一命题给出不相容表述；须保留双方条件。"},
+    "reported_by": {"zh": "由…报告", "direction": "subject_to_object", "symmetric": false, "requires_condition": false, "definition": "该判断出自某研究者/团队，用于区分作者自述与他人转述。"},
+    "derived_from": {"zh": "结论出自", "direction": "subject_to_object", "symmetric": false, "requires_condition": false, "definition": "结论节点依据的图表或段落证据。"},
+    "mentions": {"zh": "提及", "direction": "subject_to_object", "symmetric": false, "requires_condition": false, "definition": "仅共现/提及，属弱证据，不得用于结论性判断。"}
+  },
+  "evidence_strength": {
+    "direct": "同句中同时出现主体与客体，且关系线索词明确。",
+    "indirect": "主体与客体分处不同句/段，靠上下文推论，须在 conditions 中写明推论依据。",
+    "cited": "线索词为转述（et al./reported by/according to/等人报道），attribution=cited_claim。"
+  },
+  "forbidden": ["同一通用术语在两篇不同实验条件下的数值结果合并为一个结论", "仅共现即断言因果", "把综述转述写成作者自述"]
+}
