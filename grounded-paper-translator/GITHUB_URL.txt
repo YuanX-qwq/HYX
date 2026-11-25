@@ -1,0 +1,3 @@
+# 未提供公开仓库链接
+# 说明：本次执行环境没有 GitHub 凭据（无 GITHUB_TOKEN、无 gh CLI 登录），无法创建或推送公开仓库，因此不填写伪造链接。
+# 本目录本身就是完整可复用的技能包：SKILL.md + scripts/ + resources/ + schemas/ + examples/ + demo/ + tests/。

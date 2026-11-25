@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "translation-result/v1",
+  "type": "object",
+  "required": ["schema", "case_id", "status", "result", "coverage", "sources", "change_log"],
+  "properties": {
+    "schema": {"const": "translation-result/v1"},
+    "case_id": {"type": "string"},
+    "status": {"enum": ["success", "partial", "failed", "unable", "refused"]},
+    "status_note": {"type": "string"},
+    "target_language": {"type": "string"},
+    "result": {
+      "type": "object",
+      "required": ["bilingual_paragraphs", "glossary", "metrics", "verification"],
+      "properties": {
+        "title": {"type": ["object", "null"]},
+        "abstract": {"type": ["object", "null"]},
+        "glossary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["term_en", "term_zh"],
+            "properties": {
+              "term_en": {"type": "string"},
+              "term_zh": {"type": "string"},
+              "category": {"type": "string"},
+              "variants": {"type": "array", "items": {"type": "string"}},
+              "locked": {"type": "boolean"}
+            }
+          }
+        },
+        "bilingual_paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["pid", "page", "kind", "source", "translation", "status"],
+            "properties": {
+              "pid": {"type": "string", "pattern": "^P[0-9]{4}$"},
+              "page": {"type": "integer"},
+              "page_end": {"type": ["integer", "null"]},
+              "kind": {"type": "string"},
+              "section": {"type": "string"},
+              "source": {"type": "string"},
+              "translation": {"type": "string"},
+              "sentences": {"type": "array", "items": {"type": "string"}},
+              "translation_notes": {"type": "array", "items": {"type": "string"}},
+              "uncertainty": {"type": "string"},
+              "status": {"enum": ["translated", "missing"]}
+            }
+          }
+        },
+        "metrics": {
+          "type": "object",
+          "properties": {
+            "paragraphs_in_scope": {"type": "integer"},
+            "paragraphs_translated": {"type": "integer"},
+            "coverage": {"type": "number"},
+            "glossary_terms_locked": {"type": "integer"},
+            "glossary_consistency": {"type": ["number", "null"]},
+            "verification_fail": {"type": "integer"},
+            "verification_warn": {"type": "integer"}
+          }
+        },
+        "verification": {"type": "object"},
+        "scope": {"type": "object"}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "required": ["rate", "missing", "scope"],
+      "properties": {
+        "rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "missing": {"type": "array", "items": {"type": "string"}},
+        "scope": {"type": "integer"}
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pid", "page"],
+        "properties": {
+          "pid": {"type": "string"},
+          "page": {"type": "integer"},
+          "bbox": {"type": ["array", "null"]},
+          "quote": {"type": "string"},
+          "anchor": {"type": "string"}
+        }
+      }
+    },
+    "uncertainty": {"type": "array", "items": {"type": "object"}},
+    "unreported": {"type": "array", "items": {"type": "string"}},
+    "sources": {"type": "object"},
+    "change_log": {"type": "array", "items": {"type": "object"}}
+  }
+}

@@ -1,0 +1,319 @@
+{
+ "schema": "translation-result/v1",
+ "case_id": "example-translation-001",
+ "status": "success",
+ "status_note": "范围内全部段落完成翻译，机械核验无 FAIL。",
+ "target_language": "zh-CN",
+ "result": {
+  "title": {
+   "source": "Example: A calibration protocol for low-temperature transport measurements",
+   "translation": "示例：低温输运测量的一种校准流程",
+   "pid": "P0001"
+  },
+  "abstract": {
+   "source": "We describe a calibration protocol for four-terminal transport measurements between 1.5 K and 300 K. The protocol does not require a superconducting reference and can be completed in about 40 min. All resistances are reported with an uncertainty of 0.5%.",
+   "translation": "我们描述一种用于 1.5 K 至 300 K 之间四端输运测量的校准流程。该流程不需要超导参考件，约 40 min 即可完成。所有电阻的报告不确定度为 0.5%。",
+   "pid": "P0002"
+  },
+  "glossary": [
+   {
+    "term_en": "calibration protocol",
+    "term_zh": "校准流程",
+    "category": "method",
+    "variants": [],
+    "locked": true
+   },
+   {
+    "term_en": "four-terminal",
+    "term_zh": "四端",
+    "category": "method",
+    "variants": [],
+    "locked": true
+   },
+   {
+    "term_en": "thermometer",
+    "term_zh": "温度计",
+    "category": "instrument",
+    "variants": [],
+    "locked": true
+   },
+   {
+    "term_en": "uncertainty",
+    "term_zh": "不确定度",
+    "category": "quantity",
+    "variants": [],
+    "locked": true
+   }
+  ],
+  "bilingual_paragraphs": [
+   {
+    "pid": "P0001",
+    "page": 1,
+    "page_end": null,
+    "kind": "title",
+    "section": "",
+    "source": "Example: A calibration protocol for low-temperature transport measurements",
+    "translation": "示例：低温输运测量的一种校准流程",
+    "sentences": [
+     "Example: A calibration protocol for low-temperature transport measurements"
+    ],
+    "status": "translated",
+    "translation_notes": [
+     "标题按中文语序重排；calibration protocol → 校准流程（锁定术语）。"
+    ]
+   },
+   {
+    "pid": "P0002",
+    "page": 1,
+    "page_end": null,
+    "kind": "abstract",
+    "section": "",
+    "source": "We describe a calibration protocol for four-terminal transport measurements between 1.5 K and 300 K. The protocol does not require a superconducting reference and can be completed in about 40 min. All resistances are reported with an uncertainty of 0.5%.",
+    "translation": "我们描述一种用于 1.5 K 至 300 K 之间四端输运测量的校准流程。该流程不需要超导参考件，约 40 min 即可完成。所有电阻的报告不确定度为 0.5%。",
+    "sentences": [
+     "We describe a calibration protocol for four-terminal transport measurements between 1.5 K and 300 K. The protocol does not require a superconducting reference and can be completed in about 40 min. All resistances are reported with an uncertainty of 0.5%."
+    ],
+    "status": "translated",
+    "translation_notes": [
+     "four-terminal → 四端；保留 1.5 K、300 K、40 min、0.5%；否定词 not require 译为“不需要”。"
+    ]
+   },
+   {
+    "pid": "P0003",
+    "page": 1,
+    "page_end": null,
+    "kind": "body",
+    "section": "",
+    "source": "The sample holder carries two calibrated thermometers [3, 4]. A constant current of 10 uA is applied, and the voltage is recorded at 0.1 s intervals. We find that the drift of the offset voltage remains below 2 uV over 8 h, in agreement with Figure 2(B). This drift is not corrected by the standard averaging procedure.",
+    "translation": "样品架带有两支已校准的温度计[3, 4]。施加 10 uA 的恒定电流，并以 0.1 s 的间隔记录电压。我们发现，偏置电压的漂移在 8 h 内始终低于 2 uV，与图 2(B) 一致。该漂移不会被标准平均流程校正。",
+    "sentences": [
+     "The sample holder carries two calibrated thermometers [3, 4].",
+     "A constant current of 10 uA is applied, and the voltage is recorded at 0.1 s intervals.",
+     "We find that the drift of the offset voltage remains below 2 uV over 8 h, in agreement with Figure 2(B).",
+     "This drift is not corrected by the standard averaging procedure."
+    ],
+    "status": "translated",
+    "translation_notes": [
+     "Figure 2(B) → 图 2(B)；保留 10 uA、0.1 s、2 uV、8 h；否定 not corrected 译为“不会被……校正”。"
+    ]
+   },
+   {
+    "pid": "P0004",
+    "page": 1,
+    "page_end": null,
+    "kind": "body",
+    "section": "",
+    "source": "In summary, the protocol is simple, but it cannot replace a full uncertainty budget. Users should verify the thermometer calibration every 6 months, as discussed in Section 3 and Ref. [7].",
+    "translation": "总之，该流程简单，但它不能取代完整的不确定度预算。用户应每 6 个月核验一次温度计校准，如第 3 节与文献[7] 所述。",
+    "sentences": [
+     "In summary, the protocol is simple, but it cannot replace a full uncertainty budget.",
+     "Users should verify the thermometer calibration every 6 months, as discussed in Section 3 and Ref. [7]."
+    ],
+    "status": "translated",
+    "translation_notes": [
+     "Section 3 → 第 3 节；Ref. [7] → 文献[7]；保留 6 个月；cannot replace 译为“不能取代”。"
+    ]
+   }
+  ],
+  "metrics": {
+   "paragraphs_in_scope": 4,
+   "paragraphs_translated": 4,
+   "coverage": 1.0,
+   "words_in_scope": 136,
+   "characters_translated": 265,
+   "glossary_terms_locked": 4,
+   "glossary_consistency": 1.0,
+   "verification_fail": 0,
+   "verification_warn": 0
+  },
+  "verification": {
+   "status": "pass",
+   "coverage": {
+    "scope": 4,
+    "translated": 4,
+    "missing": [],
+    "empty": [],
+    "extra": [],
+    "rate": 1.0
+   },
+   "issue_counts": {},
+   "human_review": []
+  },
+  "scope": {
+   "mode": "full",
+   "pids": [
+    "P0001",
+    "P0002",
+    "P0003",
+    "P0004"
+   ],
+   "verbatim_pids": []
+  },
+  "translation": {
+   "source_language": "en",
+   "target_language": "zh-CN",
+   "paragraphs": [
+    {
+     "pid": "P0001",
+     "page": 1,
+     "page_end": null,
+     "kind": "title",
+     "section": "",
+     "source": "Example: A calibration protocol for low-temperature transport measurements",
+     "translation": "示例：低温输运测量的一种校准流程",
+     "sentences": [
+      "Example: A calibration protocol for low-temperature transport measurements"
+     ],
+     "status": "translated",
+     "translation_notes": [
+      "标题按中文语序重排；calibration protocol → 校准流程（锁定术语）。"
+     ]
+    },
+    {
+     "pid": "P0002",
+     "page": 1,
+     "page_end": null,
+     "kind": "abstract",
+     "section": "",
+     "source": "We describe a calibration protocol for four-terminal transport measurements between 1.5 K and 300 K. The protocol does not require a superconducting reference and can be completed in about 40 min. All resistances are reported with an uncertainty of 0.5%.",
+     "translation": "我们描述一种用于 1.5 K 至 300 K 之间四端输运测量的校准流程。该流程不需要超导参考件，约 40 min 即可完成。所有电阻的报告不确定度为 0.5%。",
+     "sentences": [
+      "We describe a calibration protocol for four-terminal transport measurements between 1.5 K and 300 K. The protocol does not require a superconducting reference and can be completed in about 40 min. All resistances are reported with an uncertainty of 0.5%."
+     ],
+     "status": "translated",
+     "translation_notes": [
+      "four-terminal → 四端；保留 1.5 K、300 K、40 min、0.5%；否定词 not require 译为“不需要”。"
+     ]
+    },
+    {
+     "pid": "P0003",
+     "page": 1,
+     "page_end": null,
+     "kind": "body",
+     "section": "",
+     "source": "The sample holder carries two calibrated thermometers [3, 4]. A constant current of 10 uA is applied, and the voltage is recorded at 0.1 s intervals. We find that the drift of the offset voltage remains below 2 uV over 8 h, in agreement with Figure 2(B). This drift is not corrected by the standard averaging procedure.",
+     "translation": "样品架带有两支已校准的温度计[3, 4]。施加 10 uA 的恒定电流，并以 0.1 s 的间隔记录电压。我们发现，偏置电压的漂移在 8 h 内始终低于 2 uV，与图 2(B) 一致。该漂移不会被标准平均流程校正。",
+     "sentences": [
+      "The sample holder carries two calibrated thermometers [3, 4].",
+      "A constant current of 10 uA is applied, and the voltage is recorded at 0.1 s intervals.",
+      "We find that the drift of the offset voltage remains below 2 uV over 8 h, in agreement with Figure 2(B).",
+      "This drift is not corrected by the standard averaging procedure."
+     ],
+     "status": "translated",
+     "translation_notes": [
+      "Figure 2(B) → 图 2(B)；保留 10 uA、0.1 s、2 uV、8 h；否定 not corrected 译为“不会被……校正”。"
+     ]
+    },
+    {
+     "pid": "P0004",
+     "page": 1,
+     "page_end": null,
+     "kind": "body",
+     "section": "",
+     "source": "In summary, the protocol is simple, but it cannot replace a full uncertainty budget. Users should verify the thermometer calibration every 6 months, as discussed in Section 3 and Ref. [7].",
+     "translation": "总之，该流程简单，但它不能取代完整的不确定度预算。用户应每 6 个月核验一次温度计校准，如第 3 节与文献[7] 所述。",
+     "sentences": [
+      "In summary, the protocol is simple, but it cannot replace a full uncertainty budget.",
+      "Users should verify the thermometer calibration every 6 months, as discussed in Section 3 and Ref. [7]."
+     ],
+     "status": "translated",
+     "translation_notes": [
+      "Section 3 → 第 3 节；Ref. [7] → 文献[7]；保留 6 个月；cannot replace 译为“不能取代”。"
+     ]
+    }
+   ]
+  }
+ },
+ "coverage": {
+  "rate": 1.0,
+  "missing": [],
+  "scope": 4
+ },
+ "evidence": [
+  {
+   "pid": "P0001",
+   "page": 1,
+   "bbox": [
+    72.0,
+    100.0,
+    540.0,
+    112.0
+   ],
+   "quote": "Example: A calibration protocol for low-temperature transport measurements",
+   "anchor": "p1b?bbox=72.0,100.0,540.0,112.0"
+  },
+  {
+   "pid": "P0002",
+   "page": 1,
+   "bbox": [
+    72.0,
+    122.0,
+    540.0,
+    134.0
+   ],
+   "quote": "We describe a calibration protocol for four-terminal transport measurements between 1.5 K and 300 K. The protocol does not require a superconducting reference a",
+   "anchor": "p1b?bbox=72.0,122.0,540.0,134.0"
+  },
+  {
+   "pid": "P0003",
+   "page": 1,
+   "bbox": [
+    72.0,
+    180.0,
+    540.0,
+    192.0
+   ],
+   "quote": "The sample holder carries two calibrated thermometers [3, 4]. A constant current of 10 uA is applied, and the voltage is recorded at 0.1 s intervals. We find th",
+   "anchor": "p1b?bbox=72.0,180.0,540.0,192.0"
+  },
+  {
+   "pid": "P0004",
+   "page": 1,
+   "bbox": [
+    72.0,
+    238.0,
+    540.0,
+    250.0
+   ],
+   "quote": "In summary, the protocol is simple, but it cannot replace a full uncertainty budget. Users should verify the thermometer calibration every 6 months, as discusse",
+   "anchor": "p1b?bbox=72.0,238.0,540.0,250.0"
+  }
+ ],
+ "uncertainty": [],
+ "unreported": [],
+ "sources": {
+  "document": "paper.example.txt",
+  "document_sha256": "01b8a7d74f1fb6a3471aa8d4a805412c5ca00bdeb0775bcd43f603f8e87bfbff",
+  "pages": 1,
+  "backend": "text",
+  "segments_file": "segments.json",
+  "translations_file": "translations.jsonl",
+  "glossary_file": "glossary.json",
+  "verify_file": "verify_report.json",
+  "case_file": "case.example.json"
+ },
+ "change_log": [
+  {
+   "step": "segment",
+   "detail": "解析 1 页，得到 4 个段落单元（可译 4），来源 text"
+  },
+  {
+   "step": "glossary",
+   "detail": "锁定术语 4 条"
+  },
+  {
+   "step": "translate",
+   "detail": "完成 4/4 段译文"
+  },
+  {
+   "step": "verify",
+   "detail": "机械核验 FAIL 0 / WARN 0；术语一致率 1.0"
+  },
+  {
+   "step": "status",
+   "detail": "范围内全部段落完成翻译，机械核验无 FAIL。"
+  }
+ ],
+ "example": true,
+ "note": "Synthetic minimal example generated by the pipeline on examples/paper.example.txt. NOT a formal case result."
+}

@@ -1,0 +1,38 @@
+﻿term_en,term_zh,category,variants,locked
+machine learning,机器学习,method,,yes
+neural network,神经网络,method,,yes
+convolutional neural network,卷积神经网络,method,CNN,yes
+feed-forward neural network,前馈神经网络,method,,yes
+hidden layer,隐藏层,method,,yes
+output layer,输出层,method,,yes
+input layer,输入层,method,,yes
+supervised learning,监督学习,method,,yes
+training set,训练集,method,,yes
+test set,测试集,method,,yes
+accuracy,准确率,metric,,yes
+phase transition,相变,concept,,yes
+order parameter,序参量,concept,,yes
+critical temperature,临界温度,concept,,yes
+magnetization,磁化强度,quantity,,yes
+Hamiltonian,哈密顿量,concept,,yes
+spin,自旋,concept,,yes
+ground state,基态,concept,,yes
+Monte Carlo,蒙特卡洛,method,,yes
+configuration,构型,concept,,yes
+constraint,约束,concept,,yes
+local constraint,局域约束,concept,,yes
+topological phase,拓扑相,concept,,yes
+gauge theory,规范理论,concept,,yes
+lattice gauge theory,格点规范理论,concept,,yes
+square ice,方冰,model,,yes
+plaquette,面元,concept,,yes
+Ising model,伊辛模型,model,,yes
+Ising,伊辛,concept,,yes
+ferromagnet,铁磁体,concept,,yes
+toy model,玩具模型,model,,yes
+condensed matter,凝聚态,field,,yes
+statistical physics,统计物理,field,,yes
+simulation,模拟,method,,yes
+filter,滤波器,method,,yes
+convolution,卷积,method,,yes
+perceptron,感知机,method,,yes

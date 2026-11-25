@@ -1,0 +1,57 @@
+{
+ "schema": "translation-verify/v1",
+ "case_id": null,
+ "status": "pass",
+ "coverage": {
+  "scope": 4,
+  "translated": 4,
+  "missing": [],
+  "empty": [],
+  "extra": [],
+  "rate": 1.0
+ },
+ "metrics": {
+  "glossary_consistency": 1.0,
+  "fail_count": 0,
+  "warn_count": 0,
+  "checked_segments": 4,
+  "avg_length_ratio": 1.964
+ },
+ "glossary_terms": [
+  {
+   "term_en": "calibration protocol",
+   "term_zh": "校准流程",
+   "occurrences": 2,
+   "compliant": 2,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "four-terminal",
+   "term_zh": "四端",
+   "occurrences": 1,
+   "compliant": 1,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "thermometer",
+   "term_zh": "温度计",
+   "occurrences": 1,
+   "compliant": 1,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "uncertainty",
+   "term_zh": "不确定度",
+   "occurrences": 2,
+   "compliant": 2,
+   "consistency": 1.0,
+   "violating_pids": []
+  }
+ ],
+ "issue_counts": {},
+ "issues": [],
+ "human_review": []
+}

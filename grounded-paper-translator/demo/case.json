@@ -1,0 +1,21 @@
+{
+  "case_id": "demo-arxiv-1605.01735",
+  "example": false,
+  "note": "demo 用输入描述：真实预印本 arXiv:1605.01735v1。该 case 文件仅用于给演示产物一个可追溯的 case_id 与输出契约，不是平台正式案例。",
+  "input": {
+    "material": "ml.pdf",
+    "source": "https://arxiv.org/pdf/1605.01735v1",
+    "title": "Machine learning phases of matter",
+    "authors": "Juan Carrasquilla, Roger G. Melko"
+  },
+  "output_contract": {
+    "translation": {
+      "target_language": "zh-CN",
+      "scope": "title+abstract+body+figure_captions+headings+footnotes",
+      "verbatim": ["equations", "references", "figure_labels", "headers_footers"],
+      "bilingual": true,
+      "glossary": true
+    },
+    "verification": true
+  }
+}

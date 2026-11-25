@@ -1,0 +1,7 @@
+Example: A calibration protocol for low-temperature transport measurements
+
+We describe a calibration protocol for four-terminal transport measurements between 1.5 K and 300 K. The protocol does not require a superconducting reference and can be completed in about 40 min. All resistances are reported with an uncertainty of 0.5%.
+
+The sample holder carries two calibrated thermometers [3, 4]. A constant current of 10 uA is applied, and the voltage is recorded at 0.1 s intervals. We find that the drift of the offset voltage remains below 2 uV over 8 h, in agreement with Figure 2(B). This drift is not corrected by the standard averaging procedure.
+
+In summary, the protocol is simple, but it cannot replace a full uncertainty budget. Users should verify the thermometer calibration every 6 months, as discussed in Section 3 and Ref. [7].

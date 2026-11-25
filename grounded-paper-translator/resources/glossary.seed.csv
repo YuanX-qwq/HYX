@@ -1,0 +1,128 @@
+term_en,term_zh,category
+machine learning,机器学习,method
+deep learning,深度学习,method
+neural network,神经网络,method
+convolutional neural network,卷积神经网络,method
+feed-forward neural network,前馈神经网络,method
+fully connected layer,全连接层,method
+hidden layer,隐藏层,method
+output layer,输出层,method
+input layer,输入层,method
+supervised learning,监督学习,method
+unsupervised learning,无监督学习,method
+training set,训练集,method
+test set,测试集,method
+training data,训练数据,method
+classifier,分类器,method
+classification,分类,method
+accuracy,准确率,metric
+loss function,损失函数,method
+gradient descent,梯度下降,method
+backpropagation,反向传播,method
+regularization,正则化,method
+dropout,随机失活,method
+weight matrix,权重矩阵,method
+bias vector,偏置向量,method
+architecture,架构,method
+dataset,数据集,method
+label,标签,method
+feature,特征,method
+dimension,维度,concept
+visualization,可视化,method
+clustering,聚类,method
+algorithm,算法,method
+benchmark,基准,method
+framework,框架,method
+model,模型,concept
+parameter,参数,concept
+tensor,张量,concept
+matrix,矩阵,concept
+vector,向量,concept
+condensed matter,凝聚态,field
+statistical physics,统计物理,field
+phase transition,相变,concept
+phase,相,concept
+order parameter,序参量,concept
+critical temperature,临界温度,concept
+magnetization,磁化强度,quantity
+Hamiltonian,哈密顿量,concept
+state space,状态空间,concept
+lattice,晶格,concept
+spin,自旋,concept
+ground state,基态,concept
+thermal equilibrium,热平衡,concept
+entropy,熵,quantity
+entanglement entropy,纠缠熵,quantity
+topological phase,拓扑相,concept
+topological order,拓扑序,concept
+gauge theory,规范理论,concept
+lattice gauge theory,格点规范理论,concept
+square ice,方冰,model
+plaquette,面元,concept
+constraint,约束,concept
+local constraint,局域约束,concept
+energetic constraint,能量约束,concept
+Monte Carlo,蒙特卡洛,method
+importance sampling,重要性采样,method
+partition function,配分函数,concept
+free energy,自由能,quantity
+correlation function,关联函数,quantity
+symmetry,对称性,concept
+symmetry breaking,对称破缺,concept
+specific heat,比热,quantity
+susceptibility,磁化率,quantity
+coupling constant,耦合常数,quantity
+finite size,有限尺寸,concept
+scaling,标度,concept
+universality,普适性,concept
+renormalization,重整化,method
+simulation,模拟,method
+numerical simulation,数值模拟,method
+analytical model,解析模型,method
+experiment,实验,method
+hypothesis,假设,concept
+temperature,温度,quantity
+energy,能量,quantity
+interaction,相互作用,concept
+configuration,构型,concept
+ensemble,系综,concept
+distribution,分布,concept
+probability,概率,concept
+approximation,近似,concept
+convergence,收敛,concept
+precision,精度,quantity
+uncertainty,不确定度,quantity
+physical quantity,物理量,quantity
+toy model,玩具模型,model
+discriminative power,判别能力,concept
+feature map,特征图,method
+filter,滤波器,method
+convolution,卷积,method
+stride,步长,method
+pooling,池化,method
+perceptron,感知机,method
+activation function,激活函数,method
+softmax,Softmax 函数,method
+cross entropy,交叉熵,quantity
+overfitting,过拟合,concept
+generalization,泛化,concept
+sample,样本,concept
+sampling,采样,method
+estimator,估计量,concept
+observable,可观测量,quantity
+mean,均值,quantity
+variance,方差,quantity
+correlation,关联,concept
+lattice site,格点,concept
+boundary condition,边界条件,concept
+thermodynamic limit,热力学极限,concept
+critical exponent,临界指数,quantity
+renormalization group,重整化群,method
+Ising model,伊辛模型,model
+ferromagnet,铁磁体,concept
+antiferromagnet,反铁磁体,concept
+domain wall,畴壁,concept
+defect,缺陷,concept
+qubit,量子比特,concept
+quantum,量子,concept
+classical,经典的,concept

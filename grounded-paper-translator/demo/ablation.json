@@ -1,0 +1,153 @@
+{
+ "schema": "translation-ablation/v1",
+ "purpose": "同一模型、同一原文、同一 6 段的对照：单遍直译（无术语锁定、无自检） vs 本 Skill 流水线（术语锁定 + 机械核验）。用于证明术语一致性与否定保留的增益，不替代平台正式对照。",
+ "pids": [
+  "P0007",
+  "P0021",
+  "P0037",
+  "P0042",
+  "P0077",
+  "P0106"
+ ],
+ "conditions": {
+  "baseline_single_pass": {
+   "description": "只译一遍，不查术语表、不做数字/否定自检",
+   "metrics": {
+    "glossary_consistency": 0.8438,
+    "fail_count": 10,
+    "warn_count": 1,
+    "checked_segments": 6,
+    "avg_length_ratio": 1.66
+   },
+   "issue_counts": {
+    "negation": 1,
+    "glossary": 10
+   },
+   "coverage": 1.0
+  },
+  "skill_pipeline": {
+   "description": "先锁 37 条术语，再逐段译，verify.py 返修至 FAIL=0",
+   "metrics": {
+    "glossary_consistency": 1.0,
+    "fail_count": 0,
+    "warn_count": 1,
+    "checked_segments": 6,
+    "avg_length_ratio": 1.817
+   },
+   "issue_counts": {
+    "negation": 1
+   },
+   "coverage": 1.0
+  }
+ },
+ "term_drift_baseline": [
+  {
+   "term_en": "neural network",
+   "occurrences": 4,
+   "compliant": 2,
+   "violating_pids": [
+    "P0021",
+    "P0077"
+   ]
+  },
+  {
+   "term_en": "feed-forward neural network",
+   "occurrences": 1,
+   "compliant": 0,
+   "violating_pids": [
+    "P0021"
+   ]
+  },
+  {
+   "term_en": "hidden layer",
+   "occurrences": 1,
+   "compliant": 0,
+   "violating_pids": [
+    "P0021"
+   ]
+  },
+  {
+   "term_en": "training set",
+   "occurrences": 3,
+   "compliant": 2,
+   "violating_pids": [
+    "P0021"
+   ]
+  },
+  {
+   "term_en": "accuracy",
+   "occurrences": 4,
+   "compliant": 3,
+   "violating_pids": [
+    "P0021"
+   ]
+  },
+  {
+   "term_en": "Monte Carlo",
+   "occurrences": 4,
+   "compliant": 0,
+   "violating_pids": [
+    "P0007",
+    "P0021",
+    "P0037",
+    "P0042"
+   ]
+  }
+ ],
+ "fail_detail_baseline": [
+  {
+   "pid": "P0007",
+   "check": "glossary",
+   "detail": "locked term 'Monte Carlo' must be rendered as '蒙特卡洛'"
+  },
+  {
+   "pid": "P0021",
+   "check": "glossary",
+   "detail": "locked term 'neural network' must be rendered as '神经网络'"
+  },
+  {
+   "pid": "P0021",
+   "check": "glossary",
+   "detail": "locked term 'feed-forward neural network' must be rendered as '前馈神经网络'"
+  },
+  {
+   "pid": "P0021",
+   "check": "glossary",
+   "detail": "locked term 'hidden layer' must be rendered as '隐藏层'"
+  },
+  {
+   "pid": "P0021",
+   "check": "glossary",
+   "detail": "locked term 'training set' must be rendered as '训练集'"
+  },
+  {
+   "pid": "P0021",
+   "check": "glossary",
+   "detail": "locked term 'accuracy' must be rendered as '准确率'"
+  },
+  {
+   "pid": "P0021",
+   "check": "glossary",
+   "detail": "locked term 'Monte Carlo' must be rendered as '蒙特卡洛'"
+  },
+  {
+   "pid": "P0037",
+   "check": "glossary",
+   "detail": "locked term 'Monte Carlo' must be rendered as '蒙特卡洛'"
+  },
+  {
+   "pid": "P0042",
+   "check": "glossary",
+   "detail": "locked term 'Monte Carlo' must be rendered as '蒙特卡洛'"
+  },
+  {
+   "pid": "P0077",
+   "check": "glossary",
+   "detail": "locked term 'neural network' must be rendered as '神经网络'"
+  }
+ ],
+ "honest_notes": [
+  "对照组在数字、单位、引用上未出现 FAIL：单遍直译通常会保留数字，因此本对照的差异集中在术语一致性与否定关系，不应夸大为全面大幅提升。",
+  "两组各有 1 条相同 WARN（“是否”类否定启发式），说明核验规则对两组口径一致。"
+ ]
+}

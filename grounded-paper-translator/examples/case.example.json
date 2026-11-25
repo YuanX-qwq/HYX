@@ -1,0 +1,18 @@
+{
+  "case_id": "example-translation-001",
+  "example": true,
+  "note": "最小调用示例输入（synthetic，非正式案例）。材料为自写短文，不是任何真实论文。",
+  "input": {
+    "material": "paper.example.txt",
+    "task_md": "task.example.md"
+  },
+  "output_contract": {
+    "translation": {
+      "target_language": "zh-CN",
+      "scope": "full_text",
+      "bilingual": true,
+      "glossary": true
+    },
+    "verification": true
+  }
+}

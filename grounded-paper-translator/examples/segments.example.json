@@ -1,0 +1,110 @@
+{
+ "schema": "translation-segments/v1",
+ "source": {
+  "file": "paper.example.txt",
+  "sha256": "01b8a7d74f1fb6a3471aa8d4a805412c5ca00bdeb0775bcd43f603f8e87bfbff",
+  "pages": 1,
+  "backend": "text"
+ },
+ "typography": {
+  "body_size": 11.0
+ },
+ "segments": [
+  {
+   "pid": "P0001",
+   "kind": "title",
+   "section": "",
+   "section_level": 0,
+   "page": 1,
+   "bbox": [
+    72.0,
+    100.0,
+    540.0,
+    112.0
+   ],
+   "zone": "full",
+   "text": "Example: A calibration protocol for low-temperature transport measurements",
+   "sentences": [
+    "Example: A calibration protocol for low-temperature transport measurements"
+   ],
+   "words": 8,
+   "chars": 74
+  },
+  {
+   "pid": "P0002",
+   "kind": "abstract",
+   "section": "",
+   "section_level": 0,
+   "page": 1,
+   "bbox": [
+    72.0,
+    122.0,
+    540.0,
+    134.0
+   ],
+   "zone": "full",
+   "text": "We describe a calibration protocol for four-terminal transport measurements between 1.5 K and 300 K. The protocol does not require a superconducting reference and can be completed in about 40 min. All resistances are reported with an uncertainty of 0.5%.",
+   "sentences": [
+    "We describe a calibration protocol for four-terminal transport measurements between 1.5 K and 300 K. The protocol does not require a superconducting reference and can be completed in about 40 min. All resistances are reported with an uncertainty of 0.5%."
+   ],
+   "words": 40,
+   "chars": 254
+  },
+  {
+   "pid": "P0003",
+   "kind": "body",
+   "section": "",
+   "section_level": 0,
+   "page": 1,
+   "bbox": [
+    72.0,
+    180.0,
+    540.0,
+    192.0
+   ],
+   "zone": "full",
+   "text": "The sample holder carries two calibrated thermometers [3, 4]. A constant current of 10 uA is applied, and the voltage is recorded at 0.1 s intervals. We find that the drift of the offset voltage remains below 2 uV over 8 h, in agreement with Figure 2(B). This drift is not corrected by the standard averaging procedure.",
+   "sentences": [
+    "The sample holder carries two calibrated thermometers [3, 4].",
+    "A constant current of 10 uA is applied, and the voltage is recorded at 0.1 s intervals.",
+    "We find that the drift of the offset voltage remains below 2 uV over 8 h, in agreement with Figure 2(B).",
+    "This drift is not corrected by the standard averaging procedure."
+   ],
+   "words": 57,
+   "chars": 319
+  },
+  {
+   "pid": "P0004",
+   "kind": "body",
+   "section": "",
+   "section_level": 0,
+   "page": 1,
+   "bbox": [
+    72.0,
+    238.0,
+    540.0,
+    250.0
+   ],
+   "zone": "full",
+   "text": "In summary, the protocol is simple, but it cannot replace a full uncertainty budget. Users should verify the thermometer calibration every 6 months, as discussed in Section 3 and Ref. [7].",
+   "sentences": [
+    "In summary, the protocol is simple, but it cannot replace a full uncertainty budget.",
+    "Users should verify the thermometer calibration every 6 months, as discussed in Section 3 and Ref. [7]."
+   ],
+   "words": 31,
+   "chars": 188
+  }
+ ],
+ "stats": {
+  "segments": 4,
+  "words": 136,
+  "pages": 1,
+  "translatable": 4,
+  "by_kind": {
+   "title": 1,
+   "abstract": 1,
+   "body": 2
+  }
+ },
+ "warnings": []
+}

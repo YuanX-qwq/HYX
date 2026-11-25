@@ -1,0 +1,349 @@
+{
+ "schema": "translation-verify/v1",
+ "case_id": null,
+ "status": "pass",
+ "coverage": {
+  "scope": 43,
+  "translated": 43,
+  "missing": [],
+  "empty": [],
+  "extra": [],
+  "rate": 1.0
+ },
+ "metrics": {
+  "glossary_consistency": 1.0,
+  "fail_count": 0,
+  "warn_count": 3,
+  "checked_segments": 43,
+  "avg_length_ratio": 1.926
+ },
+ "glossary_terms": [
+  {
+   "term_en": "machine learning",
+   "term_zh": "机器学习",
+   "occurrences": 6,
+   "compliant": 6,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "neural network",
+   "term_zh": "神经网络",
+   "occurrences": 19,
+   "compliant": 19,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "convolutional neural network",
+   "term_zh": "卷积神经网络",
+   "occurrences": 7,
+   "compliant": 7,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "feed-forward neural network",
+   "term_zh": "前馈神经网络",
+   "occurrences": 3,
+   "compliant": 3,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "hidden layer",
+   "term_zh": "隐藏层",
+   "occurrences": 7,
+   "compliant": 7,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "output layer",
+   "term_zh": "输出层",
+   "occurrences": 10,
+   "compliant": 10,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "input layer",
+   "term_zh": "输入层",
+   "occurrences": 3,
+   "compliant": 3,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "supervised learning",
+   "term_zh": "监督学习",
+   "occurrences": 3,
+   "compliant": 3,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "training set",
+   "term_zh": "训练集",
+   "occurrences": 4,
+   "compliant": 4,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "test set",
+   "term_zh": "测试集",
+   "occurrences": 7,
+   "compliant": 7,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "accuracy",
+   "term_zh": "准确率",
+   "occurrences": 7,
+   "compliant": 7,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "phase transition",
+   "term_zh": "相变",
+   "occurrences": 1,
+   "compliant": 1,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "order parameter",
+   "term_zh": "序参量",
+   "occurrences": 8,
+   "compliant": 8,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "critical temperature",
+   "term_zh": "临界温度",
+   "occurrences": 3,
+   "compliant": 3,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "magnetization",
+   "term_zh": "磁化强度",
+   "occurrences": 7,
+   "compliant": 7,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "Hamiltonian",
+   "term_zh": "哈密顿量",
+   "occurrences": 9,
+   "compliant": 9,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "spin",
+   "term_zh": "自旋",
+   "occurrences": 12,
+   "compliant": 12,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "ground state",
+   "term_zh": "基态",
+   "occurrences": 7,
+   "compliant": 7,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "Monte Carlo",
+   "term_zh": "蒙特卡洛",
+   "occurrences": 8,
+   "compliant": 8,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "configuration",
+   "term_zh": "构型",
+   "occurrences": 8,
+   "compliant": 8,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "constraint",
+   "term_zh": "约束",
+   "occurrences": 0,
+   "compliant": 0,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "local constraint",
+   "term_zh": "局域约束",
+   "occurrences": 0,
+   "compliant": 0,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "topological phase",
+   "term_zh": "拓扑相",
+   "occurrences": 1,
+   "compliant": 1,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "gauge theory",
+   "term_zh": "规范理论",
+   "occurrences": 8,
+   "compliant": 8,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "lattice gauge theory",
+   "term_zh": "格点规范理论",
+   "occurrences": 5,
+   "compliant": 5,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "square ice",
+   "term_zh": "方冰",
+   "occurrences": 4,
+   "compliant": 4,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "plaquette",
+   "term_zh": "面元",
+   "occurrences": 3,
+   "compliant": 3,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "Ising model",
+   "term_zh": "伊辛模型",
+   "occurrences": 6,
+   "compliant": 6,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "Ising",
+   "term_zh": "伊辛",
+   "occurrences": 23,
+   "compliant": 23,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "ferromagnet",
+   "term_zh": "铁磁体",
+   "occurrences": 1,
+   "compliant": 1,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "toy model",
+   "term_zh": "玩具模型",
+   "occurrences": 10,
+   "compliant": 10,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "condensed matter",
+   "term_zh": "凝聚态",
+   "occurrences": 7,
+   "compliant": 7,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "statistical physics",
+   "term_zh": "统计物理",
+   "occurrences": 2,
+   "compliant": 2,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "simulation",
+   "term_zh": "模拟",
+   "occurrences": 1,
+   "compliant": 1,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "filter",
+   "term_zh": "滤波器",
+   "occurrences": 2,
+   "compliant": 2,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "convolution",
+   "term_zh": "卷积",
+   "occurrences": 1,
+   "compliant": 1,
+   "consistency": 1.0,
+   "violating_pids": []
+  },
+  {
+   "term_en": "perceptron",
+   "term_zh": "感知机",
+   "occurrences": 3,
+   "compliant": 3,
+   "consistency": 1.0,
+   "violating_pids": []
+  }
+ ],
+ "issue_counts": {
+  "negation": 1,
+  "sentences": 2
+ },
+ "issues": [
+  {
+   "pid": "P0007",
+   "check": "negation",
+   "severity": "warn",
+   "detail": "translation adds negation not present in source",
+   "source": "Condensed matter physics is the study of the collective behavior of massively complex assemblies of electrons, nuclei, magnetic moments, atoms or qubits [1]. This complexity is reflected in the size of the classical or quantum state space, which grows exponentially with the number of particles. This",
+   "target": "凝聚态物理研究的是由电子、原子核、磁矩、原子或量子比特构成的大规模复杂集合体的集体行为[1]。这种复杂性体现在经典或量子状态空间的规模上：状态空间随粒子数呈指数增长。这种指数增长让人联想到机器学习中常见的“维度灾难”。也就是说，一个待学习的目标函数所需的训练数据量随维度（例如图像特征的数量）呈指数增长。尽管存在这一灾难，机器学习界已发展出若干技术，具备识别、分类与刻画复杂数据集的非凡能力。鉴于这些成功，人们自然会问：这类技术能否应用于凝聚态物理领域，尤其是在微观哈密顿量包含强相互作用、而人们通常借助数值模拟研究相与相变的情形[2, 3]？我们证明，现代机器学习架构（例如全连接神经网络与卷积神经"
+  },
+  {
+   "pid": "P0103",
+   "check": "sentences",
+   "severity": "warn",
+   "detail": "sentence count dropped: source 10 -> target 3",
+   "source": "L is the linear size of the system. The outcome of the convolutional layer is reshaped into a 16 × L2-dimensional vector such that the first 8L2 entries correspond to the outcome of the first group of filters (f = 1 thorugh f = 8) while the remaining 8L2 correspond to the last group of filters (f = ",
+   "target": "L 是体系的线度。卷积层的输出被重塑为 16 × L2 维向量，使前 8L2 个分量对应第一组滤波器（f = 1 至 f = 8）的输出，其余 8L2 个分量对应最后一组滤波器（f = 9 至 f = 16）。与卷积层全连接的输出层包含两个感知机神经元，分别记为 O0 与 O∞，对应零温态与高温态。它由权重矩阵与偏置向量参数化，二者为 8L2 项 8L2 项 0 z }| { −L2 + L − 1 . . . − L2 + L − 1 z }| { 1 . . . 1 Wo = 以及 bo = (C1) , 0"
+  },
+  {
+   "pid": "P0104",
+   "check": "sentences",
+   "severity": "warn",
+   "detail": "sentence count dropped: source 4 -> target 1",
+   "source": "L2 − L + 1 . . . L2 − L + 1",
+   "target": "L2 − L + 1 … L2 − L + 1"
+  }
+ ],
+ "human_review": []
+}

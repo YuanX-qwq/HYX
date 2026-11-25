@@ -1,0 +1,310 @@
+{
+ "schema": "glossary-lock/v1",
+ "source": "glossary.csv",
+ "terms": [
+  {
+   "term_en": "machine learning",
+   "term_zh": "机器学习",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "neural network",
+   "term_zh": "神经网络",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "convolutional neural network",
+   "term_zh": "卷积神经网络",
+   "category": "method",
+   "variants": [
+    "CNN"
+   ],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "feed-forward neural network",
+   "term_zh": "前馈神经网络",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "hidden layer",
+   "term_zh": "隐藏层",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "output layer",
+   "term_zh": "输出层",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "input layer",
+   "term_zh": "输入层",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "supervised learning",
+   "term_zh": "监督学习",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "training set",
+   "term_zh": "训练集",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "test set",
+   "term_zh": "测试集",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "accuracy",
+   "term_zh": "准确率",
+   "category": "metric",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "phase transition",
+   "term_zh": "相变",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "order parameter",
+   "term_zh": "序参量",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "critical temperature",
+   "term_zh": "临界温度",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "magnetization",
+   "term_zh": "磁化强度",
+   "category": "quantity",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "Hamiltonian",
+   "term_zh": "哈密顿量",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "spin",
+   "term_zh": "自旋",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "ground state",
+   "term_zh": "基态",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "Monte Carlo",
+   "term_zh": "蒙特卡洛",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "configuration",
+   "term_zh": "构型",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "constraint",
+   "term_zh": "约束",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "local constraint",
+   "term_zh": "局域约束",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "topological phase",
+   "term_zh": "拓扑相",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "gauge theory",
+   "term_zh": "规范理论",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "lattice gauge theory",
+   "term_zh": "格点规范理论",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "square ice",
+   "term_zh": "方冰",
+   "category": "model",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "plaquette",
+   "term_zh": "面元",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "Ising model",
+   "term_zh": "伊辛模型",
+   "category": "model",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "Ising",
+   "term_zh": "伊辛",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "ferromagnet",
+   "term_zh": "铁磁体",
+   "category": "concept",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "toy model",
+   "term_zh": "玩具模型",
+   "category": "model",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "condensed matter",
+   "term_zh": "凝聚态",
+   "category": "field",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "statistical physics",
+   "term_zh": "统计物理",
+   "category": "field",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "simulation",
+   "term_zh": "模拟",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "filter",
+   "term_zh": "滤波器",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "convolution",
+   "term_zh": "卷积",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  },
+  {
+   "term_en": "perceptron",
+   "term_zh": "感知机",
+   "category": "method",
+   "variants": [],
+   "note": "",
+   "locked": true
+  }
+ ],
+ "problems": [],
+ "locked": true,
+ "stats": {
+  "terms": 37,
+  "problems": 0
+ }
+}
