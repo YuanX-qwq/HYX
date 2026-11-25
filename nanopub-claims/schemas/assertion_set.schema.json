@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/assertion_set/1.0",
+  "title": "Nanopublication assertion set v1.0",
+  "type": "object",
+  "required": ["schema_version", "case_id", "status", "source", "assertions"],
+  "properties": {
+    "schema_version": {"const": "nanopub-claims/1.0"},
+    "case_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["success", "partial", "failed", "unable", "refused"]},
+    "source": {"$ref": "#/$defs/source"},
+    "document": {"$ref": "#/$defs/document"},
+    "assertions": {"type": "array", "items": {"$ref": "#/$defs/assertion"}},
+    "unreported": {"type": "array", "items": {"type": "string"}},
+    "uncertainty": {"type": "array", "items": {"$ref": "#/$defs/uncertainty"}},
+    "qc_summary": {"type": "object"},
+    "change_log": {"type": "array", "items": {"type": "object"}}
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["title", "authors", "year", "source_id"],
+      "properties": {
+        "source_id": {"type": "string", "description": "稳定标识符，优先 DOI；无 DOI 时用 sha256:<file hash>"},
+        "title": {"type": "string"},
+        "authors": {"type": "array", "items": {"type": "string"}},
+        "year": {"type": "integer"},
+        "venue": {"type": ["string", "null"]},
+        "doi": {"type": ["string", "null"]},
+        "version": {"type": ["string", "null"]},
+        "retrieved_from": {"type": ["string", "null"], "description": "材料来源（URL / 平台材料路径 / 文件名）"},
+        "file_sha256": {"type": ["string", "null"]},
+        "license": {"type": ["string", "null"]}
+      }
+    },
+    "document": {
+      "type": "object",
+      "properties": {
+        "page_count": {"type": "integer"},
+        "paragraph_ids": {"type": "array", "items": {"type": "string"}},
+        "text_sha256": {"type": "string"}
+      }
+    },
+    "assertion": {
+      "type": "object",
+      "required": ["id", "text", "subject", "relation", "object", "evidence", "provenance_ref", "confidence", "qc"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^a\\d{3,}$"},
+        "text": {"type": "string", "description": "单一、可判断真假的断言（一句一断言）"},
+        "subject": {"$ref": "#/$defs/entity"},
+        "relation": {"$ref": "#/$defs/relation"},
+        "object": {"$ref": "#/$defs/entity"},
+        "qualifiers": {"type": "object", "description": "条件与限定：condition / population / temperature / ph / dose / duration 等"},
+        "polarity": {"enum": ["positive", "negative"]},
+        "modality": {"enum": ["observed", "inferred", "hypothesized"]},
+        "asserted_by": {"enum": ["author", "reader"], "description": "author=原文明确断言；reader=由读者推论（须标 modality=inferred 并给间接证据）"},
+        "evidence": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidence"}},
+        "provenance_ref": {"type": "string"},
+        "confidence": {"$ref": "#/$defs/confidence"},
+        "qc": {"$ref": "#/$defs/qc"}
+      }
+    },
+    "entity": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": {"type": "string"},
+        "type": {"enum": ["material", "compound", "gene", "protein", "organism", "process", "metric", "condition", "model", "dataset", "other"]},
+        "identifier": {"type": ["string", "null"], "description": "可选稳定标识（CAS/UniProt/基因 ID 等）"},
+        "value": {"description": "数值或字符串取值"},
+        "unit": {"type": ["string", "null"]}
+      }
+    },
+    "relation": {
+      "type": "object",
+      "required": ["predicate"],
+      "properties": {
+        "predicate": {"type": "string", "description": "受控词表 vocab/predicates.json 中的 id"},
+        "free_text": {"type": ["string", "null"], "description": "原文动词/短语，predicate=other 时必填"},
+        "direction": {"enum": ["up", "down", "none"]}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["quote", "page", "paragraph_id", "char_start", "char_end", "support", "relation_to_assertion"],
+      "properties": {
+        "quote": {"type": "string", "description": "逐字引文（与原文完全一致，仅允许换行/多空格差异由校验器归一化后比对）"},
+        "page": {"type": "integer"},
+        "paragraph_id": {"type": "string"},
+        "char_start": {"type": "integer", "minimum": 0},
+        "char_end": {"type": "integer", "minimum": 1},
+        "bbox": {"type": ["array", "null"]},
+        "support": {"enum": ["full", "partial"]},
+        "relation_to_assertion": {"enum": ["direct", "indirect"]},
+        "note": {"type": ["string", "null"]}
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "required": ["level", "basis"],
+      "properties": {
+        "level": {"enum": ["high", "medium", "low"]},
+        "basis": {"enum": ["explicit-statement", "table-value", "figure-caption", "cross-section-inference", "absent"]},
+        "note": {"type": ["string", "null"]}
+      }
+    },
+    "qc": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["pass", "warn", "fail"]},
+        "issues": {"type": "array", "items": {"type": "object", "required": ["code", "detail"], "properties": {"code": {"type": "string"}, "detail": {"type": "string"}, "criterion": {"type": "string"}}}}
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "required": ["kind", "detail"],
+      "properties": {
+        "kind": {"enum": ["cannot-determine", "conflict", "missing-source", "unreadable"]},
+        "detail": {"type": "string"},
+        "assertion_id": {"type": ["string", "null"]},
+        "location": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

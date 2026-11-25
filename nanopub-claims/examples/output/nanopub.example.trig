@@ -1,0 +1,304 @@
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sub: <https://example.org/nanopub/sub/> .
+@prefix src: <https://example.org/nanopub/source/> .
+
+sub:Head {
+  sub:assertion np:hasAssertion sub:assertion ;
+                np:hasProvenance sub:provenance ;
+                np:hasPublicationInfo sub:pubinfo .
+}
+
+sub:provenance {
+  sub:assertion prov:wasDerivedFrom src:sha256-synthetic-example-0001 ;
+                prov:wasGeneratedBy sub:assertionSet .
+}
+
+sub:pubinfo {
+  sub:assertionSet a np:AssertionSet ; dct:title "Synthetic Study of Potassium Sensing in Strain K-12 (example)" ; dct:creator "A. Example, B. Example" ; dct:issued "2026" .
+}
+
+sub:assertion {
+  sub:a001 a np:Assertion ;
+    np:subject "Strain K-12" ;
+    np:predicate "equals" ;
+    np:object "maximum growth rate" ;
+    np:hasEvidence sub:ev_a001 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a001 a np:Evidence ;
+    np:quote "Strain K-12 reached a maximum growth rate of 0.42 per hour at 30 °C." ;
+    np:page "1"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p1b1" ;
+    np:charStart "0"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "68"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a002 a np:Assertion ;
+    np:subject "strain K-12" ;
+    np:predicate "decreases" ;
+    np:object "maximum growth rate" ;
+    np:hasEvidence sub:ev_a002 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a002 a np:Evidence ;
+    np:quote "At 37 °C, the maximum growth rate of strain K-12 dropped to 0.28 per hour." ;
+    np:page "1"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p1b1" ;
+    np:charStart "69"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "143"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a003 a np:Assertion ;
+    np:subject "Ammonium supplementation" ;
+    np:predicate "increases" ;
+    np:object "biomass yield" ;
+    np:hasEvidence sub:ev_a003 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a003 a np:Evidence ;
+    np:quote "Ammonium supplementation raised the biomass yield of strain K-12 by 18 percent." ;
+    np:page "1"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p1b2" ;
+    np:charStart "0"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "79"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a004 a np:Assertion ;
+    np:subject "Nitrate supplementation" ;
+    np:predicate "other" ;
+    np:object "biomass yield" ;
+    np:hasEvidence sub:ev_a004 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a004 a np:Evidence ;
+    np:quote "Nitrate supplementation left the biomass yield of strain K-12 unchanged." ;
+    np:page "1"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p1b2" ;
+    np:charStart "80"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "152"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a005 a np:Assertion ;
+    np:subject "Strain K-12" ;
+    np:predicate "other" ;
+    np:object "NaCl concentrations" ;
+    np:hasEvidence sub:ev_a005 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a005 a np:Evidence ;
+    np:quote "Strain K-12 tolerated NaCl concentrations up to 4.5 percent (w/v)." ;
+    np:page "1"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p1b3" ;
+    np:charStart "0"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "66"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a006 a np:Assertion ;
+    np:subject "strain K-12" ;
+    np:predicate "decreases" ;
+    np:object "growth" ;
+    np:hasEvidence sub:ev_a006 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a006 a np:Evidence ;
+    np:quote "Above 4.5 percent NaCl, growth of strain K-12 ceased completely." ;
+    np:page "1"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p1b3" ;
+    np:charStart "67"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "131"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a007 a np:Assertion ;
+    np:subject "genome" ;
+    np:predicate "has_part" ;
+    np:object "protein-coding genes" ;
+    np:hasEvidence sub:ev_a007 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a007 a np:Evidence ;
+    np:quote "The genome of strain K-12 carries 4318 protein-coding genes." ;
+    np:page "1"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p1b4" ;
+    np:charStart "0"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "60"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a008 a np:Assertion ;
+    np:subject "Gene kdpA" ;
+    np:predicate "increases" ;
+    np:object "expression" ;
+    np:hasEvidence sub:ev_a008 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a008 a np:Evidence ;
+    np:quote "Gene kdpA showed 2.1-fold higher expression under low potassium." ;
+    np:page "1"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p1b4" ;
+    np:charStart "61"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "125"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a009 a np:Assertion ;
+    np:subject "Low potassium conditions" ;
+    np:predicate "activates" ;
+    np:object "kdp operon" ;
+    np:hasEvidence sub:ev_a009 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a009 a np:Evidence ;
+    np:quote "Low potassium conditions activated the kdp operon within 15 minutes." ;
+    np:page "1"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p1b5" ;
+    np:charStart "0"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "68"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a010 a np:Assertion ;
+    np:subject "kdp operon" ;
+    np:predicate "has_part" ;
+    np:object "three subunits" ;
+    np:hasEvidence sub:ev_a010 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a010 a np:Evidence ;
+    np:quote "The kdp operon encodes three subunits, KdpA, KdpB and KdpC." ;
+    np:page "1"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p1b5" ;
+    np:charStart "69"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "128"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a011 a np:Assertion ;
+    np:subject "KdpA" ;
+    np:predicate "binds" ;
+    np:object "potassium" ;
+    np:hasEvidence sub:ev_a011 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a011 a np:Evidence ;
+    np:quote "KdpA binds potassium with a dissociation constant of 12 micromolar." ;
+    np:page "2"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p2b1" ;
+    np:charStart "0"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "67"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a012 a np:Assertion ;
+    np:subject "Deletion of kdpA" ;
+    np:predicate "decreases" ;
+    np:object "growth" ;
+    np:hasEvidence sub:ev_a012 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a012 a np:Evidence ;
+    np:quote "Deletion of kdpA reduced growth under low potassium by 34 percent." ;
+    np:page "2"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p2b1" ;
+    np:charStart "68"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "134"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a013 a np:Assertion ;
+    np:subject "Complementation with wild-type kdpA" ;
+    np:predicate "other" ;
+    np:object "growth" ;
+    np:hasEvidence sub:ev_a013 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a013 a np:Evidence ;
+    np:quote "Complementation with wild-type kdpA restored growth to 96 percent of the control level." ;
+    np:page "2"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p2b2" ;
+    np:charStart "0"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "87"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a014 a np:Assertion ;
+    np:subject "Mutant strain K-12 delta-kdpA" ;
+    np:predicate "decreases" ;
+    np:object "colonies" ;
+    np:hasEvidence sub:ev_a014 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a014 a np:Evidence ;
+    np:quote "Mutant strain K-12 delta-kdpA produced colonies 40 percent smaller than the wild type." ;
+    np:page "2"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p2b2" ;
+    np:charStart "88"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "174"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a015 a np:Assertion ;
+    np:subject "Transcription of kdpA" ;
+    np:predicate "other" ;
+    np:object "transcripts" ;
+    np:hasEvidence sub:ev_a015 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a015 a np:Evidence ;
+    np:quote "Transcription of kdpA peaked at 0.8 transcripts per cell during stationary phase." ;
+    np:page "2"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p2b3" ;
+    np:charStart "0"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "81"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a016 a np:Assertion ;
+    np:subject "Potassium starvation" ;
+    np:predicate "increases" ;
+    np:object "kdpA promoter activity" ;
+    np:hasEvidence sub:ev_a016 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a016 a np:Evidence ;
+    np:quote "Potassium starvation increased kdpA promoter activity 5.6-fold." ;
+    np:page "2"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p2b3" ;
+    np:charStart "82"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "145"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a017 a np:Assertion ;
+    np:subject "kdp operon" ;
+    np:predicate "other" ;
+    np:object "27 tested isolates" ;
+    np:hasEvidence sub:ev_a017 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a017 a np:Evidence ;
+    np:quote "The kdp operon is conserved across 27 tested isolates." ;
+    np:page "2"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p2b4" ;
+    np:charStart "0"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "54"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a018 a np:Assertion ;
+    np:subject "Isolates lacking the kdp operon" ;
+    np:predicate "decreases" ;
+    np:object "growth" ;
+    np:hasEvidence sub:ev_a018 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a018 a np:Evidence ;
+    np:quote "Isolates lacking the kdp operon showed 22 percent slower growth at low potassium." ;
+    np:page "2"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p2b4" ;
+    np:charStart "55"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "136"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a019 a np:Assertion ;
+    np:subject "potassium affinity of KdpA" ;
+    np:predicate "equals" ;
+    np:object "12 micromolar" ;
+    np:hasEvidence sub:ev_a019 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a019 a np:Evidence ;
+    np:quote "The measured potassium affinity of KdpA was 12 micromolar in three independent assays." ;
+    np:page "2"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p2b5" ;
+    np:charStart "0"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "86"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+  sub:a020 a np:Assertion ;
+    np:subject "potassium" ;
+    np:predicate "other" ;
+    np:object "starvation response" ;
+    np:hasEvidence sub:ev_a020 ;
+    np:confidence "high" ;
+    prov:wasAttributedTo src:sha256-synthetic-example-0001 .
+  sub:ev_a020 a np:Evidence ;
+    np:quote "Adding 50 millimolar potassium fully reversed the starvation response within 10 minutes." ;
+    np:page "2"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:paragraphId "p2b5" ;
+    np:charStart "87"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:charEnd "175"^^<http://www.w3.org/2001/XMLSchema#decimal> ;
+    np:support "full" .
+}

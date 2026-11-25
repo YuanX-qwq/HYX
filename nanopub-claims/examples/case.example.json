@@ -1,0 +1,18 @@
+{
+  "case_id": "example-synthetic-001",
+  "note": "示例输入（synthetic），用于说明接口与完整流程，不是正式案例。",
+  "output_contract": {
+    "assertions": "每条断言：id/text/subject/relation/object/qualifiers/polarity/modality/evidence/provenance_ref/confidence",
+    "source": "论文来源元数据：source_id/title/authors/year/venue/doi/version",
+    "qc": "每条断言的 qc.status 与 qc.issues[].code",
+    "exports": "assertion_set.json + assertions.csv + nanopub.trig"
+  },
+  "materials": [
+    {"path": "examples/sample_pages.json", "kind": "pages", "note": "2 页 / 10 段 / 20 句，合成"}
+  ],
+  "constraints": {
+    "min_assertions": 1,
+    "evidence_required": true,
+    "provenance_required": true
+  }
+}

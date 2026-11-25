@@ -1,0 +1,10 @@
+[
+  {
+    "page": 1,
+    "text": "Strain K-12 reached a maximum growth rate of 0.42 per hour at 30 °C. At 37 °C, the maximum growth rate of strain K-12 dropped to 0.28 per hour.\n\nAmmonium supplementation raised the biomass yield of strain K-12 by 18 percent. Nitrate supplementation left the biomass yield of strain K-12 unchanged.\n\nStrain K-12 tolerated NaCl concentrations up to 4.5 percent (w/v). Above 4.5 percent NaCl, growth of strain K-12 ceased completely.\n\nThe genome of strain K-12 carries 4318 protein-coding genes. Gene kdpA showed 2.1-fold higher expression under low potassium.\n\nLow potassium conditions activated the kdp operon within 15 minutes. The kdp operon encodes three subunits, KdpA, KdpB and KdpC."
+  },
+  {
+    "page": 2,
+    "text": "KdpA binds potassium with a dissociation constant of 12 micromolar. Deletion of kdpA reduced growth under low potassium by 34 percent.\n\nComplementation with wild-type kdpA restored growth to 96 percent of the control level. Mutant strain K-12 delta-kdpA produced colonies 40 percent smaller than the wild type.\n\nTranscription of kdpA peaked at 0.8 transcripts per cell during stationary phase. Potassium starvation increased kdpA promoter activity 5.6-fold.\n\nThe kdp operon is conserved across 27 tested isolates. Isolates lacking the kdp operon showed 22 percent slower growth at low potassium.\n\nThe measured potassium affinity of KdpA was 12 micromolar in three independent assays. Adding 50 millimolar potassium fully reversed the starvation response within 10 minutes."
+  }
+]

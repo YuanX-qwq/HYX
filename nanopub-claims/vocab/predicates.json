@@ -1,0 +1,22 @@
+{
+  "schema_version": "nanopub-claims/predicates/1.0",
+  "note": "受控关系词表。relation.predicate 只能取本表中的 id；无法映射时必须用 other 并在 relation.free_text 写原文动词，同时 qc 会给出 Q011(relation-unmapped) 提示。",
+  "predicates": [
+    {"id": "increases", "label_zh": "增加", "label_en": "increases", "direction": "up", "inverse": "decreases", "definition": "主体使对象在数量或程度上变大", "cues": ["increase", "increased", "increase in", "higher", "rise", "rose", "增加", "升高", "提高", "上升", "增大", "增强"]},
+    {"id": "decreases", "label_zh": "降低", "label_en": "decreases", "direction": "down", "inverse": "increases", "definition": "主体使对象在数量或程度上变小", "cues": ["decrease", "decreased", "lower", "reduce", "reduced", "drop", "decline", "减少", "降低", "下降", "减小", "减弱"]},
+    {"id": "inhibits", "label_zh": "抑制", "label_en": "inhibits", "direction": "down", "inverse": "activates", "definition": "主体削弱对象的活性或过程", "cues": ["inhibit", "inhibits", "inhibition", "suppress", "block", "抑制", "阻断", "抑制了"]},
+    {"id": "activates", "label_zh": "激活", "label_en": "activates", "direction": "up", "inverse": "inhibits", "definition": "主体增强对象的活性或过程", "cues": ["activate", "activates", "activation", "promote", "enhance", "激活", "促进", "增强"]},
+    {"id": "correlates_with", "label_zh": "与…相关", "label_en": "correlates with", "direction": "none", "inverse": "correlates_with", "definition": "两个量之间存在统计相关，不蕴含因果", "cues": ["correlate", "correlated", "correlation", "associated with", "相关", "正相关", "负相关"]},
+    {"id": "causes", "label_zh": "导致", "label_en": "causes", "direction": "none", "inverse": "caused_by", "definition": "主体是对象变化的因果来源（需原文明确因果措辞）", "cues": ["cause", "caused", "leads to", "results in", "导致", "引起", "造成"]},
+    {"id": "caused_by", "label_zh": "由…导致", "label_en": "caused by", "direction": "none", "inverse": "causes", "definition": "对象是主体变化的因果来源（原文为被动因果）", "cues": ["caused by", "due to", "attributable to", "由", "归因于"]},
+    {"id": "equals", "label_zh": "等于", "label_en": "equals", "direction": "none", "inverse": "equals", "definition": "主体在给定条件下取值等于对象（含实测值与拟合值）", "cues": ["=", "equals", "was", "为", "等于", "达到"]},
+    {"id": "is_part_of", "label_zh": "属于", "label_en": "is part of", "direction": "none", "inverse": "has_part", "definition": "主体是对象的结构或组成成分", "cues": ["part of", "component of", "属于", "组成", "包含于"]},
+    {"id": "has_part", "label_zh": "包含", "label_en": "has part", "direction": "none", "inverse": "is_part_of", "definition": "对象是主体的结构或组成成分", "cues": ["consists of", "comprises", "contains", "包含", "由…组成"]},
+    {"id": "expresses", "label_zh": "表达", "label_en": "expresses", "direction": "up", "inverse": "expressed_by", "definition": "主体（基因/构建体）产生对象（蛋白/转录本）", "cues": ["express", "expression of", "表达", "转录"]},
+    {"id": "expressed_by", "label_zh": "由…表达", "label_en": "expressed by", "direction": "none", "inverse": "expresses", "definition": "对象由主体表达（被动语态）", "cues": ["expressed by", "由…表达"]},
+    {"id": "binds", "label_zh": "结合", "label_en": "binds", "direction": "none", "inverse": "bound_by", "definition": "主体与对象存在物理结合关系", "cues": ["bind", "binds", "binding", "结合", "结合于"]},
+    {"id": "bound_by", "label_zh": "被…结合", "label_en": "bound by", "direction": "none", "inverse": "binds", "definition": "主体被对象结合（被动语态）", "cues": ["bound by", "被…结合"]},
+    {"id": "predicts", "label_zh": "预测", "label_en": "predicts", "direction": "none", "inverse": "predicted_by", "definition": "主体（模型/理论）给出对象的取值或趋势", "cues": ["predict", "predicts", "prediction", "预测", "预示"]},
+    {"id": "other", "label_zh": "其他", "label_en": "other", "direction": "none", "inverse": "other", "definition": "无法归入以上受控关系时使用；必须填写 relation.free_text 记录原文动词", "cues": []}
+  ]
+}
