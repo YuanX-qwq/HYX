@@ -57,3 +57,12 @@
 - 自测：python3 academic-language-polishing/tests/selftest.py（24 项）
 
 同步自 Bohrium 挑战「写作02｜学术语言润色」（product-arena-02-7051d92d）的提交包。
+## reference-citation-management
+
+参考文献与引用管理 Skill：多格式解析（BibTeX/RIS/EndNote/CNKI）、编号连锁更新、五条判据的可解释去重、GB/T 7714-2015 与 APA 渲染、DOI 形态与占位题名核验、逐句论断—文献匹配（strong/weak/mismatch/dangling）。
+
+- 入口：[reference-citation-management/SKILL.md](reference-citation-management/SKILL.md)
+- 核心脚本：[reference-citation-management/scripts/cite.py](reference-citation-management/scripts/cite.py)
+- 自测：python3 reference-citation-management/tests/selftest.py（28 项）
+
+同步自 Bohrium 挑战「写作04｜参考文献与引用管理」（product-arena-03-429cc14d）的提交包。
