@@ -1,0 +1,226 @@
+{
+  "case_id": "EXAMPLE-CASE-W04",
+  "task_id": "product-arena-03-429cc14d",
+  "status": "partial",
+  "results": {
+    "citations": [
+      {
+        "claim_span": "本研究考察掺杂对催化活性的影响[1]。",
+        "ref_keys": "wang2021doping",
+        "placement": "mid-sentence",
+        "style": "GB/T 7714-2015"
+      },
+      {
+        "claim_span": "在 25 °C 条件下，掺杂样品的产率提升到 42%[1]。",
+        "ref_keys": "wang2021doping",
+        "placement": "after-numeric-claim",
+        "style": "GB/T 7714-2015"
+      },
+      {
+        "claim_span": "对照组在相同条件下产率仅为 18%[1]。",
+        "ref_keys": "wang2021doping",
+        "placement": "after-numeric-claim",
+        "style": "GB/T 7714-2015"
+      },
+      {
+        "claim_span": "该结果证明掺杂总是有效[1]。",
+        "ref_keys": "wang2021doping",
+        "placement": "after-assertion",
+        "style": "GB/T 7714-2015"
+      },
+      {
+        "claim_span": "X 射线衍射表明晶格常数随掺杂量增大而减小[2]。",
+        "ref_keys": "chen2020xrd",
+        "placement": "after-assertion",
+        "style": "GB/T 7714-2015"
+      },
+      {
+        "claim_span": "掺杂样品在连续 10 小时反应后仍保持稳定[2]，这一点与文献报道一致[6]。",
+        "ref_keys": "chen2020xrd",
+        "placement": "sentence-end",
+        "style": "GB/T 7714-2015"
+      }
+    ],
+    "reference_list": [
+      {
+        "key": "wang2021doping",
+        "metadata": "WANG L., ZHANG H., CHEN M. Doping-induced lattice contraction and catalytic activity in oxide catalysts[J]. Journal of Catalysis, 2021, 398(2): 112-121. DOI: 10.1016/j.jcat.2021.03.014.",
+        "doi": "10.1016/j.jcat.2021.03.014",
+        "source": [
+          "wang2021doping",
+          "wang2021preprint",
+          "wang2021dup"
+        ],
+        "status": "verified_shape",
+        "order": 1
+      },
+      {
+        "key": "chen2020xrd",
+        "metadata": "CHEN M. X-ray diffraction study of lattice constants in doped oxides[J]. Materials Letters, 2020, 271: 127-134. DOI: 10.1016/j.matlet.2020.11.009.",
+        "doi": "10.1016/j.matlet.2020.11.009",
+        "source": "chen2020xrd",
+        "status": "verified_shape",
+        "order": 2
+      },
+      {
+        "key": "liu2019stability",
+        "metadata": "LIU Q., ZHAO Y. Long-term hydrothermal stability of doped oxide catalysts under reaction conditions[J]. Applied Catalysis B, 2019, 245: 55-63. DOI: 10.1016/j.apcatb.2019.01.007.",
+        "doi": "10.1016/j.apcatb.2019.01.007",
+        "source": "liu2019stability",
+        "status": "verified_shape",
+        "order": 3
+      },
+      {
+        "key": "fake2022ghost",
+        "metadata": "SMITH J. Unpublished placeholder results on doping[J]. Journal of Nonexistent Results, 2022. DOI: doi:10.9999/fake.2022.001.",
+        "doi": "doi:10.9999/fake.2022.001",
+        "source": "fake2022ghost",
+        "status": "needs_check",
+        "order": 4
+      }
+    ],
+    "dedup": [
+      {
+        "merged_keys": "wang2021doping, wang2021preprint, wang2021dup",
+        "basis": "R-PREPRINT; R-TITLE-NORM",
+        "kept_key": "wang2021doping"
+      }
+    ],
+    "consistency_checks": [
+      {
+        "claim": "本研究考察掺杂对催化活性的影响[1]。",
+        "ref_key": "wang2021doping",
+        "match": "strong",
+        "evidence": "strong | 词重叠得分 0.375 | 题名：Doping-induced lattice contraction and catalytic activity in oxide catalysts",
+        "score": 0.375
+      },
+      {
+        "claim": "在 25 °C 条件下，掺杂样品的产率提升到 42%[1]。",
+        "ref_key": "wang2021doping",
+        "match": "weak",
+        "evidence": "weak | 词重叠得分 0.125 | 题名：Doping-induced lattice contraction and catalytic activity in oxide catalysts",
+        "score": 0.125
+      },
+      {
+        "claim": "对照组在相同条件下产率仅为 18%[1]。",
+        "ref_key": "wang2021doping",
+        "match": "mismatch",
+        "evidence": "mismatch | 词重叠得分 0.000 | 题名：Doping-induced lattice contraction and catalytic activity in oxide catalysts",
+        "score": 0.0
+      },
+      {
+        "claim": "该结果证明掺杂总是有效[1]。",
+        "ref_key": "wang2021doping",
+        "match": "weak",
+        "evidence": "weak | 词重叠得分 0.125 | 题名：Doping-induced lattice contraction and catalytic activity in oxide catalysts",
+        "score": 0.125
+      },
+      {
+        "claim": "X 射线衍射表明晶格常数随掺杂量增大而减小[2]。",
+        "ref_key": "chen2020xrd",
+        "match": "weak",
+        "evidence": "weak | 词重叠得分 0.250 | 题名：X-ray diffraction study of lattice constants in doped oxides",
+        "score": 0.25
+      },
+      {
+        "claim": "掺杂样品在连续 10 小时反应后仍保持稳定[2]，这一点与文献报道一致[6]。",
+        "ref_key": "chen2020xrd",
+        "match": "mismatch",
+        "evidence": "mismatch | 词重叠得分 0.000 | 题名：X-ray diffraction study of lattice constants in doped oxides",
+        "score": 0.0
+      },
+      {
+        "claim": "掺杂样品在连续 10 小时反应后仍保持稳定[2]，这一点与文献报道一致[6]。",
+        "ref_key": "?6",
+        "match": "dangling",
+        "evidence": "文献表无第 6 条"
+      }
+    ],
+    "format_notes": {
+      "target_style": "GB/T 7714-2015",
+      "converted_from": "",
+      "kept_fields": [
+        "DOI",
+        "volume",
+        "issue",
+        "pages"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "source_id": "manuscript",
+      "locator": "paragraph 1",
+      "locator_type": "paragraph",
+      "quote": "在 25 °C 条件下，掺杂样品的产率提升到 42%",
+      "note": "正文断言原文"
+    },
+    {
+      "source_id": "library.bib",
+      "locator": "entry wang2021doping",
+      "locator_type": "record",
+      "quote": "doi = {10.1016/j.jcat.2021.03.014}",
+      "note": "DOI 比对依据"
+    },
+    {
+      "source_id": "library.bib",
+      "locator": "entry fake2022ghost",
+      "locator_type": "record",
+      "quote": "doi = {doi:10.9999/fake.2022.001}",
+      "note": "DOI 形态非法，判为编造候选"
+    }
+  ],
+  "uncertainty": [
+    {
+      "item": "正文引用 [6] 无对应条目",
+      "reason": "文献库只有 4 条记录",
+      "action_required": "补录条目或改编号，需作者确认"
+    },
+    {
+      "item": "条目 fake2022ghost 待核验",
+      "reason": "DOI 不符合 10.xxxx/... 形态; 题名像占位/编造内容",
+      "action_required": "按 DOI 解析或数据库检索核验后再引用"
+    },
+    {
+      "item": "缺引用的论断：此外，掺杂样品的比表面积达到 210 m2/g，明显高于未掺杂样品。",
+      "reason": "含数值但无引用标记",
+      "action_required": "确认是否需补引并选择文献"
+    }
+  ],
+  "changes": [
+    {
+      "step": "1",
+      "action": "读取 manuscript.md 与 library.bib",
+      "note": "确认目标规范与文献库格式 bibtex"
+    },
+    {
+      "step": "2",
+      "action": "解析并渲染 4 条文献",
+      "note": "GB/T 7714-2015 字段顺序"
+    },
+    {
+      "step": "3",
+      "action": "去重合并 1 组",
+      "note": "DOI 相同 / 预印本与正式版同题"
+    },
+    {
+      "step": "4",
+      "action": "按正文首次出现重排编号",
+      "note": "编号连续化并检出 dangling 与未被引条目"
+    },
+    {
+      "step": "5",
+      "action": "逐句核验论断与文献",
+      "note": "7 条判定，weak/mismatch 已标注"
+    }
+  ],
+  "artifacts": [],
+  "metadata": {
+    "skill_name": "reference-citation-management",
+    "skill_version": "1.0.0",
+    "model": "doubao-work-agent",
+    "runtime": "python3.13",
+    "generated_at": "2026-11-25T23:29:44+08:00",
+    "example_only": true
+  }
+}

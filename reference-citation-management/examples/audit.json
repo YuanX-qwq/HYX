@@ -1,0 +1,212 @@
+{
+  "manuscript_revised": "本研究考察掺杂对催化活性的影响[1]。在 25 °C 条件下，掺杂样品的产率提升到 42%[1]。\n对照组在相同条件下产率仅为 18%[1]。该结果证明掺杂总是有效[1]。X 射线衍射表明晶格常数随掺杂量增大而减小[2]。\n掺杂样品在连续 10 小时反应后仍保持稳定[2]，这一点与文献报道一致[6]。\n此外，掺杂样品的比表面积达到 210 m2/g，明显高于未掺杂样品。\n",
+  "order": {
+    "1": 1,
+    "2": 2
+  },
+  "renumber_issues": [
+    {
+      "kind": "dangling_intext",
+      "number": 6,
+      "detail": "正文引用编号超出文献表范围 1..4"
+    },
+    {
+      "kind": "uncited_reference",
+      "number": 3,
+      "detail": "文献表第 3 条未被正文引用"
+    },
+    {
+      "kind": "uncited_reference",
+      "number": 4,
+      "detail": "文献表第 4 条未被正文引用"
+    }
+  ],
+  "citations": [
+    {
+      "claim_span": "本研究考察掺杂对催化活性的影响[1]。",
+      "ref_keys": "wang2021doping",
+      "placement": "mid-sentence",
+      "style": "GB/T 7714-2015"
+    },
+    {
+      "claim_span": "在 25 °C 条件下，掺杂样品的产率提升到 42%[1]。",
+      "ref_keys": "wang2021doping",
+      "placement": "after-numeric-claim",
+      "style": "GB/T 7714-2015"
+    },
+    {
+      "claim_span": "对照组在相同条件下产率仅为 18%[1]。",
+      "ref_keys": "wang2021doping",
+      "placement": "after-numeric-claim",
+      "style": "GB/T 7714-2015"
+    },
+    {
+      "claim_span": "该结果证明掺杂总是有效[1]。",
+      "ref_keys": "wang2021doping",
+      "placement": "after-assertion",
+      "style": "GB/T 7714-2015"
+    },
+    {
+      "claim_span": "X 射线衍射表明晶格常数随掺杂量增大而减小[2]。",
+      "ref_keys": "chen2020xrd",
+      "placement": "after-assertion",
+      "style": "GB/T 7714-2015"
+    },
+    {
+      "claim_span": "掺杂样品在连续 10 小时反应后仍保持稳定[2]，这一点与文献报道一致[6]。",
+      "ref_keys": "chen2020xrd",
+      "placement": "sentence-end",
+      "style": "GB/T 7714-2015"
+    }
+  ],
+  "reference_list": [
+    {
+      "key": "wang2021doping",
+      "metadata": "WANG L., ZHANG H., CHEN M. Doping-induced lattice contraction and catalytic activity in oxide catalysts[J]. Journal of Catalysis, 2021, 398(2): 112-121. DOI: 10.1016/j.jcat.2021.03.014.",
+      "doi": "10.1016/j.jcat.2021.03.014",
+      "source": [
+        "wang2021doping",
+        "wang2021preprint",
+        "wang2021dup"
+      ],
+      "status": "verified_shape",
+      "order": 1
+    },
+    {
+      "key": "chen2020xrd",
+      "metadata": "CHEN M. X-ray diffraction study of lattice constants in doped oxides[J]. Materials Letters, 2020, 271: 127-134. DOI: 10.1016/j.matlet.2020.11.009.",
+      "doi": "10.1016/j.matlet.2020.11.009",
+      "source": "chen2020xrd",
+      "status": "verified_shape",
+      "order": 2
+    },
+    {
+      "key": "liu2019stability",
+      "metadata": "LIU Q., ZHAO Y. Long-term hydrothermal stability of doped oxide catalysts under reaction conditions[J]. Applied Catalysis B, 2019, 245: 55-63. DOI: 10.1016/j.apcatb.2019.01.007.",
+      "doi": "10.1016/j.apcatb.2019.01.007",
+      "source": "liu2019stability",
+      "status": "verified_shape",
+      "order": 3
+    },
+    {
+      "key": "fake2022ghost",
+      "metadata": "SMITH J. Unpublished placeholder results on doping[J]. Journal of Nonexistent Results, 2022. DOI: doi:10.9999/fake.2022.001.",
+      "doi": "doi:10.9999/fake.2022.001",
+      "source": "fake2022ghost",
+      "status": "needs_check",
+      "order": 4
+    }
+  ],
+  "dedup": [
+    {
+      "merged_keys": "wang2021doping, wang2021preprint, wang2021dup",
+      "basis": "R-PREPRINT; R-TITLE-NORM",
+      "kept_key": "wang2021doping"
+    }
+  ],
+  "consistency_checks": [
+    {
+      "claim": "本研究考察掺杂对催化活性的影响[1]。",
+      "ref_key": "wang2021doping",
+      "match": "strong",
+      "evidence": "strong | 词重叠得分 0.375 | 题名：Doping-induced lattice contraction and catalytic activity in oxide catalysts",
+      "score": 0.375
+    },
+    {
+      "claim": "在 25 °C 条件下，掺杂样品的产率提升到 42%[1]。",
+      "ref_key": "wang2021doping",
+      "match": "weak",
+      "evidence": "weak | 词重叠得分 0.125 | 题名：Doping-induced lattice contraction and catalytic activity in oxide catalysts",
+      "score": 0.125
+    },
+    {
+      "claim": "对照组在相同条件下产率仅为 18%[1]。",
+      "ref_key": "wang2021doping",
+      "match": "mismatch",
+      "evidence": "mismatch | 词重叠得分 0.000 | 题名：Doping-induced lattice contraction and catalytic activity in oxide catalysts",
+      "score": 0.0
+    },
+    {
+      "claim": "该结果证明掺杂总是有效[1]。",
+      "ref_key": "wang2021doping",
+      "match": "weak",
+      "evidence": "weak | 词重叠得分 0.125 | 题名：Doping-induced lattice contraction and catalytic activity in oxide catalysts",
+      "score": 0.125
+    },
+    {
+      "claim": "X 射线衍射表明晶格常数随掺杂量增大而减小[2]。",
+      "ref_key": "chen2020xrd",
+      "match": "weak",
+      "evidence": "weak | 词重叠得分 0.250 | 题名：X-ray diffraction study of lattice constants in doped oxides",
+      "score": 0.25
+    },
+    {
+      "claim": "掺杂样品在连续 10 小时反应后仍保持稳定[2]，这一点与文献报道一致[6]。",
+      "ref_key": "chen2020xrd",
+      "match": "mismatch",
+      "evidence": "mismatch | 词重叠得分 0.000 | 题名：X-ray diffraction study of lattice constants in doped oxides",
+      "score": 0.0
+    },
+    {
+      "claim": "掺杂样品在连续 10 小时反应后仍保持稳定[2]，这一点与文献报道一致[6]。",
+      "ref_key": "?6",
+      "match": "dangling",
+      "evidence": "文献表无第 6 条"
+    }
+  ],
+  "format_notes": {
+    "target_style": "GB/T 7714-2015",
+    "converted_from": "",
+    "kept_fields": [
+      "DOI",
+      "volume",
+      "issue",
+      "pages"
+    ]
+  },
+  "citation_gaps": [
+    {
+      "sentence": "此外，掺杂样品的比表面积达到 210 m2/g，明显高于未掺杂样品。",
+      "reason": "含数值但无引用标记"
+    }
+  ],
+  "verify": [
+    {
+      "key": "wang2021doping",
+      "flags": [],
+      "status": "verified_shape"
+    },
+    {
+      "key": "chen2020xrd",
+      "flags": [],
+      "status": "verified_shape"
+    },
+    {
+      "key": "liu2019stability",
+      "flags": [],
+      "status": "verified_shape"
+    },
+    {
+      "key": "fake2022ghost",
+      "flags": [
+        {
+          "kind": "doi_malformed",
+          "detail": "DOI 不符合 10.xxxx/... 形态"
+        },
+        {
+          "kind": "placeholder_title",
+          "detail": "题名像占位/编造内容"
+        }
+      ],
+      "status": "needs_check"
+    }
+  ],
+  "stats": {
+    "refs_in": 6,
+    "refs_out": 4,
+    "merged_groups": 1,
+    "citations": 6,
+    "gaps": 1,
+    "weak_matches": 5
+  }
+}

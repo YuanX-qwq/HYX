@@ -1,0 +1,68 @@
+{
+  "_note": "示例（EXAMPLE ONLY）。本文件演示 result.json 结构，不是任何正式案例的答案；正式结果必须来自真实输入。",
+  "case_id": "EXAMPLE-CASE-W04",
+  "task_id": "product-arena-03-429cc14d",
+  "status": "partial",
+  "_status_enum": ["success", "partial", "undetermined", "refused"],
+  "results": {
+    "citations": [
+      {
+        "claim_span": "string：引用所贴的那句原文",
+        "ref_keys": "string：一个或多个条目 key，逗号分隔",
+        "placement": "after-numeric-claim | after-assertion | sentence-end | mid-sentence",
+        "style": "string：引用样式，如 GB/T 7714-2015 / APA 7"
+      }
+    ],
+    "reference_list": [
+      {
+        "key": "string：条目唯一 key",
+        "metadata": "string：按目标规范渲染后的完整条目",
+        "doi": "string：DOI，无则空串",
+        "source": "string：合并来源 key 列表或原始 key",
+        "status": "verified_shape | needs_check"
+      }
+    ],
+    "dedup": [
+      {
+        "merged_keys": "string：被合并的 key 列表",
+        "basis": "string：合并判据，如 R-DOI; R-PREPRINT",
+        "kept_key": "string：保留下来的条目 key"
+      }
+    ],
+    "consistency_checks": [
+      {
+        "claim": "string：正文论断原文",
+        "ref_key": "string：条目 key，缺失时为 ?编号",
+        "match": "strong | weak | mismatch | dangling | undetermined",
+        "evidence": "string：判定依据（词重叠得分、题名、DOI 比对）"
+      }
+    ],
+    "format_notes": {
+      "target_style": "string",
+      "converted_from": "string：bibtex | ris | endnote | cnki | plain",
+      "kept_fields": ["DOI", "volume", "issue", "pages"]
+    }
+  },
+  "sources": [
+    {
+      "source_id": "string：来源标识，如 manuscript / library.bib",
+      "locator": "string：章节、段落或条目位置",
+      "locator_type": "paragraph | record | table | figure",
+      "quote": "string：原文短引",
+      "note": "string：直接证据 / 间接推论 / 元数据比对"
+    }
+  ],
+  "uncertainty": [
+    {"item": "string", "reason": "string", "action_required": "string"}
+  ],
+  "changes": [{"step": "1", "action": "string", "note": "string"}],
+  "artifacts": [],
+  "metadata": {
+    "skill_name": "reference-citation-management",
+    "skill_version": "1.0.0",
+    "model": "",
+    "runtime": "",
+    "generated_at": "2026-01-01T00:00:00+08:00",
+    "example_only": true
+  }
+}
