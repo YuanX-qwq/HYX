@@ -1,0 +1,47 @@
+{
+  "_note": "示例草稿（EXAMPLE ONLY）。用于演示 serialize_result.py 的输入形态，不是正式案例答案。",
+  "case_id": "EXAMPLE-CASE-000",
+  "task_id": "product-arena-02-7051d92d",
+  "status": "partial",
+  "results": {
+    "revised_text": "We used 5 mL of the catalyst suspension at 25 °C to test the activity, and the yield was 42%. The results suggest that doping improves the selectivity. However, the stability of the sample was not tested after 10 h.",
+    "revisions": [
+      {"span": "sentence 1", "original": "We use 5 ml catalyst suspension", "revised": "We used 5 mL of the catalyst suspension",
+       "type": "grammar", "reason": "时态与主谓一致；单位书写统一为 mL；补介词 of", "preserves_meaning": true},
+      {"span": "sentence 1", "original": "in 25 °C", "revised": "at 25 °C", "type": "collocation",
+       "reason": "温度用 at，不用 in", "preserves_meaning": true},
+      {"span": "sentence 2", "original": "The result prove that the doping is very effective and always improve the selectivity.",
+       "revised": "The results suggest that doping improves the selectivity.", "type": "register",
+       "reason": "主谓一致；删除宣传化 very 与绝对化 always；prove 降为 suggest（限定强度不得加强，且原文仅为单一条件实验）",
+       "preserves_meaning": true},
+      {"span": "sentence 3", "original": "the stability of sample is not test after 10 h",
+       "revised": "the stability of the sample was not tested after 10 h.",
+       "type": "grammar", "reason": "补冠词；被动语态 be + 过去分词；时态一致", "preserves_meaning": true}
+    ],
+    "glossary": [
+      {"concept": "catalyst suspension", "en_form": "catalyst suspension", "zh_form": "催化剂悬浮液",
+       "note": "全篇统一；首次出现不加缩写"},
+      {"concept": "yield", "en_form": "yield", "zh_form": "产率", "note": "不与 productivity 混用"}
+    ],
+    "register_notes": ["目标文体：期刊论文 Methods/Results 段；客观陈述、过去时叙述实验；避免宣传化与绝对化表述"],
+    "unresolved": ["42% 是摩尔产率还是质量产率，原文未说明，需作者确认；本稿按原文数值保留不改"]
+  },
+  "sources": [
+    {"source_id": "example-manuscript", "locator": "section Results paragraph 1", "locator_type": "paragraph",
+     "quote": "We use 5 ml catalyst suspension in 25 °C", "note": "修改 1–2 的原文定位"},
+    {"source_id": "example-manuscript", "locator": "section Results paragraph 1", "locator_type": "paragraph",
+     "quote": "the stability of sample is not test after 10 h", "note": "修改 4 的原文定位"}
+  ],
+  "uncertainty": [
+    {"item": "产率口径（摩尔/质量）", "reason": "原文未报告", "action_required": "作者确认后补充，不得自行改写数值"},
+    {"item": "稳定性实验时长之外的条件", "reason": "原文只给 10 h", "action_required": "补充实验条件或标注未报告"}
+  ],
+  "changes": [
+    {"step": "1", "action": "读取 case.json / task.md", "note": "识别目标文体为期刊论文 Results 段"},
+    {"step": "2", "action": "建术语表并锁定写法", "note": "catalyst suspension / yield 两项"},
+    {"step": "3", "action": "逐句最小编辑并记录", "note": "4 条修改，均标注类型与理由"},
+    {"step": "4", "action": "机械守恒检查", "note": "polish_check：数值/单位/否定/限定强度均守恒，verdict 见 check.json"},
+    {"step": "5", "action": "序列化交付", "note": "serialize_result.py 生成契约形态 result.json"}
+  ],
+  "artifacts": []
+}

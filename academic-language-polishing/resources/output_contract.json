@@ -1,0 +1,69 @@
+{
+  "_note": "字段定义（DEFINITION ONLY）。规定 academic-language-polishing 产出的 result.json；example_only 内为示意值，不是任何正式案例的答案。",
+  "top_level": {
+    "case_id": "string，原样取自 /input/case.json，不得改写或编造",
+    "task_id": "string，本题标识 product-arena-02-7051d92d 或 case.json 的 task_id",
+    "status": "success | partial | undetermined | refused",
+    "results": "object，见 results",
+    "sources": "array，见 sources_item",
+    "uncertainty": "array，见 uncertainty_item",
+    "changes": "array，{step, action, note}",
+    "artifacts": "array，产物路径",
+    "metadata": "object，skill_name / skill_version / model / runtime / generated_at"
+  },
+  "results": {
+    "revised_text": "string，润色后的完整文本（按指定章节逐段处理，不删段不并段）",
+    "revisions": [
+      {
+        "span": "string，定位（句号/段落编号或句首片段）",
+        "original": "string，原文片段（必须逐字出现在原文中）",
+        "revised": "string，改后片段（必须逐字出现在改文中）",
+        "type": "grammar | syntax | collocation | punctuation | terminology | register | clarity | redundancy | cohesion | bilingual | other",
+        "reason": "string，为什么改（对应哪条规则）",
+        "preserves_meaning": "boolean，必须为 true，否则该条不得提交"
+      }
+    ],
+    "glossary": [
+      {"concept": "string", "en_form": "string", "zh_form": "string", "note": "string，缩写首现/大小写/连字符约定"}
+    ],
+    "register_notes": ["array，目标文体、受众、语域决策"],
+    "unresolved": ["array，未确认的手工项（如需要作者确认的表述）"]
+  },
+  "sources_item": {
+    "source_id": "string，材料标识",
+    "locator": "string，如 section 2 paragraph 3 / line 12 / 段落 P3",
+    "locator_type": "paragraph | sentence | line | section | page",
+    "quote": "string，原文逐字短引（用于核验定位）",
+    "note": "string，支撑哪条修改或术语决策"
+  },
+  "uncertainty_item": {
+    "item": "string，无法确定的事项",
+    "reason": "string，材料未报告/冲突/编码或公式读不出",
+    "action_required": "string，需要谁补什么"
+  },
+  "example_only": {
+    "case_id": "EXAMPLE-CASE-000",
+    "task_id": "product-arena-02-7051d92d",
+    "status": "partial",
+    "results": {
+      "revised_text": "（示例）We used 5 mL of the catalyst suspension at 25 °C, and the yield was 42%.",
+      "revisions": [
+        {"span": "sentence 1", "original": "（示例）we use 5 ml catalyst suspension in 25 °C, yield is 42%",
+         "revised": "（示例）We used 5 mL of the catalyst suspension at 25 °C, and the yield was 42%.",
+         "type": "grammar", "reason": "（示例）主谓一致与时态、单位大小写、介词", "preserves_meaning": true}
+      ],
+      "glossary": [{"concept": "（示例）catalyst suspension", "en_form": "catalyst suspension",
+                    "zh_form": "催化剂悬浮液", "note": "（示例）全篇统一"}],
+      "register_notes": ["（示例）journal paper, passive-leaning, no promotional wording"],
+      "unresolved": ["（示例）author to confirm whether 42% is molar yield"]
+    },
+    "sources": [{"source_id": "paper-example", "locator": "section 2 paragraph 1", "locator_type": "paragraph",
+                 "quote": "（示例）verbatim excerpt from the source", "note": "（示例）supports revision 1"}],
+    "uncertainty": [{"item": "（示例）A value not reported in the source", "reason": "material does not state it",
+                     "action_required": "confirm with the author"}],
+    "changes": [{"step": "1", "action": "（示例）read case.json and task.md", "note": "（示例）identified register"}],
+    "artifacts": [],
+    "metadata": {"skill_name": "academic-language-polishing", "skill_version": "1.0.0", "model": "",
+                 "runtime": "", "generated_at": "2026-01-01T00:00:00+08:00"}
+  }
+}

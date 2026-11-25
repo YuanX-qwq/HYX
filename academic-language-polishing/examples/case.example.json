@@ -1,0 +1,7 @@
+{
+  "case_id": "EXAMPLE-CASE-000",
+  "task_id": "product-arena-02-7051d92d",
+  "manuscript": {"path": "before.txt", "section": "Results", "paragraph": 1},
+  "target": {"register": "journal", "language": "en", "audience": "peer reviewers"},
+  "_note": "示例 case 文件（EXAMPLE ONLY），演示输入结构，不对应任何正式案例。"
+}

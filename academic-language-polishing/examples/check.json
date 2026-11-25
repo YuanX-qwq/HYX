@@ -1,0 +1,62 @@
+{
+  "verdict": "PASS",
+  "fails": 0,
+  "warns": 0,
+  "issues": [],
+  "passed": [
+    {
+      "kind": "number",
+      "detail": "原 4 个数值 / 改 4 个；新增=[] 丢失=[]"
+    },
+    {
+      "kind": "unit",
+      "detail": "带单位数值不一致：新增=[] 丢失=[]"
+    },
+    {
+      "kind": "citation",
+      "detail": "引用编号集合不同：新增=[] 丢失=[]"
+    },
+    {
+      "kind": "xref",
+      "detail": "图表/公式指向不同：新增=[] 丢失=[]"
+    },
+    {
+      "kind": "negation",
+      "detail": "否定标记 原 1 / 改 1（减少即可能改变结论方向）"
+    },
+    {
+      "kind": "hedge",
+      "detail": "强化词新增=[]；原文限定词 0 / 改文 1（不得把“可能/提示”升级为“证明/必然”）"
+    },
+    {
+      "kind": "condition",
+      "detail": "条件句 原 0 / 改 0（减少即丢条件）"
+    },
+    {
+      "kind": "quantifier",
+      "detail": "量词 原 [] / 改 []（all↔some 一类替换会改变外推范围）"
+    },
+    {
+      "kind": "abbr",
+      "detail": "缩写未见首次展开：[]"
+    },
+    {
+      "kind": "term",
+      "detail": "术语不一致：[]"
+    },
+    {
+      "kind": "revision",
+      "detail": "修改记录问题：[]"
+    }
+  ],
+  "coverage": 1.0,
+  "counts": {
+    "numbers": 4,
+    "citations": 0,
+    "xrefs": 0,
+    "negations": 1,
+    "hedges": 0,
+    "conditions": 0,
+    "revision_records": 4
+  }
+}
