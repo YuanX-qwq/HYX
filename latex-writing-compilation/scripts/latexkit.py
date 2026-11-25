@@ -83,8 +83,19 @@ def read(p):
     return Path(p).read_text(encoding="utf-8", errors="replace")
 
 
+SKIP_DIRS = {"build", ".git", "__pycache__", "node_modules"}
+
+
 def walk_tex(root):
-    return sorted(p for p in Path(root).rglob("*.tex") if "build" not in p.parts)
+    """只收源码树里的 .tex；按相对路径跳过 build/ 等生成目录（避免根路径里含 build 时全被过滤）。"""
+    root = Path(root).resolve()
+    out = []
+    for p in root.rglob("*.tex"):
+        rp = p.resolve().relative_to(root)
+        if any(part in SKIP_DIRS for part in rp.parts[:-1]):
+            continue
+        out.append(p)
+    return sorted(out)
 
 
 def rel(p, root):
@@ -126,7 +137,8 @@ def scan(root):
             if cand.exists():
                 graph.setdefault(rel(p, root), []).append(rel(cand, root))
 
-    bibs = sorted(rel(b, root) for b in root.rglob("*.bib"))
+    bibs = sorted(rel(b, root) for b in root.rglob("*.bib")
+                  if not any(part in SKIP_DIRS for part in b.resolve().relative_to(root).parts[:-1]))
     for b in bibs:
         sources.append({"path": b, "role": "bibliography"})
     figures = sorted(rel(f, root) for f in root.rglob("*") if f.suffix.lower() in {".pdf", ".png", ".jpg", ".eps"})
@@ -572,6 +584,7 @@ def build(root, engine="pdflatex", max_passes=3, take_pdf=True):
         "errors": errors[:20], "overfull": overfull[:20],
         "logs": log[-4000:],
         "pdf": str(pdf) if pdf.exists() else "",
+        "pdf_rel": (rel(pdf, root) if pdf.exists() else ""),
         "distro": first, "distro_os": osinfo,
         "package_versions": pkgv,
         "font_versions": font_versions(pdf) if pdf.exists() else "",
@@ -654,8 +667,8 @@ def assemble(case_path, struct, lint_res, build_res, tpl):
             "errors": [{"file": e["file"], "line": str(e["line"]), "cause": e["cause"], "fix": e["fix"]}
                        for e in b.get("errors", [])],
         },
-        "artifacts": [{"path": p, "type": "pdf" if p.endswith(".pdf") else "source"} for p in
-                      ([b.get("pdf")] if b.get("pdf") else [])],
+        "artifacts": ([{"path": b.get("pdf_rel") or b.get("pdf"), "type": "pdf"}]
+                      if b.get("pdf") else []),
         "template_compliance": {"required_fields": tpl.get("required_fields", []),
                                 "layout_ok": bool(tpl.get("layout_ok", False))},
         "reproduction_notes": {

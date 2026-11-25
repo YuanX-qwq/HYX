@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "engine": "pdflatex",
+  "passes": 3,
+  "exit_code": 0,
+  "bibtex_runs": 1,
+  "converged": true,
+  "errors": [],
+  "overfull": [],
+  "logs": "/generic/pdfescape/pdfescape.sty)\n(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)\n(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)\n(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)\n(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)\n(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)\n(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)\n(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)\n(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)\n(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)\n(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)\n(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty\n(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))\n(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))\n(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def\n(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)\n(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty\n(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))\n(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)\n(/home/user/Doubao/chats/38456334520079362/build/lx-bundle/work/fixed/build/mai\nn.aux)\n*geometry* driver: auto-detecting\n*geometry* detected driver: pdftex\n(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii\n[Loading MPS to PDF converter (version 2006.09.02).]\n) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty\n(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))\n(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty\n(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)\n(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))\n(/home/user/Doubao/chats/38456334520079362/build/lx-bundle/work/fixed/build/mai\nn.out)\n(/home/user/Doubao/chats/38456334520079362/build/lx-bundle/work/fixed/build/mai\nn.out) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)\n(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)\n(./sections/abstract.tex) (./sections/intro.tex) (./sections/method.tex\n[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])\n(./sections/experiments.tex) (./sections/conclusion.tex) [2]\n(/home/user/Doubao/chats/38456334520079362/build/lx-bundle/work/fixed/build/mai\nn.bbl) [3]\n(/home/user/Doubao/chats/38456334520079362/build/lx-bundle/work/fixed/build/mai\nn.aux) )</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pf\nb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share\n/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli\nve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex\nmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist\n/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/\ntype1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p\nublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a\nmsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts\n/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr\n7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></\nusr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh\nare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex\nlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>\nOutput written on /home/user/Doubao/chats/38456334520079362/build/lx-bundle/wor\nk/fixed/build/main.pdf (3 pages, 203387 bytes).\nTranscript written on /home/user/Doubao/chats/38456334520079362/build/lx-bundle\n/work/fixed/build/main.log.\n",
+  "pdf": "/home/user/Doubao/chats/38456334520079362/build/lx-bundle/work/fixed/build/main.pdf",
+  "pdf_rel": "build/main.pdf",
+  "distro": "pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian)",
+  "distro_os": "Ubuntu 22.04.5 LTS",
+  "package_versions": [
+    {
+      "package": "geometry",
+      "version": "2020/01/02 v5.9 Page Geometry"
+    },
+    {
+      "package": "amsmath",
+      "version": "2021/10/15 v2.17l AMS math features"
+    },
+    {
+      "package": "amssymb",
+      "version": "2013/01/14 v3.01 AMS font symbols"
+    },
+    {
+      "package": "graphicx",
+      "version": "2021/09/16 v1.2d  Enhanced LaTeX Graphics (DPC,SPQR)"
+    },
+    {
+      "package": "booktabs",
+      "version": "2020/01/12 v1.61803398 Publication quality tables"
+    },
+    {
+      "package": "tabularx",
+      "version": "2020/01/15 v2.11c `tabularx' package (DPC)"
+    },
+    {
+      "package": "tikz",
+      "version": "unknown"
+    },
+    {
+      "package": "natbib",
+      "version": "2010/09/13 8.31b (PWD, AO)"
+    },
+    {
+      "package": "hyperref",
+      "version": "2021-06-07 v7.00m %\n  Hypertext links for LaTeX"
+    }
+  ],
+  "font_versions": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nGBNNZQ+CMR17                         Type 1            Builtin          yes yes yes     59  0\nPGSMTU+CMR12                         Type 1            Builtin          yes yes yes     60  0\nEUWOLL+CMBX9                         Type 1            Builtin          yes yes yes     61  0\nJXGQNZ+CMR9                          Type 1            Builtin          yes yes yes     62  0\nPXFSNJ+CMMI9                         Type 1            Builtin          yes yes yes     63  0\nNPWJYQ+CMBX12                        Type 1            Builtin          yes yes yes     64  0\nKUADLQ+CMR10                         Type 1            Builtin          yes yes yes     65  0\nDWIIKN+CMMI10                        Type 1            Builtin          yes yes yes     66  0\nILMEXE+CMBX10                        Type 1            Builtin          yes yes yes     68  0\nSIKCYS+CMMI7                         Type 1            Builtin          yes yes yes     69  0\nWSJDAB+CMSY10                        Type 1            Builtin          yes yes yes     70  0\nQDTWCG+MSBM10                        Type 1            Builtin          yes yes yes     71  0\nMQYKRD+CMR7                          Type 1            Builtin          yes yes yes     73  0\nWFFRLI+CMEX10                        Type 1            Builtin          yes yes yes     74  0\nABHTUF+CMSY7                         Type 1            Builtin          yes yes yes     75  0\nYJUITE+CMMI5                         Type 1            Builtin          yes yes yes     76  0\nFXLCHZ+CMTI10                        Type 1            Builtin          yes yes yes     98  0",
+  "commands": "pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex; bibtex main（cwd=build，BIBINPUTS=/home/user/Doubao/chats/38456334520079362/build/lx-bundle/work/fixed）; pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex; pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex"
+}

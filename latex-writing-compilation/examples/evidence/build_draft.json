@@ -1,0 +1,98 @@
+{
+  "status": "failed",
+  "engine": "pdflatex",
+  "passes": 3,
+  "exit_code": 1,
+  "bibtex_runs": 1,
+  "converged": false,
+  "errors": [
+    {
+      "file": "sections/method.tex",
+      "line": 42,
+      "cause": "Package PGF Math Error: Unknown function `of' (in 'of",
+      "fix": "tikz 库未加载：right=of 等相对定位语法需 \\usetikzlibrary{positioning}"
+    },
+    {
+      "file": "sections/method.tex",
+      "line": 43,
+      "cause": "Package PGF Math Error: Unknown function `of' (in 'of",
+      "fix": "tikz 库未加载：right=of 等相对定位语法需 \\usetikzlibrary{positioning}"
+    },
+    {
+      "file": "sections/method.tex",
+      "line": 44,
+      "cause": "Package PGF Math Error: Unknown function `of' (in 'of",
+      "fix": "tikz 库未加载：right=of 等相对定位语法需 \\usetikzlibrary{positioning}"
+    },
+    {
+      "file": "sections/method.tex",
+      "line": 45,
+      "cause": "Package PGF Math Error: Unknown function `of' (in 'of",
+      "fix": "tikz 库未加载：right=of 等相对定位语法需 \\usetikzlibrary{positioning}"
+    },
+    {
+      "file": "sections/experiments.tex",
+      "line": 23,
+      "cause": "Undefined control sequence.",
+      "fix": "命令未定义：若为 \\toprule/\\multirow/\\textcolor 等，preamble 加载对应宏包"
+    },
+    {
+      "file": "sections/experiments.tex",
+      "line": 25,
+      "cause": "Undefined control sequence.",
+      "fix": "命令未定义：若为 \\toprule/\\multirow/\\textcolor 等，preamble 加载对应宏包"
+    },
+    {
+      "file": "sections/experiments.tex",
+      "line": 29,
+      "cause": "Undefined control sequence.",
+      "fix": "命令未定义：若为 \\toprule/\\multirow/\\textcolor 等，preamble 加载对应宏包"
+    }
+  ],
+  "overfull": [
+    {
+      "file": "sections/experiments.tex",
+      "line": 22,
+      "end_line": 31,
+      "too_wide_pt": 320.24347,
+      "cause": "Overfull \\hbox 320.2pt too wide"
+    }
+  ],
+  "logs": "r immediate help.\n ...                                              \n                                                  \nl.42   \\node (enc) [right=of in]\n                                 {GINE\\\\encoder};\n\n./sections/method.tex:43: Package PGF Math Error: Unknown function `of' (in 'of\n enc').\n\nSee the PGF Math package documentation for explanation.\nType  H <return>  for immediate help.\n ...                                              \n                                                  \nl.43   \\node (sp) [right=of enc]\n                                 {Sparse\\\\attention};\n\n./sections/method.tex:44: Package PGF Math Error: Unknown function `of' (in 'of\n sp').\n\nSee the PGF Math package documentation for explanation.\nType  H <return>  for immediate help.\n ...                                              \n                                                  \nl.44   \\node (ro) [right=of sp]\n                                {Attended\\\\readout};\n\n./sections/method.tex:45: Package PGF Math Error: Unknown function `of' (in 'of\n ro').\n\nSee the PGF Math package documentation for explanation.\nType  H <return>  for immediate help.\n ...                                              \n                                                  \nl.45   \\node (out) [right=of ro]\n                                 {Property\\\\prediction};\n\nPackage pgf Warning: Returning node center instead of a point on node border. D\nid you specify a point identical to the center of node ``in''? on input line 46\n.\n\n) (./sections/experiments.tex\n\nLaTeX Warning: Reference `tab:metrics' on page 2 undefined on input line 13.\n\n./sections/experiments.tex:23: Undefined control sequence.\nl.23 \\toprule\n             \n./sections/experiments.tex:25: Undefined control sequence.\n<recently read> \\midrule \n                         \nl.25 \\midrule\n             \n./sections/experiments.tex:29: Undefined control sequence.\n<recently read> \\bottomrule \n                            \nl.29 \\bottomrule\n                \n\nOverfull \\hbox (320.24347pt too wide) in paragraph at lines 22--31\n [][] \n) (./sections/conclusion.tex)\n(/home/user/Doubao/chats/38456334520079362/build/lx-bundle/outputs/submission/e\nxamples/draft/build/main.bbl [2])\n\nPackage natbib Warning: There were undefined citations.\n\n[3]\n(/home/user/Doubao/chats/38456334520079362/build/lx-bundle/outputs/submission/e\nxamples/draft/build/main.aux)\n\nLaTeX Warning: There were undefined references.\n\n )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am\nsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts\n/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm\ni7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb>\n</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/s\nhare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te\nxlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dis\nt/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/\ntype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/\npublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/symbols/msbm10.pfb>\nOutput written on /home/user/Doubao/chats/38456334520079362/build/lx-bundle/out\nputs/submission/examples/draft/build/main.pdf (3 pages, 203294 bytes).\nTranscript written on /home/user/Doubao/chats/38456334520079362/build/lx-bundle\n/outputs/submission/examples/draft/build/main.log.\n",
+  "pdf": "/home/user/Doubao/chats/38456334520079362/build/lx-bundle/outputs/submission/examples/draft/build/main.pdf",
+  "pdf_rel": "build/main.pdf",
+  "distro": "pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian)",
+  "distro_os": "Ubuntu 22.04.5 LTS",
+  "package_versions": [
+    {
+      "package": "geometry",
+      "version": "2020/01/02 v5.9 Page Geometry"
+    },
+    {
+      "package": "amsmath",
+      "version": "2021/10/15 v2.17l AMS math features"
+    },
+    {
+      "package": "amssymb",
+      "version": "2013/01/14 v3.01 AMS font symbols"
+    },
+    {
+      "package": "graphicx",
+      "version": "2021/09/16 v1.2d  Enhanced LaTeX Graphics (DPC,SPQR)"
+    },
+    {
+      "package": "tikz",
+      "version": "unknown"
+    },
+    {
+      "package": "natbib",
+      "version": "2010/09/13 8.31b (PWD, AO)"
+    },
+    {
+      "package": "hyperref",
+      "version": "2021-06-07 v7.00m %\n  Hypertext links for LaTeX"
+    }
+  ],
+  "font_versions": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nGBNNZQ+CMR17                         Type 1            Builtin          yes yes yes     57  0\nPGSMTU+CMR12                         Type 1            Builtin          yes yes yes     58  0\nEUWOLL+CMBX9                         Type 1            Builtin          yes yes yes     59  0\nJXGQNZ+CMR9                          Type 1            Builtin          yes yes yes     60  0\nPXFSNJ+CMMI9                         Type 1            Builtin          yes yes yes     61  0\nNPWJYQ+CMBX12                        Type 1            Builtin          yes yes yes     62  0\nKUADLQ+CMR10                         Type 1            Builtin          yes yes yes     63  0\nDWIIKN+CMMI10                        Type 1            Builtin          yes yes yes     64  0\nEEGPEP+CMBX10                        Type 1            Builtin          yes yes yes     65  0\nSIKCYS+CMMI7                         Type 1            Builtin          yes yes yes     67  0\nWSJDAB+CMSY10                        Type 1            Builtin          yes yes yes     68  0\nQDTWCG+MSBM10                        Type 1            Builtin          yes yes yes     69  0\nMQYKRD+CMR7                          Type 1            Builtin          yes yes yes     71  0\nWFFRLI+CMEX10                        Type 1            Builtin          yes yes yes     72  0\nABHTUF+CMSY7                         Type 1            Builtin          yes yes yes     73  0\nYJUITE+CMMI5                         Type 1            Builtin          yes yes yes     74  0\nFXLCHZ+CMTI10                        Type 1            Builtin          yes yes yes     91  0",
+  "commands": "pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex; bibtex main（cwd=build，BIBINPUTS=/home/user/Doubao/chats/38456334520079362/build/lx-bundle/outputs/submission/examples/draft）; pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex; pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex"
+}

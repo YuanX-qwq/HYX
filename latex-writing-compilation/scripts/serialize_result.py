@@ -102,9 +102,11 @@ def main(argv=None):
             sys.exit("status=success 但 build.errors 非空")
         if not res["template_compliance"].get("layout_ok"):
             sys.exit("status=success 但 layout_ok=false")
-        for k in ("engine", "commands", "distro"):
+        for k in ("commands", "distro"):
             if not str(notes.get(k, "")).strip():
                 sys.exit("status=success 但 reproduction_notes.%s 为空：构建不可复现" % k)
+        if not str(notes.get("engine") or b.get("engine") or "").strip():
+            sys.exit("status=success 但 engine 为空：构建不可复现")
         try:
             if int(str(b.get("passes", "0"))) < 1:
                 sys.exit("status=success 但 passes<1")

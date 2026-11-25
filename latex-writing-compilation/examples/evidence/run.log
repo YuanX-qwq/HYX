@@ -1,0 +1,19 @@
+# latex-writing-compilation · ARM reproduction entry
+# python: 3.12.11
+[selftest] exit=0 53/53 assertions passed
+[draft] build=failed errors=7 overfull=1 | lint error=5 warn=2 codes=FLOAT_NOT_REFERENCED,FLOAT_PLACEMENT,MISSING_BIB_KEY,MISSING_PACKAGE,UNDEFINED_REF,WIDE_TABLE
+  err: sections/method.tex:42 Package PGF Math Error: Unknown function `of' (in 'of
+  err: sections/method.tex:43 Package PGF Math Error: Unknown function `of' (in 'of
+  err: sections/method.tex:44 Package PGF Math Error: Unknown function `of' (in 'of
+  err: sections/method.tex:45 Package PGF Math Error: Unknown function `of' (in 'of
+  overfull: sections/experiments.tex:22 320.2pt
+[fixed] apply=8/8 applied | build=success passes=3 bibtex=1 converged=True errors=0 overfull=0
+  cmd: pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex
+  cmd: bibtex main（cwd=build，BIBINPUTS=/home/user/Doubao/chats/38456334520079362/build/lx-bundle/work/fixed）
+  cmd: pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex
+  cmd: pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex
+[template] layout_ok=True required=8 missing=none
+[artifacts] pdf=True(203387 bytes) png=preview-1.png
+[contract] exit=0 fields=9/9 status=success build=success passes=3 sources=7 uncertainty=2
+[budget] files=29 text=20 bytes=762753 max=preview-1.png(204116) symlinks=0
+ALL_OK=True assertions=53/53 draft_errors=7 fixed_passes=3 pages_pdf=203387 wall=57.1s

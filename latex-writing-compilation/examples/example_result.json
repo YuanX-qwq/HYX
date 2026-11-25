@@ -1,0 +1,180 @@
+{
+  "case_id": "EXAMPLE-CASE-013",
+  "task_id": "latex-writing-compilation",
+  "status": "success",
+  "results": {
+    "latex_sources": [
+      {
+        "path": "main.tex",
+        "role": "main"
+      },
+      {
+        "path": "sections/abstract.tex",
+        "role": "section"
+      },
+      {
+        "path": "sections/conclusion.tex",
+        "role": "section"
+      },
+      {
+        "path": "sections/experiments.tex",
+        "role": "section"
+      },
+      {
+        "path": "sections/intro.tex",
+        "role": "section"
+      },
+      {
+        "path": "sections/method.tex",
+        "role": "section"
+      },
+      {
+        "path": "refs.bib",
+        "role": "bibliography"
+      },
+      {
+        "path": "build/main.pdf",
+        "role": "figure"
+      }
+    ],
+    "build": {
+      "engine": "pdflatex",
+      "passes": "3",
+      "status": "success",
+      "logs": "x10.pfb></usr/share/texli\nve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex\nmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist\n/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/\ntype1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p\nublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a\nmsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts\n/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr\n7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></\nusr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh\nare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex\nlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>\nOutput written on /home/user/Doubao/chats/38456334520079362/build/lx-bundle/wor\nk/fixed/build/main.pdf (3 pages, 203387 bytes).\nTranscript written on /home/user/Doubao/chats/38456334520079362/build/lx-bundle\n/work/fixed/build/main.log.\n",
+      "errors": []
+    },
+    "artifacts": [
+      {
+        "path": "build/main.pdf",
+        "type": "pdf"
+      }
+    ],
+    "template_compliance": {
+      "required_fields": [
+        "title",
+        "author",
+        "abstract",
+        "section-numbering",
+        "equation-numbering",
+        "three-line-table",
+        "bibliography",
+        "citation-style"
+      ],
+      "layout_ok": true
+    },
+    "reproduction_notes": {
+      "distro": "pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian); Ubuntu 22.04.5 LTS",
+      "package_versions": "geometry 2020/01/02 v5.9 Page Geometry; amsmath 2021/10/15 v2.17l AMS math features; amssymb 2013/01/14 v3.01 AMS font symbols; graphicx 2021/09/16 v1.2d  Enhanced LaTeX Graphics (DPC,SPQR); booktabs 2020/01/12 v1.61803398 Publication quality tables; tabularx 2020/01/15 v2.11c `tabularx' package (DPC); tikz unknown; natbib 2010/09/13 8.31b (PWD, AO); hyperref 2021-06-07 v7.00m %\n  Hypertext links for LaTeX",
+      "font_versions": "name                                 type              encoding         emb sub uni object ID | ------------------------------------ ----------------- ---------------- --- --- --- --------- | GBNNZQ+CMR17                         Type 1            Builtin          yes yes yes     59  0 | PGSMTU+CMR12                         Type 1            Builtin          yes yes yes     60  0 | EUWOLL+CMBX9                         Type 1            Builtin          yes yes yes     61  0 | JXGQNZ+CMR9                          Type 1            Builtin          yes yes yes     62  0 | PXFSNJ+CMMI9            ",
+      "commands": "pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex; bibtex main（cwd=build，BIBINPUTS=/home/user/Doubao/chats/38456334520079362/build/lx-bundle/work/fixed）; pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex; pdflatex -interaction=nonstopmode -file-line-error -output-directory build main.tex"
+    }
+  },
+  "sources": [
+    {
+      "source_id": "task-md",
+      "locator": "task.md §2 验收",
+      "locator_type": "section",
+      "quote": "在 pdflatex 下 ≤3 遍编译成功，日志无 Rerun、无 undefined references/citations",
+      "note": "direct evidence（题面约束）"
+    },
+    {
+      "source_id": "logo-draft-errors",
+      "locator": "build_draft.json build.errors",
+      "locator_type": "build_log",
+      "quote": "sections/method.tex:42 Package PGF Math Error: Unknown function `of'; sections/method.tex:43 Package PGF Math Error: Unknown function `of'; sections/method.tex:44 Package PGF Math Error: Unknown function `of'; sections/method.tex:45 Package PGF Math Error: Unknown function `of'; sections/experiments.tex:23 Undefined control sequence.; sections/experiments.tex:25 Undefined control sequence.",
+      "note": "direct evidence（真实 pdflatex log）"
+    },
+    {
+      "source_id": "log-overfull",
+      "locator": "examples/draft: 表格所在行段",
+      "locator_type": "build_log",
+      "quote": "Overfull \\hbox (320.2pt too wide) in alignment",
+      "note": "direct evidence（真实 log）"
+    },
+    {
+      "source_id": "lint-errors",
+      "locator": "work/lint.json",
+      "locator_type": "static_check",
+      "quote": "error=5, warn=2; codes=FLOAT_NOT_REFERENCED,FLOAT_PLACEMENT,MISSING_BIB_KEY,MISSING_PACKAGE,UNDEFINED_REF,WIDE_TABLE",
+      "note": "static evidence（结构化诊断）"
+    },
+    {
+      "source_id": "logo-fixed",
+      "locator": "build/main.log 最后一轮",
+      "locator_type": "build_log",
+      "quote": "Output written on /home/user/Doubao/chats/38456334520079362/HYX/latex-writing-c",
+      "note": "direct evidence（真实 pdflatex log，收敛后产物）"
+    },
+    {
+      "source_id": "bibtex",
+      "locator": "build/main.blg",
+      "locator_type": "build_log",
+      "quote": "bibtex main（cwd=build）产出 .bbl，第三轮 pdflatex 后 undefined=0",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "patches",
+      "locator": "examples/patches.json",
+      "locator_type": "patch_file",
+      "quote": "8 条补丁全部命中（applied=8, failed=0）",
+      "note": "direct evidence"
+    }
+  ],
+  "uncertainty": [
+    {
+      "item": "期刊模板版本",
+      "reason": "case.json 只给 generic-journal-article，未给出版社版本号与 .cls 文件",
+      "action_required": "拿到正式模板后重跑 check（templates/template_required.json 需换成该刊必填项）"
+    },
+    {
+      "item": "字体版本",
+      "reason": "pdffonts 能列出实际嵌入字体，但 Type1 字体无版本号字段",
+      "action_required": "如需精确字体版本，用 mtxrun/pdffonts 输出的字体文件名与发行版清单对照"
+    }
+  ],
+  "changes": [
+    {
+      "step": "1",
+      "action": "scan + lint 示例稿件",
+      "note": "5 error / 2 warn，逐条定位 file/line/code/fix"
+    },
+    {
+      "step": "2",
+      "action": "pdflatex 编译原稿",
+      "note": "failed：4 处 PGF Math Error（缺 positioning 库）、\\toprule 未定义、表格 Overfull 320.2pt"
+    },
+    {
+      "step": "3",
+      "action": "apply 8 条补丁",
+      "note": "补 booktabs/tabularx/positioning、修 \\eqref/\\ref/\\cite 键、tabular→tabularx、[h]→[tbp]"
+    },
+    {
+      "step": "4",
+      "action": "pdflatex ×3 + bibtex ×1",
+      "note": "收敛：undefined=0、Overfull=0，产出 main.pdf（3 页）"
+    },
+    {
+      "step": "5",
+      "action": "check + 交付 PDF/PNG",
+      "note": "8 项模板必填全部命中，layout_ok=true"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "examples/evidence/main.pdf",
+      "type": "pdf"
+    },
+    {
+      "path": "examples/evidence/preview-1.png",
+      "type": "png"
+    }
+  ],
+  "metadata": {
+    "runtime": "python3.12 + TeX Live 2022 (pdfTeX 1.40.22)",
+    "skill_name": "latex-writing-compilation",
+    "skill_version": "1.0.0",
+    "generated_at": "2026-11-26T00:31:42+08:00",
+    "model": ""
+  }
+}
