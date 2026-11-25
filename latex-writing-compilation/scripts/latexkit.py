@@ -55,6 +55,7 @@ FIX_RULES = [
     (r"Missing \\$ inserted", "数学符号出现在文本模式：补 $...$ 或改用 \\(...\\)"),
     (r"Extra alignment tab", "列数多于 tabular 列格式：核对 & 数量与列声明"),
     (r"Misplaced \\noalign", "规则命令位置错误：\\toprule/\\midrule 必须在 tabular 首行或 \\\\ 之后"),
+    (r"PGF Math Error: Unknown function", "tikz 库未加载：right=of 等相对定位语法需 \\usetikzlibrary{positioning}"),
     (r"Runaway argument", "花括号未闭合：从报错行向前回溯未配平的花括号"),
     (r"There were undefined references", "引用未收敛：补多一遍编译并核对标签/文献键"),
     (r"Too many unprocessed floats", "浮动体积压：调整 [tbp]、缩短队列或改用 \\clearpage"),
@@ -517,13 +518,15 @@ def build(root, engine="pdflatex", max_passes=3, take_pdf=True):
     outdir.mkdir(exist_ok=True)
     if not engine_available(engine):
         return {"status": "engine_unavailable", "engine": engine, "passes": 0, "errors": [],
+                "bibtex_runs": 0, "converged": False,
                 "logs": "%s not found on PATH" % engine,
                 "note": "本机未安装 TeX 发行版：无法给出编译结论，不伪造成功",
                 "distro": "", "distro_os": "", "commands": ""}
 
     cmd = [engine, "-interaction=nonstopmode", "-file-line-error", "-output-directory", str(outdir), main.name]
-    passes, log, rc = 0, "", 1
+    passes, log, rc, bibtex_runs = 0, "", 1, 0
     commands = []
+    converged = False
     while passes < max_passes:
         passes += 1
         commands.append("%s -interaction=nonstopmode -file-line-error -output-directory build %s" % (engine, main.name))
@@ -531,21 +534,35 @@ def build(root, engine="pdflatex", max_passes=3, take_pdf=True):
         rc = r.returncode
         log = (r.stdout or "") + (r.stderr or "")
         (outdir / (main.stem + ".log")).write_text(log, encoding="utf-8", errors="replace")
-        need_more = bool(re.search(r"Rerun to get|Label\(s\) may have changed", log))
-        undef = bool(re.search(r"undefined references|Citation .+ undefined|Reference .+ undefined", log))
-        if not need_more and not undef and rc == 0:
+        undef_cit = bool(re.search(r"Citation .+ undefined|There were undefined citations", log))
+        undef_ref = bool(re.search(r"Reference .+ undefined|There were undefined references|Rerun to get", log))
+        converged = not (undef_cit or undef_ref)
+        if rc != 0 and not (undef_cit or undef_ref):
             break
-        if rc != 0 and not undef and not need_more:
+        if undef_cit and bibtex_runs == 0 and shutil.which("bibtex"):
+            bx = subprocess.run(["bibtex", main.stem], cwd=str(root), capture_output=True, text=True, timeout=120)
+            bibtex_runs += 1
+            commands.append("bibtex %s" % main.stem)
+            (outdir / (main.stem + ".blg")).write_text((bx.stdout or "") + (bx.stderr or ""),
+                                                      encoding="utf-8", errors="replace")
+            continue
+        if converged:
             break
 
     errors, overfull = parse_log(log, root, rel(main, root))
     pdf = outdir / (main.stem + ".pdf")
-    status = "success" if rc == 0 and not errors and not overfull else ("failed" if rc != 0 else "warnings")
+    if rc != 0:
+        status = "failed"
+    elif errors or overfull or not converged:
+        status = "warnings"
+    else:
+        status = "success"
     first, osinfo = distro_info(engine)
     info = scan(root)
     pkgv = pkg_versions(info.get("packages", [])[:12])
     return {
         "status": status, "engine": engine, "passes": passes, "exit_code": rc,
+        "bibtex_runs": bibtex_runs, "converged": converged,
         "errors": errors[:20], "overfull": overfull[:20],
         "logs": log[-4000:],
         "pdf": str(pdf) if pdf.exists() else "",

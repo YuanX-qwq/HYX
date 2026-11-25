@@ -121,10 +121,13 @@ def main():
     results.append(t("parse_log_overfull", lambda: over and abs(over[0]["too_wide_pt"] - 18.7) < 1e-6
                      and over[0]["line"] == 21))
     results.append(t("fix_rule_package", lambda: "宏包" in lk.fix_for("Undefined control sequence.", "", [], 0)))
+    results.append(t("fix_rule_tikz_lib", lambda: "positioning" in lk.fix_for(
+        "Package PGF Math Error: Unknown function `of' (in 'of in')", "", [], 0)))
     results.append(t("fix_rule_citation", lambda: "文献键" in lk.fix_for("Citation `a' undefined", "", [], 0)))
 
     b = lk.build(fixed, "pdflatex_does_not_exist")
-    results.append(t("build_degrades_honestly", lambda: b["status"] == "engine_unavailable" and b["passes"] == 0))
+    results.append(t("build_degrades_honestly", lambda: b["status"] == "engine_unavailable" and b["passes"] == 0
+                     and b["bibtex_runs"] == 0 and b["converged"] is False))
 
     # 序列化契约
     case = json.loads(CASE.read_text(encoding="utf-8"))
