@@ -540,9 +540,15 @@ def build(root, engine="pdflatex", max_passes=3, take_pdf=True):
         if rc != 0 and not (undef_cit or undef_ref):
             break
         if undef_cit and bibtex_runs == 0 and shutil.which("bibtex"):
-            bx = subprocess.run(["bibtex", main.stem], cwd=str(root), capture_output=True, text=True, timeout=120)
+            # aux 在 -output-directory 指定的目录里，bibtex 必须在同一目录运行；
+            # .bib 可以留在源码根目录，用 BIBINPUTS 指过去
+            env = dict(os.environ)
+            env["BIBINPUTS"] = str(root) + os.sep + (":" if os.sep == "/" else ";")
+            env["BSTINPUTS"] = str(root) + os.sep + (":" if os.sep == "/" else ";")
+            bx = subprocess.run(["bibtex", main.stem], cwd=str(outdir), env=env,
+                                capture_output=True, text=True, timeout=120)
             bibtex_runs += 1
-            commands.append("bibtex %s" % main.stem)
+            commands.append("bibtex %s（cwd=build，BIBINPUTS=%s）" % (main.stem, root))
             (outdir / (main.stem + ".blg")).write_text((bx.stdout or "") + (bx.stderr or ""),
                                                       encoding="utf-8", errors="replace")
             continue
