@@ -675,7 +675,8 @@ def cmd_dedup(a):
     recs = parse_library(load_text(a.library), a.format)
     merged, groups, _ = dedup_records(recs)
     print(json.dumps({"merged": merged,
-                      "groups": [{"members": g["members"], "basis": g["basis"]} for g in groups],
+                      "groups": [{"keep_key": g["keep_key"], "members": g["merged_keys"],
+                                  "basis": [b["rule"] for b in g["basis"]]} for g in groups],
                       "count_in": len(recs), "count_out": len(merged)},
                      ensure_ascii=False, indent=2))
 
