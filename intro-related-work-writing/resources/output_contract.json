@@ -1,0 +1,73 @@
+{
+  "_note": "示例（EXAMPLE ONLY）。本文件仅演示 result.json 结构，不是任何正式案例的答案；评测结果必须来自真实输入。",
+  "case_id": "EXAMPLE-CASE-000",
+  "task_id": "product-arena-04-4b82ad21",
+  "status": "partial",
+  "results": {
+    "background": {
+      "thread": "研究脉络（示例）：2020–2024 年，6 条已引工作，主要发表渠道 Journal of Materials Data、Computational Materials Science 等",
+      "problem": "问题设定（problem）：多组分吸附预测的基准数据与任务定义",
+      "constraints": "技术约束：湿度条件下的稳定性、单组分数据外推的限制",
+      "open_issue": "多篇已引工作在相同条件下受限：多组分与柔性框架的联合设定尚未覆盖"
+    },
+    "related_work": [
+      {
+        "group": "problem-dimension",
+        "dimension": "problem",
+        "works": [
+          {
+            "ref": "smith2020gas",
+            "conclusion": "We introduce a benchmark dataset of 12 metal-organic frameworks and their gas uptake isotherms to define the task of uptake prediction.",
+            "conditions": "",
+            "limitation": "However, these models are limited to single-component adsorption."
+          }
+        ]
+      }
+    ],
+    "gap": {
+      "gap": "多篇已引工作在相同条件下受限：However, these models are limited to single-component adsorption.",
+      "evidence": "smith2020gas: However, these models are limited to single-component adsorption.; li2021gnn: However, these models are limited to single-component adsorption.",
+      "how_paper_fills": ""
+    },
+    "contributions": [
+      {"claim": "A dual-network model for multicomponent adsorption prediction", "evidence_locator": "fig:1"},
+      {"claim": "Selectivity MAE of 0.08 on 12 held-out frameworks", "evidence_locator": "res:R1"}
+    ],
+    "citations_coverage": {
+      "key_works": ["smith2020gas", "li2021gnn", "chen2022cg"],
+      "recent_works": ["kim2024flow"],
+      "missing": []
+    }
+  },
+  "sources": [
+    {
+      "source_id": "smith2020gas",
+      "locator": "library record: smith2020gas",
+      "locator_type": "bibliography_record",
+      "quote": "We introduce a benchmark dataset of 12 metal-organic frameworks and their gas uptake isotherms to define the task of uptake prediction.",
+      "note": "conclusion/conditions/limitation 均从该记录抽取"
+    }
+  ],
+  "uncertainty": [
+    {
+      "item": "正文无引用的论断 1 句",
+      "reason": "事实句缺少引用标记",
+      "action_required": "补引用或标为作者判断"
+    }
+  ],
+  "changes": [
+    {"step": "1", "action": "解析文献库", "note": "6 条记录"},
+    {"step": "2", "action": "按维度分组", "note": "3 个维度：problem、method、evaluation"},
+    {"step": "3", "action": "推导研究空白", "note": "supported（支持 2 条）"},
+    {"step": "4", "action": "贡献与图表结果对照", "note": "3 条通过、1 条定位失败被剔除"},
+    {"step": "5", "action": "引用覆盖审计", "note": "缺失 0 项，无引用事实句 1 句"}
+  ],
+  "artifacts": [],
+  "metadata": {
+    "skill_name": "intro-related-work-writing",
+    "skill_version": "1.0.0",
+    "model": "",
+    "runtime": "",
+    "generated_at": "2026-01-01T00:00:00+08:00"
+  }
+}

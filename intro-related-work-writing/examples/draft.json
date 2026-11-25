@@ -1,0 +1,191 @@
+{
+  "case_id": "EXAMPLE-CASE-000",
+  "task_id": "product-arena-04-4b82ad21",
+  "status": "partial",
+  "results": {
+    "background": {
+      "thread": "研究脉络：2019–2024 年，6 条已引工作，主要发表渠道 AI for Materials、Computational Materials Science、Journal of Materials Data",
+      "problem": "问题设定（problem）：We introduce a benchmark dataset of 12 metal-organic frameworks and their gas uptake isotherms to define the task of uptake prediction.",
+      "constraints": "技术约束：Under humid conditions the model reproduces experimental swelling within 5 percent. However, our approach is limited to single-component systems.；Transfer learning improves adsorption prediction when experimental data are scarce. The evaluation uses three baselines and reports mean absolute error.；T",
+      "open_issue": "多篇已引工作在相同条件下受限：However, these models are limited to single-component adsorption."
+    },
+    "related_work": [
+      {
+        "group": "problem-dimension",
+        "dimension": "problem",
+        "works": [
+          {
+            "ref": "smith2020gas",
+            "conclusion": "We introduce a benchmark dataset of 12 metal-organic frameworks and their gas uptake isotherms to define the task of uptake prediction.",
+            "conditions": "",
+            "limitation": "However, these models are limited to single-component adsorption."
+          }
+        ]
+      },
+      {
+        "group": "method-dimension",
+        "dimension": "method",
+        "works": [
+          {
+            "ref": "li2021gnn",
+            "conclusion": "We propose a graph neural network model that predicts adsorption isotherms from framework structures.",
+            "conditions": "",
+            "limitation": "However, these models are limited to single-component adsorption."
+          },
+          {
+            "ref": "chen2022cg",
+            "conclusion": "A coarse-grained model is developed to describe framework flexibility.",
+            "conditions": "Under humid conditions the model reproduces experimental swelling within 5 percent. However, our approach is limited to single-component systems.",
+            "limitation": "However, our approach is limited to single-component systems."
+          }
+        ]
+      },
+      {
+        "group": "evaluation-dimension",
+        "dimension": "evaluation",
+        "works": [
+          {
+            "ref": "wang2023transfer",
+            "conclusion": "Transfer learning improves adsorption prediction when experimental data are scarce.",
+            "conditions": "Transfer learning improves adsorption prediction when experimental data are scarce. The evaluation uses three baselines and reports mean absolute error.",
+            "limitation": "The approach is restricted to equilibrium conditions and cannot describe kinetics."
+          },
+          {
+            "ref": "zhao2019exp",
+            "conclusion": "High-throughput experiments measure multicomponent selectivity in 40 frameworks.",
+            "conditions": "The evaluation metric is selectivity at 1 bar. The experiments only cover room temperature, which restricts extrapolation to other conditions.",
+            "limitation": "The experiments only cover room temperature, which restricts extrapolation to other conditions."
+          },
+          {
+            "ref": "kim2024flow",
+            "conclusion": "A generative flow model proposes new framework structures.",
+            "conditions": "",
+            "limitation": "The approach cannot enforce synthesizability, so candidates require experimental validation."
+          }
+        ]
+      }
+    ],
+    "gap": {
+      "gap": "多篇已引工作在相同条件下受限：However, these models are limited to single-component adsorption.",
+      "evidence": "smith2020gas: However, these models are limited to single-component adsorption.; li2021gnn: However, these models are limited to single-component adsorption.",
+      "how_paper_fills": ""
+    },
+    "contributions": [
+      {
+        "claim": "A dual-network model for multicomponent adsorption prediction",
+        "evidence_locator": "fig:1"
+      },
+      {
+        "claim": "Selectivity MAE of 0.08 on 12 held-out frameworks",
+        "evidence_locator": "res:R1"
+      },
+      {
+        "claim": "Robust under humid conditions with uptake RMSE 4.2 mmol/g",
+        "evidence_locator": "res:R2"
+      }
+    ],
+    "citations_coverage": {
+      "key_works": [
+        "smith2020gas",
+        "li2021gnn",
+        "chen2022cg"
+      ],
+      "recent_works": [
+        "li2021gnn",
+        "chen2022cg",
+        "wang2023transfer",
+        "kim2024flow"
+      ],
+      "missing": []
+    }
+  },
+  "sources": [
+    {
+      "source_id": "smith2020gas",
+      "locator": "library record: smith2020gas",
+      "locator_type": "bibliography_record",
+      "quote": "We introduce a benchmark dataset of 12 metal-organic frameworks and their gas uptake isotherms to define the task of uptake prediction. The dataset provides a c",
+      "note": "conclusion/conditions/limitation 均从该记录抽取"
+    },
+    {
+      "source_id": "li2021gnn",
+      "locator": "library record: li2021gnn",
+      "locator_type": "bibliography_record",
+      "quote": "We propose a graph neural network model that predicts adsorption isotherms from framework structures. The model is trained on 8 frameworks and evaluated with a ",
+      "note": "conclusion/conditions/limitation 均从该记录抽取"
+    },
+    {
+      "source_id": "chen2022cg",
+      "locator": "library record: chen2022cg",
+      "locator_type": "bibliography_record",
+      "quote": "A coarse-grained model is developed to describe framework flexibility. Under humid conditions the model reproduces experimental swelling within 5 percent. Howev",
+      "note": "conclusion/conditions/limitation 均从该记录抽取"
+    },
+    {
+      "source_id": "wang2023transfer",
+      "locator": "library record: wang2023transfer",
+      "locator_type": "bibliography_record",
+      "quote": "Transfer learning improves adsorption prediction when experimental data are scarce. The evaluation uses three baselines and reports mean absolute error. The app",
+      "note": "conclusion/conditions/limitation 均从该记录抽取"
+    },
+    {
+      "source_id": "zhao2019exp",
+      "locator": "library record: zhao2019exp",
+      "locator_type": "bibliography_record",
+      "quote": "High-throughput experiments measure multicomponent selectivity in 40 frameworks. The evaluation metric is selectivity at 1 bar. The experiments only cover room ",
+      "note": "conclusion/conditions/limitation 均从该记录抽取"
+    },
+    {
+      "source_id": "kim2024flow",
+      "locator": "library record: kim2024flow",
+      "locator_type": "bibliography_record",
+      "quote": "A generative flow model proposes new framework structures. The model is evaluated by simulated uptake and compared against two baselines. The approach cannot en",
+      "note": "conclusion/conditions/limitation 均从该记录抽取"
+    }
+  ],
+  "uncertainty": [
+    {
+      "item": "正文无引用的论断 1 句",
+      "reason": "事实句缺少引用标记",
+      "action_required": "补引用或标为作者判断"
+    },
+    {
+      "item": "正文引用了库外条目 ['ghost2025']",
+      "reason": "引用键在文献库中不存在",
+      "action_required": "核对键名或补条目"
+    },
+    {
+      "item": "贡献条目 1 条定位不上或对不上：tab:9",
+      "reason": "本文材料中缺少该图表/结果编号，或论断与图表说明无词元重合",
+      "action_required": "补图表/结果，或改写贡献并重新对照"
+    }
+  ],
+  "changes": [
+    {
+      "step": "1",
+      "action": "解析文献库",
+      "note": "6 条记录"
+    },
+    {
+      "step": "2",
+      "action": "按维度分组",
+      "note": "分组 3 个：problem、method、evaluation"
+    },
+    {
+      "step": "3",
+      "action": "推导研究空白",
+      "note": "supported（支持 2 条）"
+    },
+    {
+      "step": "4",
+      "action": "贡献与图表结果对照",
+      "note": "核对 4 条"
+    },
+    {
+      "step": "5",
+      "action": "引用覆盖审计",
+      "note": "缺失 0 项，无引用事实句 1 句"
+    }
+  ],
+  "artifacts": []
+}

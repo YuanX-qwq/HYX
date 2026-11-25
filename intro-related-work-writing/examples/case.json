@@ -1,0 +1,24 @@
+{
+  "case_id": "EXAMPLE-CASE-000",
+  "task_id": "product-arena-04-4b82ad21",
+  "paper": {
+    "title": "Dual-network prediction of multicomponent adsorption in flexible frameworks",
+    "figures": [
+      {"id": "1", "caption": "Schematic of the dual-network framework for multicomponent adsorption prediction"},
+      {"id": "3", "caption": "Parity plot of predicted versus measured selectivity on held-out frameworks"}
+    ],
+    "tables": [
+      {"id": "2", "caption": "Comparison of predicted selectivity across 12 metal-organic frameworks"}
+    ],
+    "results": [
+      {"id": "R1", "name": "selectivity MAE", "value": "0.08", "unit": "-", "note": "held-out 12 frameworks"},
+      {"id": "R2", "name": "uptake RMSE", "value": "4.2", "unit": "mmol/g", "note": "humid conditions"}
+    ],
+    "contributions": [
+      {"claim": "A dual-network model for multicomponent adsorption prediction", "evidence_locator": "fig:1"},
+      {"claim": "Selectivity MAE of 0.08 on 12 held-out frameworks", "evidence_locator": "res:R1"},
+      {"claim": "Robust under humid conditions with uptake RMSE 4.2 mmol/g", "evidence_locator": "res:R2"},
+      {"claim": "Outperforms every published baseline on all benchmarks", "evidence_locator": "tab:9"}
+    ]
+  }
+}

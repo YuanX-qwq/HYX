@@ -66,3 +66,12 @@
 - 自测：python3 reference-citation-management/tests/selftest.py（28 项）
 
 同步自 Bohrium 挑战「写作04｜参考文献与引用管理」（product-arena-03-429cc14d）的提交包。
+## intro-related-work-writing
+
+引言与相关工作写作 Skill：把文献库变成按问题/方法/评价三维分组、带结论-条件-局限的比较表，仅在 ≥2 条已引工作共享局限时推导研究空白，贡献逐条绑定 fig/tab/res 编号，并审计引用覆盖（无引用事实句、关键与近期工作缺失、库外键）。
+
+- 入口：[intro-related-work-writing/SKILL.md](intro-related-work-writing/SKILL.md)
+- 引擎：[intro-related-work-writing/scripts/introkit.py](intro-related-work-writing/scripts/introkit.py)
+- 自测：python3 intro-related-work-writing/tests/selftest.py（31 项）
+
+同步自 Bohrium 挑战「写作08｜引言与相关工作写作」（product-arena-04-4b82ad21）的提交包。
