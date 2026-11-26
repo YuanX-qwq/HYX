@@ -1,0 +1,54 @@
+{
+  "_note": "示例（EXAMPLE ONLY）。本文件仅演示 result.json 结构，不是任何正式案例的答案；评测结果必须来自真实输入。",
+  "case_id": "EXAMPLE-CASE-000",
+  "task_id": "example-challenge",
+  "status": "partial",
+  "results": {
+    "paper_card": {
+      "research_question": "（示例）",
+      "data": "（示例）",
+      "methods": "（示例）",
+      "findings": "（示例）",
+      "limitations": "（示例）"
+    },
+    "section_notes": [],
+    "knowledge_points": [],
+    "comparison_fields": [
+      "research_question",
+      "methods",
+      "findings",
+      "limitations"
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "paper-example",
+      "locator": "section 1, paragraph 2",
+      "locator_type": "paragraph",
+      "quote": "verbatim excerpt from the source",
+      "note": "direct evidence"
+    }
+  ],
+  "uncertainty": [
+    {
+      "item": "A value not reported in the source",
+      "reason": "material does not state it",
+      "action_required": "confirm with the author or another source"
+    }
+  ],
+  "changes": [
+    {
+      "step": "1",
+      "action": "Read case.json and task.md",
+      "note": "identified scope and constraints"
+    }
+  ],
+  "artifacts": [],
+  "metadata": {
+    "skill_name": "literature-structured-notes",
+    "skill_version": "1.0.0",
+    "model": "",
+    "runtime": "",
+    "generated_at": "2026-01-01T00:00:00+08:00"
+  }
+}

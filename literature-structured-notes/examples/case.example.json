@@ -1,0 +1,56 @@
+{
+  "case_id": "CASE-NOTES-0001",
+  "task_id": "product-arena-06-6d8cf72b",
+  "paper": {
+    "source_id": "paper-01",
+    "title": "Copper-Doped Titania for Solar CO2 Photoreduction (synthetic example)",
+    "authors": ["A. Example", "B. Example"],
+    "year": 2026,
+    "doi_or_id": "10.0000/example.notes.0001"
+  },
+  "sections": [
+    {
+      "title": "Abstract",
+      "paragraphs": [
+        {"id": "a1", "text": "This study asks whether copper doping improves CO2 photoreduction over titania under visible light. We prepared Cu-doped TiO2 samples by sol-gel and tested them in a batch photoreactor at 25 °C."},
+        {"id": "a2", "text": "The doped catalyst reached a CO selectivity of 92% at 25 °C, while the undoped reference reached 61%."}
+      ]
+    },
+    {
+      "title": "1. Introduction",
+      "paragraphs": [
+        {"id": "i1", "text": "Solar-driven CO2 reduction offers a route to carbon-neutral fuels, but pristine TiO2 absorbs mainly ultraviolet light."},
+        {"id": "i2", "text": "Whether transition-metal doping shifts the absorption edge while preserving selectivity remains an open question for dilute copper loadings."}
+      ]
+    },
+    {
+      "title": "2. Methods",
+      "paragraphs": [
+        {"id": "m1", "text": "We synthesized Cu-doped TiO2 with nominal Cu loadings of 0.5, 1.0 and 2.0 wt% using sol-gel, and analyzed phase composition by XRD."},
+        {"id": "m2", "text": "Samples were tested in a 100 mL batch photoreactor under 420 nm cut-off illumination at 25 °C and 1 bar, with CO and CH4 quantified by gas chromatography."}
+      ]
+    },
+    {
+      "title": "3. Results",
+      "paragraphs": [
+        {"id": "r1", "text": "The 1.0 wt% sample reached a CO selectivity of 92% and a CO yield of 14 umol g-1 h-1, whereas the undoped reference reached only 61% selectivity."},
+        {"id": "r2", "text": "XRD showed no detectable CuO phase at 0.5 and 1.0 wt%, indicating that copper remains highly dispersed in the titania lattice."},
+        {"id": "r3", "text": "At 2.0 wt% loading, selectivity decreased to 74% and CH4 became detectable, suggesting that agglomerated copper sites favor deeper reduction."}
+      ]
+    },
+    {
+      "title": "4. Discussion",
+      "paragraphs": [
+        {"id": "d1", "text": "These results indicate that dilute copper doping extends visible-light absorption without sacrificing CO selectivity."},
+        {"id": "d2", "text": "The improvement is consistent with copper acting as a shallow trap that suppresses charge recombination, although the evidence here is indirect."}
+      ]
+    },
+    {
+      "title": "5. Limitations",
+      "paragraphs": [
+        {"id": "l1", "text": "This study is limited to one batch reactor and 4 h runs; stability beyond 24 h and the effect of humidity were not examined."},
+        {"id": "l2", "text": "Future work should test the catalysts under solar-spectrum illumination and quantify copper speciation by XAS."}
+      ]
+    }
+  ]
+}

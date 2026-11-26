@@ -1,0 +1,316 @@
+{
+  "case_id": "CASE-NOTES-0001",
+  "task_id": "product-arena-06-6d8cf72b",
+  "status": "success",
+  "results": {
+    "paper_card": {
+      "research_question": "This study asks whether copper doping improves CO2 photoreduction over titania under visible light.",
+      "data": "Samples were tested in a 100 mL batch photoreactor under 420 nm cut-off illumination at 25 °C and 1 bar, with CO and CH4 quantified by gas chromatography.",
+      "methods": "We synthesized Cu-doped TiO2 with nominal Cu loadings of 0.5, 1.0 and 2.0 wt% using sol-gel, and analyzed phase composition by XRD. Samples were tested in a 100 mL batch photoreactor under 420 nm cut-off illumination at ",
+      "findings": "The 1.0 wt% sample reached a CO selectivity of 92% and a CO yield of 14 umol g-1 h-1, whereas the undoped reference reached only 61% selectivity. XRD showed no detectable CuO phase at 0.5 and 1.0 wt%, indicating that cop",
+      "limitations": "This study is limited to one batch reactor and 4 h runs; stability beyond 24 h and the effect of humidity were not examined. Future work should test the catalysts under solar-spectrum illumination and quantify copper spe"
+    },
+    "section_notes": [
+      {
+        "section": "Abstract",
+        "purpose": "This study asks whether copper doping improves CO2 photoreduction over titania under visible light.",
+        "method": "",
+        "result": "The doped catalyst reached a CO selectivity of 92% at 25 °C, while the undoped reference reached 61%.",
+        "conclusion": "",
+        "source_id": "paper-01",
+        "locator": "section Abstract, paragraph a1"
+      },
+      {
+        "section": "1. Introduction",
+        "purpose": "Solar-driven CO2 reduction offers a route to carbon-neutral fuels, but pristine TiO2 absorbs mainly ultraviolet light.",
+        "method": "",
+        "result": "",
+        "conclusion": "",
+        "source_id": "paper-01",
+        "locator": "section 1. Introduction, paragraph i1"
+      },
+      {
+        "section": "2. Methods",
+        "purpose": "We synthesized Cu-doped TiO2 with nominal Cu loadings of 0.5, 1.0 and 2.0 wt% using sol-gel, and analyzed phase composition by XRD.",
+        "method": "",
+        "result": "",
+        "conclusion": "",
+        "source_id": "paper-01",
+        "locator": "section 2. Methods, paragraph m1"
+      },
+      {
+        "section": "3. Results",
+        "purpose": "The 1.0 wt% sample reached a CO selectivity of 92% and a CO yield of 14 umol g-1 h-1, whereas the undoped reference reached only 61% selectivity.",
+        "method": "",
+        "result": "The 1.0 wt% sample reached a CO selectivity of 92% and a CO yield of 14 umol g-1 h-1, whereas the undoped reference reached only 61% selectivity.",
+        "conclusion": "",
+        "source_id": "paper-01",
+        "locator": "section 3. Results, paragraph r1"
+      },
+      {
+        "section": "4. Discussion",
+        "purpose": "These results indicate that dilute copper doping extends visible-light absorption without sacrificing CO selectivity.",
+        "method": "",
+        "result": "",
+        "conclusion": "These results indicate that dilute copper doping extends visible-light absorption without sacrificing CO selectivity.",
+        "source_id": "paper-01",
+        "locator": "section 4. Discussion, paragraph d1"
+      },
+      {
+        "section": "5. Limitations",
+        "purpose": "This study is limited to one batch reactor and 4 h runs; stability beyond 24 h and the effect of humidity were not examined.",
+        "method": "",
+        "result": "",
+        "conclusion": "",
+        "source_id": "paper-01",
+        "locator": "section 5. Limitations, paragraph l1"
+      }
+    ],
+    "knowledge_points": [
+      {
+        "term": "CO2",
+        "type": "metric",
+        "statement": "This study asks whether copper doping improves CO2 photoreduction over titania under visible light.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section Abstract, paragraph a1"
+      },
+      {
+        "term": "25 °C",
+        "type": "metric",
+        "statement": "We prepared Cu-doped TiO2 samples by sol-gel and tested them in a batch photoreactor at 25 °C.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section Abstract, paragraph a1"
+      },
+      {
+        "term": "Solar-driven CO2",
+        "type": "metric",
+        "statement": "Solar-driven CO2 reduction offers a route to carbon-neutral fuels, but pristine TiO2 absorbs mainly ultraviolet light.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section 1. Introduction, paragraph i1"
+      },
+      {
+        "term": "Whether",
+        "type": "concept",
+        "statement": "Whether transition-metal doping shifts the absorption edge while preserving selectivity remains an open question for dilute copper loadings.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section 1. Introduction, paragraph i2"
+      },
+      {
+        "term": "Cu-doped TiO2",
+        "type": "metric",
+        "statement": "We synthesized Cu-doped TiO2 with nominal Cu loadings of 0.5, 1.0 and 2.0 wt% using sol-gel, and analyzed phase composition by XRD.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section 2. Methods, paragraph m1"
+      },
+      {
+        "term": "100 mL",
+        "type": "metric",
+        "statement": "Samples were tested in a 100 mL batch photoreactor under 420 nm cut-off illumination at 25 °C and 1 bar, with CO and CH4 quantified by gas chromatography.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section 2. Methods, paragraph m2"
+      },
+      {
+        "term": "14 umol",
+        "type": "metric",
+        "statement": "The 1.0 wt% sample reached a CO selectivity of 92% and a CO yield of 14 umol g-1 h-1, whereas the undoped reference reached only 61% selectivity.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section 3. Results, paragraph r1"
+      },
+      {
+        "term": "XRD",
+        "type": "concept",
+        "statement": "XRD showed no detectable CuO phase at 0.5 and 1.0 wt%, indicating that copper remains highly dispersed in the titania lattice.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section 3. Results, paragraph r2"
+      },
+      {
+        "term": "CH4",
+        "type": "metric",
+        "statement": "At 2.0 wt% loading, selectivity decreased to 74% and CH4 became detectable, suggesting that agglomerated copper sites favor deeper reduction.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section 3. Results, paragraph r3"
+      },
+      {
+        "term": "These",
+        "type": "concept",
+        "statement": "These results indicate that dilute copper doping extends visible-light absorption without sacrificing CO selectivity.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section 4. Discussion, paragraph d1"
+      },
+      {
+        "term": "4 h",
+        "type": "metric",
+        "statement": "This study is limited to one batch reactor and 4 h runs; stability beyond 24 h and the effect of humidity were not examined.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section 5. Limitations, paragraph l1"
+      },
+      {
+        "term": "Future",
+        "type": "concept",
+        "statement": "Future work should test the catalysts under solar-spectrum illumination and quantify copper speciation by XAS.",
+        "aliases": "",
+        "source_id": "paper-01",
+        "locator": "section 5. Limitations, paragraph l2"
+      }
+    ],
+    "comparison_fields": [
+      "research_question",
+      "methods",
+      "findings",
+      "limitations"
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "paper-01",
+      "locator": "section Abstract, paragraph a1",
+      "locator_type": "paragraph",
+      "quote": "This study asks whether copper doping improves CO2 photoreduction over titania under visible light.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section Abstract, paragraph a1",
+      "locator_type": "paragraph",
+      "quote": "We prepared Cu-doped TiO2 samples by sol-gel and tested them in a batch photoreactor at 25 °C.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section Abstract, paragraph a2",
+      "locator_type": "paragraph",
+      "quote": "The doped catalyst reached a CO selectivity of 92% at 25 °C, while the undoped reference reached 61%.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 1. Introduction, paragraph i1",
+      "locator_type": "paragraph",
+      "quote": "Solar-driven CO2 reduction offers a route to carbon-neutral fuels, but pristine TiO2 absorbs mainly ultraviolet light.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 1. Introduction, paragraph i2",
+      "locator_type": "paragraph",
+      "quote": "Whether transition-metal doping shifts the absorption edge while preserving selectivity remains an open question for dilute copper loadings.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 2. Methods, paragraph m1",
+      "locator_type": "paragraph",
+      "quote": "We synthesized Cu-doped TiO2 with nominal Cu loadings of 0.5, 1.0 and 2.0 wt% using sol-gel, and analyzed phase composition by XRD.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 2. Methods, paragraph m2",
+      "locator_type": "paragraph",
+      "quote": "Samples were tested in a 100 mL batch photoreactor under 420 nm cut-off illumination at 25 °C and 1 bar, with CO and CH4 quantified by gas chromatography.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 3. Results, paragraph r1",
+      "locator_type": "paragraph",
+      "quote": "The 1.0 wt% sample reached a CO selectivity of 92% and a CO yield of 14 umol g-1 h-1, whereas the undoped reference reached only 61% selectivity.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 3. Results, paragraph r2",
+      "locator_type": "paragraph",
+      "quote": "XRD showed no detectable CuO phase at 0.5 and 1.0 wt%, indicating that copper remains highly dispersed in the titania lattice.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 3. Results, paragraph r3",
+      "locator_type": "paragraph",
+      "quote": "At 2.0 wt% loading, selectivity decreased to 74% and CH4 became detectable, suggesting that agglomerated copper sites favor deeper reduction.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 4. Discussion, paragraph d1",
+      "locator_type": "paragraph",
+      "quote": "These results indicate that dilute copper doping extends visible-light absorption without sacrificing CO selectivity.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 4. Discussion, paragraph d2",
+      "locator_type": "paragraph",
+      "quote": "The improvement is consistent with copper acting as a shallow trap that suppresses charge recombination, although the evidence here is indirect.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 5. Limitations, paragraph l1",
+      "locator_type": "paragraph",
+      "quote": "This study is limited to one batch reactor and 4 h runs; stability beyond 24 h and the effect of humidity were not examined.",
+      "note": "direct evidence"
+    },
+    {
+      "source_id": "paper-01",
+      "locator": "section 5. Limitations, paragraph l2",
+      "locator_type": "paragraph",
+      "quote": "Future work should test the catalysts under solar-spectrum illumination and quantify copper speciation by XAS.",
+      "note": "direct evidence"
+    }
+  ],
+  "uncertainty": [
+    {
+      "item": "图表内数值",
+      "reason": "本次输入为文本层，未读图表像素",
+      "action_required": "如需图表数值请提供 PDF 或表格转录"
+    }
+  ],
+  "changes": [
+    {
+      "step": "1",
+      "action": "读取 case.json / task.md",
+      "note": "识别 6 个章节，source_id=paper-01"
+    },
+    {
+      "step": "2",
+      "action": "按章节顺序切句并标注定位",
+      "note": "共 14 句，定位到 section+paragraph"
+    },
+    {
+      "step": "3",
+      "action": "抽取论文卡片五字段",
+      "note": "研究问题/数据/方法/发现/局限；缺项显式记录"
+    },
+    {
+      "step": "4",
+      "action": "生成章节笔记与知识点",
+      "note": "6 条章节笔记、12 个知识点"
+    },
+    {
+      "step": "5",
+      "action": "绑定来源与自查",
+      "note": "14 条可回链证据；status=success"
+    }
+  ],
+  "artifacts": [],
+  "metadata": {
+    "skill_name": "literature-structured-notes",
+    "skill_version": "1.0.0",
+    "model": "",
+    "runtime": "python 3.13.18",
+    "generated_at": "2026-11-26T11:46:54+08:00"
+  }
+}
