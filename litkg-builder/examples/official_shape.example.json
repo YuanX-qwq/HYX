@@ -1,0 +1,127 @@
+---
+name: literature-knowledge-graph
+description: "Build a runnable literature knowledge graph for one explicit topic: extract entities (researchers, materials, methods, tasks, metrics, claims) with original wording and locators, align aliases, add only evidence-backed typed/directed relations with conditions, bind every node and edge to source evidence, run at least three real queries with subgraphs and evidence, and record merge/conflict decisions. Use for entity recognition, entity alignment, relation extraction, source binding, graph query and incremental update."
+---
+
+# 阅读15｜文献知识图谱构建
+
+## 用途与触发条件
+本 Skill 用于在 Bohrium Playground（Harbor 评测）环境中，针对组织方提供的固定科研案例完成本题指定的
+文献知识图谱构建任务。评测时 Skill 被安装到 `/skills/weekly-skill`，由官方 Harness 在每个
+固定原始案例上运行；输入为 `/input/case.json` 与 `task.md`，过程产物放 `/app/work`，最终结果放 `/app/output`。
+
+**适用**：可聚焦其一：实体识别；实体对齐；关系抽取；来源绑定；图谱查询；增量更新。
+
+**不适用**：不做预制答案、不解释题目未要求的科学结论、不编造测试成绩或运行日志。
+
+## 核心关注点
+- 抽得准：实体对应论文真实出现的科研对象，保留原文表述与位置，区分作者自述与他人转述。
+- 连得对：关系类型、方向与适用条件与原文一致，不把共现、综述转述或推测当成直接证据。
+- 对得齐：别名、缩写、大小写、全称简称、同名冲突正确处理，既不重复节点也不错误合并。
+- 查得到、回得去：图谱能回答真实查询，每个节点和边都能回到论文具体位置与原文片段。
+
+## 执行流程
+1. **读取输入**：先读 `/input/case.json` 与 `task.md`，确认任务边界、输入材料、约束与证据范围；`case_id` 原样保留。
+2. **材料解析**：按本题方向读取真实材料文件，记录每条结论对应的来源定位（来源 ID、章节/段落/图表/公式编号、原文短引）。
+3. **结构化处理**：依据下方 `results` 模式组织主结果；区分直接证据与间接推论、作者自述与他人转述。
+4. **证据与不确定性**：未报告、冲突、读不出或 OCR 乱码的内容写入 `uncertainty`，不靠猜补齐；部分结果写明边界。
+5. **序列化交付**：把 results、sources、uncertainty、changes、artifacts 写入草稿 `/app/work/results_draft.json`，
+   运行 `python3 scripts/serialize_result.py` 生成 `/app/output/result.json`（字段见 `resources/output_contract.json`）。
+6. **预览与自检**：可编辑产物同时渲染真实 PDF/PNG 预览；对照本 SKILL 的输出模式与通用规范逐项自检。
+
+## 输出契约（result.json）
+顶层字段：`case_id, task_id, status, results, sources, uncertainty, changes, artifacts, metadata`，
+完整定义见 `resources/output_contract.json`。`results` 本题结构如下：
+
+```json
+{
+  "nodes": [
+    {
+      "id": "string",
+      "type": "string",
+      "label": "string",
+      "aliases": "string",
+      "source_id": "string",
+      "locator": "string",
+      "quote": "string"
+    }
+  ],
+  "edges": [
+    {
+      "source": "string",
+      "target": "string",
+      "relation": "string",
+      "direction": "string",
+      "conditions": "string",
+      "evidence": "string"
+    }
+  ],
+  "alignments": [
+    {
+      "alias": "string",
+      "canonical_id": "string",
+      "basis": "string",
+      "action": "string"
+    }
+  ],
+  "queries": [
+    {
+      "query": "string",
+      "results": "string",
+      "evidence": "string"
+    }
+  ],
+  "conflicts": [
+    {
+      "topic": "string",
+      "detail": "string",
+      "resolution": "string"
+    }
+  ]
+}
+```
+
+## 题面特殊约定
+本题输入为两篇独立、真实且许可可再分发的论文文本：corpus-manifest.json 列出各 DOI、作者、来源哈希与许可证；material.json 为两篇正文段落汇总索引；primary-material.json 为原论文，secondary-material.json 为新增论文。根 DOI/title/authors 属于第一篇，不得套到第二篇。
+- 每个实质节点/边使用独立 source_id、paragraph_id 及原文短引；位置是组织方 JATS 段落 ID，不是实际 PDF 页码；本包无 PDF 页码，不得把自建页面 1 称作原 PDF 页。
+- 记录跨篇候选同一概念的合并依据与不得合并的冲突/不同对象；不能强迫每个别名都合并，也不能把不同论文的条件、样本和数值结果合成一个结论。
+- 相同通用方法/材料术语不代表两篇使用了相同物理样品、模型实例、数据集或实验条件；只存在同篇多种文件格式不算跨篇证据。
+- 正文行内公式/上下标被线性化，secondary-publisher.xml 留供核对；不提供图像像素、补充附件、底层临床或实验数据，不推断其中数值；未报告和源内冲突明确保留。
+
+## 资源与依赖
+- `scripts/serialize_result.py`：仅用 Python 标准库，组装并校验 `result.json`，无第三方依赖。
+- `resources/conventions.md`：通用工作规范（证据、诚实状态、产物位置、体积约束、禁止事项）。
+- `templates/`：本题领域模板；`examples/`：标注为示例的结果样例。
+- 运行时若需要解析 PDF / 编译 LaTeX / 渲染 Office，使用平台预置工具；依赖版本与来源在说明中写清。
+
+## 最小调用示例
+输入草稿（`/app/work/results_draft.json`，节选，**仅为示例**）：
+
+```json
+{
+  "nodes": [],
+  "edges": [],
+  "alignments": [],
+  "queries": [
+    {
+      "query": "（示例）which method is compared?",
+      "results": [],
+      "evidence": []
+    }
+  ],
+  "conflicts": []
+}
+```
+
+执行：
+
+```bash
+python3 scripts/serialize_result.py   --input /input/case.json   --draft /app/work/results_draft.json   --out /app/output/result.json   --skill-name literature-knowledge-graph
+```
+
+输出 `/app/output/result.json`，`status` 为 `success|partial|undetermined|refused`，每条关键结论均可回溯到 `sources`。
+
+## 限制与失败处理
+- 材料不足或冲突无法判定时，`status=undetermined` 并在 `uncertainty` 说明原因与待确认项。
+- 工具不可用、文件缺失、加密/扫描件无法识别时，记录异常与可人工接管位置，不伪造成功结果。
+- 体积约束：≤50 个 UTF-8 文本文件，单文件 ≤500 KB，总量 ≤2 MB，无符号链接。

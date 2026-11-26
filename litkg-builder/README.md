@@ -8,7 +8,7 @@
 python3 scripts/kg.py build --case /input/case.json --out /app/output --case-id "<case_id>"
 python3 scripts/kg.py demo  --out ./examples/output     # 合成示例，非真实文献
 python3 scripts/kg.py query --kg ./examples/output/kg.json --expr "entity:Cu-doped TiO2"
-python3 tests/selftest.py                                # 35 项断言
+python3 tests/selftest.py                                # 41 项断言
 ```
 
 只依赖 Python ≥3.8 标准库，无第三方包、无网络、无 GPU。
@@ -35,7 +35,7 @@ resources/conventions.md      通用工作规范（证据/诚实状态/产物位
 vocab/entity_types.json       10 类实体定义 + 实例级标记
 vocab/relation_types.json     11 类关系：方向、是否需条件、证据强度
 schemas/kg.schema.json        图谱 JSON Schema（draft 2020-12）
-tests/selftest.py             35 项 fixture 断言（全过为合格）
+tests/selftest.py             41 项 fixture 断言（全过为合格）
 examples/corpus.synthetic.json  全合成两篇论文，DOI 为 10.0000 保留段
 examples/output/              合成示例的构建产物（示例，不是正式案例结果）
 ```

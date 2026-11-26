@@ -98,7 +98,19 @@ def main():
                                         and s["quote"] for s in rj["sources"]) and bool(rj["sources"]))
     check("result_uncertainty_objects",
           all({"item", "reason", "action_required"} <= set(u) for u in rj["uncertainty"]))
-    check("deterministic_ids", [n["id"] for n in rj["results"]["graph"]["nodes"]] == [n["id"] for n in graph["nodes"]])
+    check("deterministic_ids", [n["id"] for n in rj["results"]["nodes"]] == [n["id"] for n in graph["nodes"]])
+    check("results_only_contract_keys",
+          set(rj["results"]) == {"nodes", "edges", "alignments", "queries", "conflicts"}, str(set(rj["results"])))
+    check("alignments_cover_merge_decisions",
+          len(rj["results"]["alignments"]) == len(graph["merges"])
+          and all({"canonical", "decision", "basis"} <= set(a) for a in rj["results"]["alignments"]))
+    check("queries_have_query_results_evidence",
+          all({"query", "results", "evidence"} == set(q) and (q["evidence"] or not q["results"])
+                                                                 for q in rj["results"]["queries"]))
+    check("query_evidence_locators", all(e["locator"].startswith("paragraph ") and e["quote"]
+                                         for q in rj["results"]["queries"] for e in q["evidence"]))
+    check("conflicts_present_or_empty_is_list", isinstance(rj["results"]["conflicts"], list))
+    check("qc_sidecar_written", (tmp / "run" / "qc.json").exists())
 
     tampered = json.loads(json.dumps(graph))
     tampered["nodes"][0]["evidence"][0]["quote"] = "这段引文在原段落中并不存在 zzz"

@@ -988,6 +988,68 @@ def patch_cmd(kg_path, patch_path, corpus_src):
 DEFAULT_SYNTH = ROOT / "examples" / "corpus.synthetic.json"
 
 
+def to_alignments(merges):
+    """把内部 merge 记录摊成官方 results.alignments：每个候选表述一条判定。"""
+    out = []
+    for m in merges:
+        out.append({
+            "node_id": m.get("node_id", ""),
+            "canonical": m.get("label", ""),
+            "type": m.get("type", ""),
+            "source_id": m.get("source_id", ""),
+            "paragraph_id": m.get("paragraph_id", ""),
+            "decision": m.get("decision", ""),
+            "basis": m.get("basis", ""),
+            "rule": m.get("rule", ""),
+        })
+    return out
+
+
+def to_official_queries(queries, nodes=None):
+    """官方 queries 项只保留 query / results / evidence；evidence 一律按可回链格式重建。"""
+    nmap = {n["id"]: n for n in (nodes or [])}
+    out = []
+    for q in queries:
+        rows = q.get("rows") or []
+        matched = q.get("matched_nodes") or []
+        res = rows if rows else matched
+        ev, seen = [], set()
+        for r in res:
+            quote = r.get("quote") or ""
+            pid = r.get("paragraph_id") or ""
+            if not quote:
+                for e0 in (r.get("evidence") or [])[:1]:
+                    quote, pid = e0.get("quote", ""), e0.get("paragraph_id", "")
+            if not quote and r.get("node_id") in nmap:
+                e0 = (nmap[r["node_id"]].get("evidence") or [{}])[0]
+                quote, pid = e0.get("quote", ""), e0.get("paragraph_id", "")
+                r["source_id"] = r.get("source_id") or e0.get("source_id", "")
+            key = (r.get("source_id", ""), pid, quote[:60])
+            if quote and key not in seen:
+                seen.add(key)
+                ev.append({"source_id": r.get("source_id", ""), "locator": f"paragraph {pid}", "quote": quote})
+        out.append({"query": q.get("query", ""), "results": res, "evidence": ev})
+    return out
+
+
+ART_FORMAT = {"json": "json", "csv": "csv", "graphml": "other", "cypher": "txt", "html": "other"}
+
+
+def to_artifacts(files, outdir):
+    """导出文件 → 官方 artifacts[] 对象：path 相对输出目录，供 /app/output 下回查。"""
+    out, base = [], Path(outdir)
+    for key, p in files.items():
+        fp = Path(p)
+        try:
+            rel = fp.resolve().relative_to(base.resolve()).as_posix()
+        except ValueError:
+            rel = fp.name
+        ext = fp.suffix.lstrip(".").lower()
+        out.append({"artifact_id": key, "path": rel, "format": ART_FORMAT.get(ext, "other"),
+                    "type": "data", "description": f"{key} 导出（{ext}）"})
+    return out
+
+
 def build(case, outdir, case_id=None):
     corpus = discover(case)
     ent, rel = load_vocab()
@@ -1058,22 +1120,27 @@ def build(case, outdir, case_id=None):
         "task_id": "product-arena-10-760d1a0b",
         "status": status,
         "results": {
-            "papers": [{k: v for k, v in p.items() if k != "paragraphs"} | {"paragraph_count": len(p["paragraphs"])}
-                       for p in corpus["papers"]],
-            "graph": {"stats": graph["stats"], "nodes": graph["nodes"], "edges": graph["edges"],
-                      "merges": graph["merges"], "conflicts": graph["conflicts"]},
-            "queries": queries,
-            "qc": qcres,
-            "kg_version": VERSION,
+            "nodes": graph["nodes"],
+            "edges": graph["edges"],
+            "alignments": to_alignments(graph["merges"]),
+            "queries": to_official_queries(queries, graph["nodes"]),
+            "conflicts": graph["conflicts"],
         },
         "sources": sources,
         "uncertainty": uncertainty,
         "changes": changes,
-        "artifacts": list(files.values()),
-        "metadata": {"skill_name": "litkg-builder", "skill_version": VERSION, "model": "",
+        "artifacts": to_artifacts(files, outdir),
+        "metadata": {"skill_name": "literature-knowledge-graph", "skill_version": VERSION, "model": "",
                      "runtime": f"python {sys.version.split()[0]}", "generated_at":
                          __import__("datetime").datetime.now().astimezone().isoformat(timespec="seconds")},
     }
+    qcout = Path(outdir) / "qc.json"
+    qcout.write_text(json.dumps({"qc": qcres, "stats": graph["stats"],
+                                 "papers": [{k: v for k, v in p.items() if k != "paragraphs"}
+                                            | {"paragraph_count": len(p["paragraphs"])} for p in corpus["papers"]],
+                                 "kg_version": VERSION}, ensure_ascii=False, indent=2), encoding="utf-8")
+    files["qc"] = str(qcout)
+    result["artifacts"] = to_artifacts(files, outdir)
     rpath = Path(outdir) / "result.json"
     rpath.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"wrote {rpath}")

@@ -1,0 +1,53 @@
+{
+  "qc": {
+    "issues": [
+      {
+        "code": "K007",
+        "level": "warn",
+        "target": "e001",
+        "msg": "比较类关系缺条件"
+      }
+    ],
+    "summary": {
+      "total": 1,
+      "fail": 0,
+      "warn": 1
+    }
+  },
+  "stats": {
+    "papers": 2,
+    "paragraphs": 10,
+    "nodes": 27,
+    "edges": 3,
+    "edges_dropped_unmapped": 0,
+    "candidates": 35
+  },
+  "papers": [
+    {
+      "source_id": "P1",
+      "doi": "10.0000/synthetic.alpha.0001",
+      "title": "Synthetic Study Alpha: CO2 photoreduction over Cu-doped catalysts",
+      "authors": [
+        "Li Wei",
+        "Chen Hao"
+      ],
+      "year": 2024,
+      "license": "CC0-1.0",
+      "role": "primary",
+      "paragraph_count": 5
+    },
+    {
+      "source_id": "P2",
+      "doi": "10.0000/synthetic.beta.0002",
+      "title": "Synthetic Study Beta: CO2 photoreduction over N-doped catalysts",
+      "authors": [
+        "Zhao Min"
+      ],
+      "year": 2025,
+      "license": "CC0-1.0",
+      "role": "secondary",
+      "paragraph_count": 5
+    }
+  ],
+  "kg_version": "1.0.0"
+}

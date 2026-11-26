@@ -97,7 +97,7 @@ python3 scripts/kg.py build --case /input/case.json --out /app/output --case-id 
 |---|---|
 | `case_id` / `task_id` | `case_id` 原样取输入，不得改写；`task_id` 为本题 slug |
 | `status` | `success` / `partial` / `undetermined` / `refused` |
-| `results` | `papers`（每篇 source_id/DOI/标题/角色）、`graph`（nodes/edges/merges/conflicts/stats）、`queries`、`qc` |
+| `results` | 只允许五个键：`nodes`、`edges`、`alignments`（跨篇对齐判定：`canonical`/`decision`/`basis`）、`queries`（每条恰为 `query`/`results`/`evidence`）、`conflicts` |
 | `sources[]` | 每条证据摊平成 `{source_id, locator:"paragraph <pid>", locator_type:"paragraph", quote, note}` |
 | `uncertainty[]` | `{item, reason, action_required}`；未报告、冲突、缺料各一条 |
 | `changes[]` | `{step, action, note}`，七步实施记录 |
@@ -131,12 +131,12 @@ python3 scripts/serialize_result.py \
 自查（每次交付前跑一遍）：
 
 ```bash
-python3 tests/selftest.py          # 35 项 fixture 断言，应全过
+python3 tests/selftest.py          # 41 项 fixture 断言，应全过
 python3 scripts/kg.py build --case /input/case.json --out /app/work/check --case-id check
 python3 scripts/serialize_result.py --case /input/case.json --draft /app/work/results_draft.json --out /app/work/check/result2.json
 ```
 
-验收线：`qc.summary.fail == 0`；所有节点/边 `evidence` 非空且 `quote` 能在对应段落定位；`queries` ≥ 3 且每条含 `rows` 或 `undetermined`；`merges` 每条有 `basis`+`rule`；`conflicts` 全部 `kept_separate`/`kept_both`。
+验收线：`qc.json`（同目录侧写）`summary.fail == 0`；所有节点/边 `evidence` 非空且 `quote` 能在对应段落定位；`results` 恰好五个键；`queries` ≥ 3 且有命中时必须带可回链 `evidence`；`alignments` 每条有 `decision`+`basis`；`conflicts` 全部 `kept_separate`/`kept_both`/`flagged`。
 
 ## 资源
 
@@ -145,4 +145,4 @@ python3 scripts/serialize_result.py --case /input/case.json --draft /app/work/re
 - `vocab/entity_types.json`（10 类实体与实例标记）、`vocab/relation_types.json`（11 类关系、方向与证据强度）。
 - `schemas/kg.schema.json`：图谱 JSON Schema。
 - `resources/output_contract.json`：`result.json` 字段定义（含标注为示例的取值）；`resources/conventions.md`：通用工作规范。
-- `tests/selftest.py`（35 项断言）、`examples/corpus.synthetic.json` + `examples/output/`（全合成示例，非真实文献）。
+- `tests/selftest.py`（41 项断言）、`examples/corpus.synthetic.json` + `examples/output/`（全合成示例，非真实文献）。
