@@ -121,6 +121,16 @@ python3 "$SKILL_DIR/scripts/export.py" \
 
 产出 `assertion_set.json`（规范 JSON）、`assertions.csv`（19 列扁平表）、`nanopub.trig`（assertion / provenance / pubInfo 三子图）。再把 `paragraphs.json`、`qc_report.json`、`change_log.json` 复制到 `/app/output`。
 
+平台要求的 `result.json` 用序列化器从 `assertion_set.json` 生成（官方 results 只有 `nanopubs` 与 `quality_flags` 两个键，缺字段/多字段都直接失败退出）：
+
+```bash
+python3 "$SKILL_DIR/scripts/serialize_result.py" \
+  --assertions /app/output/assertion_set.json --case /input/case.json \
+  --out /app/output/result.json --task-id <challenge-slug>
+```
+
+映射关系：`text→assertion`、`subject.name→subject`、`relation.predicate→predicate`、`object.name(=value unit)→object`、`qualifiers→conditions`、`evidence[0]→evidence{source_id,locator,quote,evidence_type}`、`source→source_metadata`、`confidence.level→confidence`、`qc.status(pass/warn/fail)→checked/flagged/rejected`、各条 issue→`quality_flags`。字段定义见 `resources/output_contract.json` 与 `resources/field_definitions.md`。
+
 `change_log.json` 每条 `{"step":"segment|decompose|bind|qc|export","detail":"…"}`，记录丢弃的候选、修复的引文、降级的页。
 
 ---

@@ -261,6 +261,46 @@ def main():
     check("write_outputs", os.path.exists(os.path.join(work, "paragraphs.json")) and
           os.path.exists(os.path.join(work, "assertions.json")), work)
 
+    # 11) 官方 result.json 契约（results.nanopubs / quality_flags）
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "serres", os.path.join(ROOT, "scripts", "serialize_result.py"))
+    sr = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(sr)
+
+    pub_src = {"source_id": SOURCE["source_id"], "authors": SOURCE["authors"],
+               "year": SOURCE["year"], "doi": SOURCE.get("doi"), "version": SOURCE.get("version")}
+    pubs = [sr.to_nanopub(a, pub_src) for a in assertions]
+    check("nanopub_required_keys",
+          all({"assertion", "subject", "predicate", "object", "conditions", "evidence",
+               "source_metadata", "confidence", "status"} == set(p) for p in pubs))
+    check("nanopub_evidence_bindable",
+          all(p["evidence"]["source_id"] and p["evidence"]["locator"]
+              and p["evidence"]["quote"] and p["evidence"]["evidence_type"] for p in pubs))
+    check("nanopub_source_metadata_complete",
+          all(p["source_metadata"]["authors"] and p["source_metadata"]["year"]
+              and p["source_metadata"]["version"] and p["source_metadata"]["doi_or_id"] for p in pubs))
+    check("nanopub_status_mapped", all(p["status"] in ("checked", "flagged", "rejected", "unverified")
+                                       for p in pubs), str({p["status"] for p in pubs}))
+    check("quality_flags_is_list", isinstance(sr.to_flags(assertions), list))
+
+    draft = {"case_id": "selftest", "status": "partial", "source": pub_src,
+             "assertions": assertions, "change_log": [{"step": "export", "detail": "selftest"}]}
+    result = {"case_id": "selftest", "task_id": "product-arena-09-0e8befd4",
+              "status": "success", "results": {"nanopubs": pubs, "quality_flags": []},
+              "sources": [{"source_id": SOURCE["source_id"], "locator": "paragraph p1b1",
+                           "quote": assertions[0]["evidence"][0]["quote"], "note": "x"}],
+              "uncertainty": [{"item": "x", "reason": "y", "action_required": "z"}],
+              "changes": [{"step": "1", "action": "a", "note": "n"}],
+              "artifacts": [], "metadata": {"skill_name": "nanopublication-extraction"}}
+    check("contract_accepts_good_result", sr.validate(result) == [], str(sr.validate(result))[:200])
+    broken = json.loads(json.dumps(result))
+    broken["results"]["nanopubs"][0]["evidence"]["quote"] = ""
+    check("contract_rejects_empty_quote", bool(sr.validate(broken)))
+    broken2 = json.loads(json.dumps(result))
+    broken2["results"]["extra_key"] = 1
+    check("contract_rejects_extra_results_key", any("契约外字段" in e for e in sr.validate(broken2)))
+
     failed = [r for r in results if not r["pass"]]
     print(json.dumps({"total": len(results), "passed": len(results) - len(failed),
                       "failed": len(failed), "results": results}, ensure_ascii=False, indent=1))

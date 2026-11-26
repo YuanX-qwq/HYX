@@ -1,0 +1,124 @@
+---
+name: nanopublication-extraction
+description: "Split a paper's key conclusions into single verifiable assertions, bind each to its minimal sufficient evidence and source locator, record source metadata (paper, authors, year, version, identifier), run quality checks for over-broad claims, weak evidence, mis-typed relations and mixed-up subjects, and export a machine-readable structure. Use for nanopublication generation, assertion validation, evidence binding and structured export. Not for merging several claims into one loose field."
+---
+
+# 阅读14｜Nanopublication
+
+## 用途与触发条件
+本 Skill 用于在 Bohrium Playground（Harbor 评测）环境中，针对组织方提供的固定科研案例完成本题指定的
+Nanopublication任务。评测时 Skill 被安装到 `/skills/weekly-skill`，由官方 Harness 在每个
+固定原始案例上运行；输入为 `/input/case.json` 与 `task.md`，过程产物放 `/app/work`，最终结果放 `/app/output`。
+
+**适用**：可聚焦其一：断言拆解；证据绑定；来源元数据；质量检查；结果复核与复用。
+
+**不适用**：不做预制答案、不解释题目未要求的科学结论、不编造测试成绩或运行日志。
+
+## 核心关注点
+- 拆得细：一段结论拆成若干条各自可判断真假的断言，保留条件和限定范围，处理并列与因果结构。
+- 对得上：每条断言找到真正支撑它的最小证据片段，原文位置可指出，区分直接证据与间接推论。
+- 追得回：断言、证据、论文、作者、年份、版本链路完整，他人能据此回到原文。
+- 读得懂：导出结构符合约定字段与序列化形态，下游程序可直接解析，无需人工清洗。
+
+## 执行流程
+1. **读取输入**：先读 `/input/case.json` 与 `task.md`，确认任务边界、输入材料、约束与证据范围；`case_id` 原样保留。
+2. **材料解析**：按本题方向读取真实材料文件，记录每条结论对应的来源定位（来源 ID、章节/段落/图表/公式编号、原文短引）。
+3. **结构化处理**：依据下方 `results` 模式组织主结果；区分直接证据与间接推论、作者自述与他人转述。
+4. **证据与不确定性**：未报告、冲突、读不出或 OCR 乱码的内容写入 `uncertainty`，不靠猜补齐；部分结果写明边界。
+5. **序列化交付**：把 results、sources、uncertainty、changes、artifacts 写入草稿 `/app/work/results_draft.json`，
+   运行 `python3 scripts/serialize_result.py` 生成 `/app/output/result.json`（字段见 `resources/output_contract.json`）。
+6. **预览与自检**：可编辑产物同时渲染真实 PDF/PNG 预览；对照本 SKILL 的输出模式与通用规范逐项自检。
+
+## 输出契约（result.json）
+顶层字段：`case_id, task_id, status, results, sources, uncertainty, changes, artifacts, metadata`，
+完整定义见 `resources/output_contract.json`。`results` 本题结构如下：
+
+```json
+{
+  "nanopubs": [
+    {
+      "assertion": "string",
+      "subject": "string",
+      "predicate": "string",
+      "object": "string",
+      "conditions": "string",
+      "evidence": {
+        "source_id": "string",
+        "locator": "string",
+        "quote": "string",
+        "evidence_type": "string"
+      },
+      "source_metadata": {
+        "authors": "string",
+        "year": "string",
+        "version": "string",
+        "doi_or_id": "string"
+      },
+      "confidence": "string",
+      "status": "string"
+    }
+  ],
+  "quality_flags": [
+    {
+      "assertion_id": "string",
+      "issue": "string",
+      "basis": "string",
+      "suggestion": "string"
+    }
+  ]
+}
+```
+
+## 题面特殊约定
+检测断言过宽、证据不足、关系类型错误、主体混淆和来源缺失，并给出可复现的判定依据。
+
+## 资源与依赖
+- `scripts/serialize_result.py`：仅用 Python 标准库，组装并校验 `result.json`，无第三方依赖。
+- `resources/conventions.md`：通用工作规范（证据、诚实状态、产物位置、体积约束、禁止事项）。
+- `templates/`：本题领域模板；`examples/`：标注为示例的结果样例。
+- 运行时若需要解析 PDF / 编译 LaTeX / 渲染 Office，使用平台预置工具；依赖版本与来源在说明中写清。
+
+## 最小调用示例
+输入草稿（`/app/work/results_draft.json`，节选，**仅为示例**）：
+
+```json
+{
+  "nanopubs": [
+    {
+      "assertion": "（示例）subject predicate object under condition",
+      "subject": "（示例）",
+      "predicate": "（示例）",
+      "object": "（示例）",
+      "conditions": "（示例）",
+      "evidence": {
+        "source_id": "paper-example",
+        "locator": "sec 2",
+        "quote": "（示例）",
+        "evidence_type": "direct"
+      },
+      "source_metadata": {
+        "authors": [],
+        "year": "",
+        "version": "",
+        "doi_or_id": ""
+      },
+      "confidence": "medium",
+      "status": "checked"
+    }
+  ],
+  "quality_flags": []
+}
+```
+
+执行：
+
+```bash
+python3 scripts/serialize_result.py   --input /input/case.json   --draft /app/work/results_draft.json   --out /app/output/result.json   --skill-name nanopublication-extraction
+```
+
+输出 `/app/output/result.json`，`status` 为 `success|partial|undetermined|refused`，每条关键结论均可回溯到 `sources`。
+
+## 限制与失败处理
+- 材料不足或冲突无法判定时，`status=undetermined` 并在 `uncertainty` 说明原因与待确认项。
+- 工具不可用、文件缺失、加密/扫描件无法识别时，记录异常与可人工接管位置，不伪造成功结果。
+- 体积约束：≤50 个 UTF-8 文本文件，单文件 ≤500 KB，总量 ≤2 MB，无符号链接。

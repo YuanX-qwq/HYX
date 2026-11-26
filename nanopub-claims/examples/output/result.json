@@ -1,0 +1,654 @@
+{
+  "case_id": "example-synthetic-001",
+  "task_id": "product-arena-09-0e8befd4",
+  "status": "success",
+  "results": {
+    "nanopubs": [
+      {
+        "assertion": "Strain K-12 reached a maximum growth rate of 0.42 per hour at 30 °C.",
+        "subject": "Strain K-12",
+        "predicate": "equals",
+        "object": "maximum growth rate = 0.42 per hour",
+        "conditions": "temperature=30 °C",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 1, paragraph p1b1, chars 0-68",
+          "quote": "Strain K-12 reached a maximum growth rate of 0.42 per hour at 30 °C.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "At 37 °C, the maximum growth rate of strain K-12 dropped to 0.28 per hour.",
+        "subject": "strain K-12",
+        "predicate": "decreases",
+        "object": "maximum growth rate = 0.28 per hour",
+        "conditions": "temperature=37 °C",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 1, paragraph p1b1, chars 69-143",
+          "quote": "At 37 °C, the maximum growth rate of strain K-12 dropped to 0.28 per hour.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Ammonium supplementation raised the biomass yield of strain K-12 by 18 percent.",
+        "subject": "Ammonium supplementation",
+        "predicate": "increases",
+        "object": "biomass yield",
+        "conditions": "",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 1, paragraph p1b2, chars 0-79",
+          "quote": "Ammonium supplementation raised the biomass yield of strain K-12 by 18 percent.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Nitrate supplementation left the biomass yield of strain K-12 unchanged.",
+        "subject": "Nitrate supplementation",
+        "predicate": "other",
+        "object": "biomass yield",
+        "conditions": "",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 1, paragraph p1b2, chars 80-152",
+          "quote": "Nitrate supplementation left the biomass yield of strain K-12 unchanged.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Strain K-12 tolerated NaCl concentrations up to 4.5 percent (w/v).",
+        "subject": "Strain K-12",
+        "predicate": "other",
+        "object": "NaCl concentrations = 4.5 percent (w/v)",
+        "conditions": "",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 1, paragraph p1b3, chars 0-66",
+          "quote": "Strain K-12 tolerated NaCl concentrations up to 4.5 percent (w/v).",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Above 4.5 percent NaCl, growth of strain K-12 ceased completely.",
+        "subject": "strain K-12",
+        "predicate": "decreases",
+        "object": "growth",
+        "conditions": "nacl=above 4.5 percent",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 1, paragraph p1b3, chars 67-131",
+          "quote": "Above 4.5 percent NaCl, growth of strain K-12 ceased completely.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "The genome of strain K-12 carries 4318 protein-coding genes.",
+        "subject": "genome",
+        "predicate": "has_part",
+        "object": "protein-coding genes = 4318 genes",
+        "conditions": "",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 1, paragraph p1b4, chars 0-60",
+          "quote": "The genome of strain K-12 carries 4318 protein-coding genes.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Gene kdpA showed 2.1-fold higher expression under low potassium.",
+        "subject": "Gene kdpA",
+        "predicate": "increases",
+        "object": "expression = 2.1 fold",
+        "conditions": "condition=low potassium",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 1, paragraph p1b4, chars 61-125",
+          "quote": "Gene kdpA showed 2.1-fold higher expression under low potassium.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Low potassium conditions activated the kdp operon within 15 minutes.",
+        "subject": "Low potassium conditions",
+        "predicate": "activates",
+        "object": "kdp operon",
+        "conditions": "duration=15 minutes",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 1, paragraph p1b5, chars 0-68",
+          "quote": "Low potassium conditions activated the kdp operon within 15 minutes.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "The kdp operon encodes three subunits, KdpA, KdpB and KdpC.",
+        "subject": "kdp operon",
+        "predicate": "has_part",
+        "object": "three subunits",
+        "conditions": "",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 1, paragraph p1b5, chars 69-128",
+          "quote": "The kdp operon encodes three subunits, KdpA, KdpB and KdpC.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "KdpA binds potassium with a dissociation constant of 12 micromolar.",
+        "subject": "KdpA",
+        "predicate": "binds",
+        "object": "potassium",
+        "conditions": "kd=12 micromolar",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 2, paragraph p2b1, chars 0-67",
+          "quote": "KdpA binds potassium with a dissociation constant of 12 micromolar.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Deletion of kdpA reduced growth under low potassium by 34 percent.",
+        "subject": "Deletion of kdpA",
+        "predicate": "decreases",
+        "object": "growth = 34 percent",
+        "conditions": "condition=low potassium",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 2, paragraph p2b1, chars 68-134",
+          "quote": "Deletion of kdpA reduced growth under low potassium by 34 percent.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Complementation with wild-type kdpA restored growth to 96 percent of the control level.",
+        "subject": "Complementation with wild-type kdpA",
+        "predicate": "other",
+        "object": "growth = 96 percent of the control",
+        "conditions": "",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 2, paragraph p2b2, chars 0-87",
+          "quote": "Complementation with wild-type kdpA restored growth to 96 percent of the control level.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Mutant strain K-12 delta-kdpA produced colonies 40 percent smaller than the wild type.",
+        "subject": "Mutant strain K-12 delta-kdpA",
+        "predicate": "decreases",
+        "object": "colonies = 40 percent",
+        "conditions": "",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 2, paragraph p2b2, chars 88-174",
+          "quote": "Mutant strain K-12 delta-kdpA produced colonies 40 percent smaller than the wild type.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Transcription of kdpA peaked at 0.8 transcripts per cell during stationary phase.",
+        "subject": "Transcription of kdpA",
+        "predicate": "other",
+        "object": "transcripts = 0.8 per cell",
+        "conditions": "phase=stationary",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 2, paragraph p2b3, chars 0-81",
+          "quote": "Transcription of kdpA peaked at 0.8 transcripts per cell during stationary phase.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Potassium starvation increased kdpA promoter activity 5.6-fold.",
+        "subject": "Potassium starvation",
+        "predicate": "increases",
+        "object": "kdpA promoter activity = 5.6 fold",
+        "conditions": "",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 2, paragraph p2b3, chars 82-145",
+          "quote": "Potassium starvation increased kdpA promoter activity 5.6-fold.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "The kdp operon is conserved across 27 tested isolates.",
+        "subject": "kdp operon",
+        "predicate": "other",
+        "object": "27 tested isolates",
+        "conditions": "",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 2, paragraph p2b4, chars 0-54",
+          "quote": "The kdp operon is conserved across 27 tested isolates.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Isolates lacking the kdp operon showed 22 percent slower growth at low potassium.",
+        "subject": "Isolates lacking the kdp operon",
+        "predicate": "decreases",
+        "object": "growth = 22 percent",
+        "conditions": "condition=low potassium",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 2, paragraph p2b4, chars 55-136",
+          "quote": "Isolates lacking the kdp operon showed 22 percent slower growth at low potassium.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "The measured potassium affinity of KdpA was 12 micromolar in three independent assays.",
+        "subject": "potassium affinity of KdpA",
+        "predicate": "equals",
+        "object": "12 micromolar = 12 micromolar",
+        "conditions": "assays=3",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 2, paragraph p2b5, chars 0-86",
+          "quote": "The measured potassium affinity of KdpA was 12 micromolar in three independent assays.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      },
+      {
+        "assertion": "Adding 50 millimolar potassium fully reversed the starvation response within 10 minutes.",
+        "subject": "potassium",
+        "predicate": "other",
+        "object": "starvation response = 50 millimolar",
+        "conditions": "duration=10 minutes",
+        "evidence": {
+          "source_id": "sha256:synthetic-example-0001",
+          "locator": "page 2, paragraph p2b5, chars 87-175",
+          "quote": "Adding 50 millimolar potassium fully reversed the starvation response within 10 minutes.",
+          "evidence_type": "direct"
+        },
+        "source_metadata": {
+          "authors": [
+            "A. Example",
+            "B. Example"
+          ],
+          "year": "2026",
+          "version": "example-v1",
+          "doi_or_id": "sha256:synthetic-example-0001"
+        },
+        "confidence": "high",
+        "status": "checked"
+      }
+    ],
+    "quality_flags": []
+  },
+  "sources": [
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 1, paragraph p1b1, chars 0-68",
+      "locator_type": "paragraph",
+      "quote": "Strain K-12 reached a maximum growth rate of 0.42 per hour at 30 °C.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 1, paragraph p1b1, chars 69-143",
+      "locator_type": "paragraph",
+      "quote": "At 37 °C, the maximum growth rate of strain K-12 dropped to 0.28 per hour.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 1, paragraph p1b2, chars 0-79",
+      "locator_type": "paragraph",
+      "quote": "Ammonium supplementation raised the biomass yield of strain K-12 by 18 percent.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 1, paragraph p1b2, chars 80-152",
+      "locator_type": "paragraph",
+      "quote": "Nitrate supplementation left the biomass yield of strain K-12 unchanged.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 1, paragraph p1b3, chars 0-66",
+      "locator_type": "paragraph",
+      "quote": "Strain K-12 tolerated NaCl concentrations up to 4.5 percent (w/v).",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 1, paragraph p1b3, chars 67-131",
+      "locator_type": "paragraph",
+      "quote": "Above 4.5 percent NaCl, growth of strain K-12 ceased completely.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 1, paragraph p1b4, chars 0-60",
+      "locator_type": "paragraph",
+      "quote": "The genome of strain K-12 carries 4318 protein-coding genes.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 1, paragraph p1b4, chars 61-125",
+      "locator_type": "paragraph",
+      "quote": "Gene kdpA showed 2.1-fold higher expression under low potassium.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 1, paragraph p1b5, chars 0-68",
+      "locator_type": "paragraph",
+      "quote": "Low potassium conditions activated the kdp operon within 15 minutes.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 1, paragraph p1b5, chars 69-128",
+      "locator_type": "paragraph",
+      "quote": "The kdp operon encodes three subunits, KdpA, KdpB and KdpC.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 2, paragraph p2b1, chars 0-67",
+      "locator_type": "paragraph",
+      "quote": "KdpA binds potassium with a dissociation constant of 12 micromolar.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 2, paragraph p2b1, chars 68-134",
+      "locator_type": "paragraph",
+      "quote": "Deletion of kdpA reduced growth under low potassium by 34 percent.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 2, paragraph p2b2, chars 0-87",
+      "locator_type": "paragraph",
+      "quote": "Complementation with wild-type kdpA restored growth to 96 percent of the control level.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 2, paragraph p2b2, chars 88-174",
+      "locator_type": "paragraph",
+      "quote": "Mutant strain K-12 delta-kdpA produced colonies 40 percent smaller than the wild type.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 2, paragraph p2b3, chars 0-81",
+      "locator_type": "paragraph",
+      "quote": "Transcription of kdpA peaked at 0.8 transcripts per cell during stationary phase.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 2, paragraph p2b3, chars 82-145",
+      "locator_type": "paragraph",
+      "quote": "Potassium starvation increased kdpA promoter activity 5.6-fold.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 2, paragraph p2b4, chars 0-54",
+      "locator_type": "paragraph",
+      "quote": "The kdp operon is conserved across 27 tested isolates.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 2, paragraph p2b4, chars 55-136",
+      "locator_type": "paragraph",
+      "quote": "Isolates lacking the kdp operon showed 22 percent slower growth at low potassium.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 2, paragraph p2b5, chars 0-86",
+      "locator_type": "paragraph",
+      "quote": "The measured potassium affinity of KdpA was 12 micromolar in three independent assays.",
+      "note": "nanopub evidence, direct"
+    },
+    {
+      "source_id": "sha256:synthetic-example-0001",
+      "locator": "page 2, paragraph p2b5, chars 87-175",
+      "locator_type": "paragraph",
+      "quote": "Adding 50 millimolar potassium fully reversed the starvation response within 10 minutes.",
+      "note": "nanopub evidence, direct"
+    }
+  ],
+  "uncertainty": [
+    {
+      "item": "未报告的数值/条件",
+      "reason": "材料未给出，未做推断",
+      "action_required": "如需该值请提供补充材料"
+    }
+  ],
+  "changes": [
+    {
+      "step": "1",
+      "action": "build_example",
+      "note": "synthetic example generated deterministically"
+    }
+  ],
+  "artifacts": [],
+  "metadata": {
+    "skill_name": "nanopublication-extraction",
+    "skill_version": "1.0.0",
+    "model": "",
+    "runtime": "python 3.13.18",
+    "generated_at": "2026-11-26T11:41:39+08:00"
+  }
+}
